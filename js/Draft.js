@@ -117,12 +117,9 @@ enabled = true;
 function test(number) {
     if (enabled == true) {
         for (i = 0; i < number; i++) {
-            try {
-                prepare(detailsToUse[number], "Gentle, Men", "First", "yes")
-            }
-            catch (err) {
-                console.log("Failed.")
-            }
+                console.log("Trying " + detailsToUse[i][6])
+                prepare(detailsToUse[i], "Gentle, Men", "First", "yes")
+                console.log("Completed " + detailsToUse[i][6])
 
         }
         console.log("finished!")

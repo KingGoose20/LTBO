@@ -212,7 +212,8 @@
         <br>
         <div>
           <div style="float: left; width: 60%">
-              <video src="../nbavideo.mp4" style="width: 45vw; border: 5px solid black" id="playerVideo" loop muted></video>
+            <video src="../nbavideo.mp4" style="width: 45vw; border: 5px solid black" id="playerVideo" loop
+              muted></video>
           </div>
           <div style="float: right; width: 40%; height: 100%; padding: auto;">
             <br><br>
@@ -234,7 +235,7 @@
       <br>
       <div data-ix="new-interaction" class="w-container">
         <h1 class="hero-heading mainHeading animate-heading fade-inHeading">The Draft | Term 4</h1>
-        <div class="button fade-inHeading" onclick="test(11)"><i>Announced on the 18th of October</i></div>
+        <div class="button fade-inHeading" onclick="test(detailsToUse.length)"><i>Announced on the 18th of October</i></div>
       </div>
     </div>
     <div id="confetti-wrapper">
@@ -411,14 +412,42 @@
         }
       </script>
       <script>
+      /*Example!!*/ detailsToUseExample = [Angus, Kimmy, Chris, Jasper, Rudy, Nick, Michael, SamM, Alex, Lukas, SamJ, Willie]
+        /*Do the actual one here*/ detailsToUse = [Kimmy, Kimmy, Kimmy]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /* Set the date we're counting down to */
         var countDownDate = [new Date("October 18, 2023 9:50:00").getTime(), new Date("October 18, 2023 9:51:00"), new Date("October 18, 2023 9:52:00").getTime(),
         new Date("October 18, 2023 9:53:00").getTime(), new Date("October 18, 2023 9:54:00"), new Date("October 18, 2023 9:55:00").getTime(),
         new Date("October 18, 2023 9:56:00").getTime(), new Date("October 18, 2023 9:57:00"), new Date("October 18, 2023 9:58:00").getTime(),
         new Date("October 18, 2023 9:59:00").getTime(), new Date("October 18, 2023 10:00:00"), new Date("October 18, 2023 10:01:00").getTime(),];
 
-        /*Example!!*/ detailsToUseExample = [Angus, Kimmy, Chris, Jasper, Rudy, Nick, Michael, SamM, Alex, Lukas, SamJ, Willie]
-        /*Do the actual one here*/ detailsToUse = [Angus, Kimmy, Chris, Jasper, Rudy, Nick, Michael, SamM, Alex, Lukas, SamJ, Willie]
+
         teamsToUse = ["Gentle, Men", "Choc-Tops", "Traffic Controllers", "Traffic Controllers", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Choc-Tops", "Traffic Controllers", "Traffic Controllers", "Choc-Tops", "Gentle, Men"]
         numbersToUse = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Nineth", "Tenth", "Eleventh", "Twelvth"]
 
@@ -462,7 +491,7 @@
             } else if (glowTick == 3) {
               glowTick = 0
               glowOn = false
-              document.getElementById("countDown" + (selectedNumber-1)).classList.remove(glow);
+              document.getElementById("countDown" + (selectedNumber - 1)).classList.remove(glow);
             }
             now = new Date().getTime();
             distance = countDownDate[selectedNumber] - now;
