@@ -47,7 +47,7 @@ function prepare(variable, team, number, forced = "no") {
             document.getElementById("teamImage").src = "../Images/GM_Final.png";
             document.getElementById("playerVideo").style.border = "5px solid #404040";
         }
-        if(forced == "no") {
+        if (forced == "no") {
             setTimeout(() => { showPlayer() }, 3000);
         } else if (forced != "cancel") {
             setTimeout(() => { showPlayer() }, 1000);
@@ -88,15 +88,15 @@ function showPlayer() {
 
     //if close button is clicked
     $('.window .close').click(function (e) {
-            e.preventDefault();
+        e.preventDefault();
 
-            $('#mask').hide();
-            $('.window').hide();
+        $('#mask').hide();
+        $('.window').hide();
 
-            if (waiting.length > 0) {
-                prepare(waiting[0][0], waiting[0][1], waiting[0][2], "yes")
-                waiting.shift()
-            }
+        if (waiting.length > 0) {
+            prepare(waiting[0][0], waiting[0][1], waiting[0][2], "yes")
+            waiting.shift()
+        }
 
     });
 
@@ -109,20 +109,23 @@ function showPlayer() {
             waiting.shift()
         }
     });
-    setTimeout(() => {document.getElementById("playerVideo").play()}, 500)
+    setTimeout(() => { document.getElementById("playerVideo").play() }, 500)
 
 }
 
-
+enabled = true;
 function test(number) {
-    for (i = 0; i<number; i++) {
-        try {        
-            prepare(detailsToUse[number], "Gentle, Men", "First", "cancel")
-          }
-          catch(err) {
-            console.log("Failed.")
-          }
+    if (enabled == true) {
+        for (i = 0; i < number; i++) {
+            try {
+                prepare(detailsToUse[number], "Gentle, Men", "First", "yes")
+            }
+            catch (err) {
+                console.log("Failed.")
+            }
 
+        }
+        console.log("finished!")
     }
-    console.log("finished!")
+
 }
