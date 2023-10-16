@@ -1,19 +1,19 @@
 Today = {
-  "Date": ["10 October"],
-  "GameNumber":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-  "Winner":["Gentle Men","Traffic Controllers","Gentle Men","Gentle Men","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Gentle Men","Traffic Controllers","Gentle Men","Traffic Controllers","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Gentle Men"],
-  "Loser":["Traffic Controllers","Gentle Men","Traffic Controllers","Traffic Controllers","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Gentle Men","Traffic Controllers","Gentle Men","Traffic Controllers","Gentle Men","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers"],
-  "Score":["3-0","1-3","4-1","5-1","2-5","3-5","4-5","5-5","6-5","7-5","6-7","8-6","7-8","9-7","8-9","9-9","11-9","12-9","13-9","14-9","15-9","16-9"],
-  "Scorer":["Alexander Galt","Rudy Hoschke","Alexander Galt","Lukas Johnston","Rudy Hoschke","Rudy Hoschke","Nicholas Szogi","Rudy Hoschke","Michael Iffland","Clarrie Jones","Alexander Galt","Michael Iffland","Alexander Galt","Michael Iffland","Alexander Galt","Alexander Galt","Samuel McConaghy","Alexander Galt","Samuel McConaghy","Lukas Johnston","Lukas Johnston","Lukas Johnston"],
-  "Type":["Finish","Finish","Finish","Finish","Finish","Finish","Finish","Midrange","Finish","Midrange","Finish","Midrange","Finish","Midrange","Finish","Finish","Three Pointer","Finish","Midrange","Midrange","Finish","Midrange"],
-  "WStreak":["-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","1"],
-  "LStreak":["-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","1"],
-  "SStreak":[1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,3]
+  "Date": ["18 October"],
+  "GameNumber":[],
+  "Winner":[],
+  "Loser":[],
+  "Score":[],
+  "Scorer":[],
+  "Type":[],
+  "WStreak":[],
+  "LStreak":[],
+  "SStreak":[]
 }
 
 Override = false
 OverrideOrder = ["CT", "GM", "TC"]
-overRideDate = "Play-In Game"
+overRideDate = " "
 overrideW = ""
 overrideL = ""
 overrideDayPoints = [0,0,0]

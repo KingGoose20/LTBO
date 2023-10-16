@@ -1,17 +1,17 @@
-Angus = ["../Videos/Angus.mp4", 2.9, 1.7, 0.5, 0.35, "", "Angus Walker"]
+Angus = ["../Videos/Angus.mp4", 2.9, 1.7, 0.5, 0.35, "1st Offensive and Defensive Team", "Angus Walker"]
 
-Chris = ["../Videos/Chris.mp4", 1.24, 0.86, 0.29, 0.05, "", "Christopher Tomkinson"]
-Kimmy = ["../Videos/Kimmy.mp4", 2.42, 1.11, 0.89, 0.21, "", "William Kim"]
-SamJ = ["../Videos/SamJ.mp4", 0.57, 0.29, 0.19, 0.05, "", "Sam James"]
+Chris = ["../Videos/Chris.mp4", 1.24, 0.86, 0.29, 0.05, "Most Valuable Player", "Christopher Tomkinson"]
+Kimmy = ["../Videos/Kimmy.mp4", 2.42, 1.11, 0.89, 0.21, "Averaged 5ppg during Finals Week", "William Kim"]
+SamJ = ["../Videos/SamJ.mp4", 0.57, 0.29, 0.19, 0.05, "Scored 3 points in one day", "Sam James"]
 
-Alex = ["../Videos/Alex.mp4", 3.54, 3.31, 0.08, 0.08, "", "Alexander Galt"]
+Alex = ["../Videos/Alex.mp4", 3.54, 3.31, 0.08, 0.08, "Averaged 5ppg for a week", "Alexander Galt"]
 Nick = ["../Videos/Nick.mp4", 0.83, 0.56, 0.06, 0.11, "2nd Offensive and Defensive Team", "Nicholas Szogi"]
-Jasper = ["../Videos/Jasper.mp4", 0.14, 0, 0.14, 0, "", "Jasper Collier"]
+Jasper = ["../Videos/Jasper.mp4", 0.14, 0, 0.14, 0, "Second for MIP Voting", "Jasper Collier"]
 Rudy = ["../Videos/Rudy.mp4", 1.44, 1.38, 0.07, 0, "1st Offensive and Defensive Team", "Rudy Hoschke"]
 
 Michael = ["../Videos/Michael.mp4", 1.2, 0.5, 0.5, 0.1, "1st Defensive Team", "Michael Iffland"]
-Lukas = ["../Videos/Lukas.mp4", 1.11, 0.84, 0.27, 0, "", "Lukas Johnston"]
-SamM = ["../Videos/SamM.mp4", 3.33, 0.76, 2, 0.29, "", "Samuel McConaghy"]
+Lukas = ["../Videos/Lukas.mp4", 1.11, 0.84, 0.27, 0, "2nd Offensive and Defensive Team", "Lukas Johnston"]
+SamM = ["../Videos/SamM.mp4", 3.33, 0.76, 2, 0.29, "Scoring Champion", "Samuel McConaghy"]
 Willie = ["../Videos/Willie.mp4", 0.05, 0.0, 0.45, 0, "3-time Teammate of the Term", "Will Weekes"]
 
 waiting = []

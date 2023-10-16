@@ -102,11 +102,11 @@ function RunMain() {
   mainArea.style.display = ''
   pastDetails.style.display = ""
   if (mainArray.TeamImage[number] == "../Images/GM_Final.png") {
-    PlayerImage.style.border = "5px solid rgb(71,174,181)"
+    PlayerImage.style.border = "5px solid #404040"
   } else if (mainArray.TeamImage[number] == "../Images/TC_Final.png") {
-    PlayerImage.style.border = "5px solid rgb(136,54,3)"
+    PlayerImage.style.border = "5px solid #ff5500"
   } else if (mainArray.TeamImage[number] == "../Images/CT_Final.png") {
-    PlayerImage.style.border = "5px solid rgb(195,45,83)"
+    PlayerImage.style.border = "5px solid #8a5500"
   } else {
     PlayerImage.style.border = "5px solid #8537ad"
   }
