@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E8LZ895SJC');
+  </script>
+  <script src="../js/HeaderFooter.js"></script>
+
+  <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+  <meta charset="utf-8" />
+  <title>Results | LTBO</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+  <script src="../js/Webfont.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(8vh);
+      visibility: hidden;
+      transition: opacity 0.6s ease-out, transform 1s ease-out;
+      will-change: opacity, visibility;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid rgb(150, 150, 150);
+    }
+
+    td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    tr {
+      line-height: 30px;
+      transition: all 0.7s ease-in-out;
+    }
+
+    tr:hover.boxScore {
+      line-height: 45px;
+      font-size: 24px
+    }
+
+    @keyframes ResultsGrow {
+      0% {
+        line-height: 30px;
+      }
+
+      10% {
+        line-height: 30px;
+      }
+
+      40% {
+        color: inherit
+      }
+
+      60% {
+        color: rgb(200, 200, 200)
+      }
+
+      90% {
+        line-height: 45px;
+        font-size: 24px;
+        color: rgb(200, 200, 200);
+      }
+
+      100% {
+        line-height: 45px;
+        font-size: 24px;
+        color: rgb(200, 200, 200);
+      }
+    }
+
+    table tr:nth-child(even) {
+      background-color: rgb(35, 35, 35);
+    }
+
+    .boldNumber {
+      font-size: 110%;
+      font-weight: bold;
+      color: rgb(200, 200, 200);
+    }
+
+    table {
+      cursor: pointer;
+    }
+  </style>
+  <script src="../js/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function () {
+      $('.fade-in').each(function () {
+        var top_of_element = $(this).offset().top;
+        var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+
+        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) && !$(this).hasClass('is-visible')) {
+          $(this).addClass('is-visible');
+        }
+      });
+    });
+  </script>
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+    <script>header("docs")</script>
+  </div>
+
+  <div class="hero-section centered container champions">
+    <br>
+    <div data-ix="new-interaction" class="w-container">
+      <h1 class="hero-heading mainHeading animate-heading fade-inHeading">Results</h1>
+      <br>
+      <div>
+        <a href="#bottom" class="button fade-inHeading">From the <span id="asOf"></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding: 60px 10px; height:auto; min-height: 500px;">
+    <div class="w-container fade-in" style="height:100%">
+      <h3 class="heading-hide">Game-by-game</h3>
+      <br>
+      <div style="overflow-x: auto; position: relative; min-height: 300px;" id="topDiv" class="heading-hide">
+        <table style="width: 100%; text-align: center; min-width: 850px;" id="mainTable">
+          <col style="width:11%">
+          <col style="width:15%">
+          <col style="width:15%">
+          <col style="width:6%">
+          <col style="width:22%">
+          <col style="width:13%">
+          <col style="width:6%">
+          <col style="width:6%">
+          <col style="width:6%">
+          <tr>
+            <td><span class="boldNumber">Game Number</span></td>
+            <td><span class="boldNumber">Winner</span></td>
+            <td><span class="boldNumber">Loser</span></td>
+            <td><span class="boldNumber">Score</span></td>
+            <td><span class="boldNumber">Scorer</span></td>
+            <td><span class="boldNumber">Type</span></td>
+            <td><span class="boldNumber">W-Streak</span></td>
+            <td><span class="boldNumber">L-Streak</span></td>
+            <td><span class="boldNumber">S-Streak</span></td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <br>
+      <span class="inverseheading-hide">
+        <p><b><u><i>Due to your device size, you cannot view the game results from today (both game-by-game and box
+                score). Please go into <span style="color: grey;">landscape mode</span> or <span
+                  style="color: grey;">download the results</span> to view them.</i></u></b></p>
+      </span>
+      <br>
+      <br>
+      <br>      
+      <p>As the <i><u>Gentle Men</u></i> won the play-in game, they will play against the <i><u>Choc-Tops</u></i> in the championship game.</p>
+      <br>
+      <br>
+      <div style="display: none;">
+      <p>As the <i><u><span id="winning"></span></u></i> had the best record today, they will start with the ball
+        against the <i><u><span id="losing"></span></u></i>.</p>
+      <br>
+      <p>Records: (no particular order)</p>
+      <p><strong>Choc-Tops: </strong><span id="CTrecord">x - y</span> (rewarding them <span
+          id="CTpoints">z points</span>)</p>
+      <p><strong>Traffic Controllers: </strong><span id="TCrecord">x - y</span> (rewarding them <span id="TCpoints">z
+        points</span>)</p>
+      <p><strong>Gentle Men: </strong><span id="GMrecord">x - y</span> (rewarding them <span
+          id="GMpoints">z points</span>)</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </div>
+      <br><br>
+      <h3 class="heading-hide">Box score</h3>
+      <br>
+      <table style="width: 70%; text-align: center; margin-left:auto; margin-right: auto;" id="scoringTable"
+        class="heading-hide">
+        <col style="width:32%">
+        <col style="width:17%">
+        <col style="width:17%">
+        <col style="width:17%">
+        <col style="width:17%">
+        <tr class="boxScore">
+          <td><span class="boldNumber">Scoring</span></td>
+          <td><span class="boldNumber">Points</span></td>
+          <td><span class="boldNumber">Finishes</span></td>
+          <td><span class="boldNumber">Midrange</span></td>
+          <td><span class="boldNumber">3 Pointers</span></td>
+        </tr>
+      </table>
+    </div>
+    <br><br><br>
+  </div>
+  <div class="section accent" style="padding: 60px 10px; height:auto; min-height: 300px;">
+    <div class="w-container fade-in" style="height:100%">
+      <div class="section-title-group" style="margin:0px; height:100%">
+        <h1 class="title">To view past results and statistics, download the file below.</h1>
+        <br>
+        <br>
+        <a href="../Other Files/PastResults.xlsx" download>
+          <h2>Download Past Results Here</h2>
+        </a>
+        <br>
+        <p>Note: Naming conventions for dates are 'datemonth' (e.g. 4th of Feburary : 402)</p>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <script>footer("results")</script>
+  </div>
+
+  <script src="../js/heading.js"></script>
+  <script src="../js/Scroll.js"></script>
+  <script src="../js/Array.js"></script>
+  <script src="../js/Results.js"></script>
+  <script>results(); asOf()</script>
+  <script>
+    height = document.getElementById("mainTable").offsetHeight
+    document.getElementById("topDiv").style.height = height + 100 + "px"
+    console.log()
+    if (window.innerWidth > 1000) {
+      i = 0
+      table = document.getElementById("mainTable")
+      function mainFunction(x) {
+        i++
+        animation = "ResultsGrow 1.8s 2 alternate"
+        if (i < table.rows.length) {
+          setTimeout(() => {
+            table.rows[i].style.animation = "none"
+            table.rows[i].offsetHeight
+            table.rows[i].style.animation = animation;
+            table.rows[i].style.animationTimingFunction = "ease-in-out";
+            mainFunction(1800)
+          }, x)
+        } else {
+          i = 0;
+          mainFunction(1800)
+        }
+      }
+      mainFunction(0)
+    }
+
+  </script>
+
+</body>
+
+</html>

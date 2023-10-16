@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Imported html2canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E8LZ895SJC');
+    </script>
+    <script src="../js/HeaderFooter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+    <meta charset="utf-8" />
+    <title>Instagram Article App | LTBO</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+    <script src="../js/Webfont.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+            }
+        });
+    </script>
+  
+</head>
+
+<body>
+    <style>
+        <style>.fade-in {
+            opacity: 0;
+            transform: translateY(8vh);
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, transform 1s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .inner_content form {
+            text-align: center;
+            margin-top: 0;
+            width: 50%;
+        }
+
+        option {
+            font-family: sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+        .left {
+            width: 25%;
+        }
+
+        .right {
+            width: 75%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .features {
+            float: left;
+            width: 100%;
+            text-align: left;
+            line-height: 70px;
+            margin-left: 40px;
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+        .teamImage {
+            width: 80%;
+            height: auto;
+        }
+
+        .playerImage {
+            width: 90%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 1250px) {
+            .column {
+                width: 100%;
+            }
+
+            .teamImage {
+                width: 40%;
+                float: left;
+                position: relative;
+                top: 200px
+            }
+
+            .playerImage {
+                width: 50%;
+                float: right;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .teamImage {
+                top: 50px;
+            }
+
+            h3 {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1030px) {
+            .normalNews {
+                width: 100%
+            }
+
+            .features {
+                font-size: 3em;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .features {
+                font-size: 1em
+            }
+        }
+
+
+        @media screen and (max-width: 800px) {
+
+            td,
+            th {
+                font-size: 10px
+            }
+        }
+
+        table {
+            position: relative;
+            border-collapse: separate;
+        }
+
+        .bc {
+            background-color: rgb(30, 30, 30);
+        }
+
+        .changer {
+            width: 40%
+        }
+
+        @media screen and (max-width: 750px) {
+            .changer {
+                width: 70%
+            }
+        }
+        td {
+            width: 50%
+        }
+
+        input[type="text"] {
+            font-size: 24px;
+            color: black;
+        }
+
+        textarea {
+            color: black
+        }
+        tr {
+            height: 65px;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            $('.fade-in').each(function () {
+                var top_of_element = $(this).offset().top;
+                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+                var top_of_screen = $(window).scrollTop();
+
+                if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) && !$(this).hasClass('is-visible')) {
+                    $(this).addClass('is-visible');
+                }
+            });
+        });
+    </script>
+    <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+        <script>header("admin")</script>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="hero-section centered container stats">
+        <br>
+        <div data-ix="new-interaction" class="w-container">
+            <h1 style="color: white" class="hero-heading mainHeading animate-heading">Instagram Article Generator</h1>
+            <br>
+            <div>
+                <a href="#bottom" class="button fade-inHeading">Program to quickly design fake article images.</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" style="padding: 60px 10px; height:auto; min-height: 500px; background-color: rgb(30,30,30);">
+        <div class="w-container fade-in" style="height:100%">
+            <div class="section-subheading center" style="font-size:6rem; line-height: 50px; color: gold">Let's Start!
+            </div>
+        </div>
+        <br><br><br>
+        <br><br>
+        <table style="width: 100%;" class="menu">
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter description of article: </h1>
+                </td>
+                <td>
+                    <form>
+                        <textarea type="text" style="width: 80%; height: 70px" id="description" onchange="myFunction()"
+                            value="Main goes here">Description goes here</textarea>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter name of person: </h1>
+                </td>
+                <td>
+                    <form>
+                        <input type="text" style="width: 80%; height: 40px" id="name" onchange="myFunction()"
+                            value="Name goes here"></input>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter sub text of article: </h1>
+                </td>
+                <td>
+                    <form>
+                        <input type="text" style="width: 80%; height: 40px" id="subtext" onchange="myFunction()"
+                            value="Subtext goes here"></input>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Select Image: </h1>
+                </td>
+                <td>
+                    <form style="color: black">
+                        <input type="file" accept="image/jpeg, image/png, image/jpg"
+                            id="imageSelector"></input><output></output>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Colour:</h1>
+                </td>
+                <td>
+                    <form style="color:black">
+                        <select style="width: 40%" class="menu" id="colour" onchange="myFunction()">
+                            <option value="zero" selected>Red</option>
+                            <option value="one">Blue</option>
+                            <option value="two">Green</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <br><br>
+        <div id="screenshotarea" style="position: relative; height: 40vw;">
+            <img src="../Images/Base News Template Red.png" id="TemplateImage"
+                style="width: 30%; height: auto; position: relative; z-index: 2; border: 3px solid rgb(0, 0, 0)" />
+            <h1 style="position: relative; top:-5vw; font-family: Diamante Serial Bold; font-size: 1.6em; color: rgb(230,0,0); z-index: 2"
+                id="nameBox">Hello</h1>
+            <h1 style="position: relative; top:-6.75vw; font-family: Diamante Serial Italic; font-size: 0.9em; color: rgb(100,100,100); z-index: 2"
+                id="subtextBox">Hello</h1>
+            <img src="../Images/jaMorant.jpg" id="changingImage"
+                style="width: 30%; height: 330px; position: relative; top: -42vw; z-index: 1; object-fit: cover;" />
+            <h1 style="position: relative; top:-42vw; font-family: Diamante Serial; font-size: 1.7em; color: black; width: 28%; margin: auto; z-index: 2"
+                id="mainBox">Hello</h1>
+        </div>
+
+
+
+        <button class="button fade-inHeading" id="startButton" style="width: 40%">
+            <p>Now Screenshot to Save!</p>
+        </button>
+    </div>
+    <div id="footer">
+        <script>footer("results")</script>
+    </div>
+    <script src="../js/NewsArticleGenerator.js">
+    </script>
+    <script src="../js/News.js"></script>
+
+    <script src="../js/heading.js"></script>
+    <script src="../js/Scroll.js"></script>
+</body>
+<script>
+    function mainfunction() {
+        const srcElement = document.getElementById("screenshotarea");
+        btns = document.querySelectorAll("button");
+
+        html2canvas(srcElement, {
+            allowTaint: true,
+            useCORS: true
+        }).then(function (canvas) {
+            // downloading canvas/screenshot
+            const a = document.createElement("a");
+            a.href = canvas.toDataURL();
+            a.download = "screenshot.jpg";
+            a.click();
+        });
+    }
+
+</script>
+
+<script>
+    function myFunction() {
+        document.getElementById("mainBox").innerHTML = document.getElementById("description").value
+        document.getElementById("subtextBox").innerHTML = document.getElementById("subtext").value
+        document.getElementById("nameBox").innerHTML = document.getElementById("name").value
+        if (document.getElementById("mainBox").innerHTML.length > 105) {
+            document.getElementById("mainBox").style.fontSize = "1.2em";
+            document.getElementById("mainBox").style.lineHeight = "1.25em";
+        } else if (document.getElementById("mainBox").innerHTML.length > 65) {
+            document.getElementById("mainBox").style.fontSize = "1.4em";
+            document.getElementById("mainBox").style.lineHeight = "1.45em";
+        } else {
+            document.getElementById("mainBox").style.fontSize = "1.7em";
+            document.getElementById("mainBox").style.lineHeight = "1.75em";
+        }
+
+
+        switch (document.getElementById("colour").value) {
+            case "zero":
+                document.getElementById("TemplateImage").src = "../Images/Base News Template Red.png"
+                document.getElementById("nameBox").style.color = "red"
+                break;
+            case "one":
+                document.getElementById("TemplateImage").src = "../Images/Base News Template Blue.png"
+                document.getElementById("nameBox").style.color = "blue"
+                break;
+            case "two":
+                document.getElementById("TemplateImage").src = "../Images/Base News Template Green.png"
+                document.getElementById("nameBox").style.color = "green"
+                break;
+        }
+
+
+
+        console.log(document.getElementById("colour"))
+    }
+    const input = document.getElementById("imageSelector")
+    input.addEventListener("change", () => {
+        const file = input.files
+        console.log(file[0])
+        document.getElementById("changingImage").src = URL.createObjectURL(file[0]);
+    })
+</script>
+
+</html>

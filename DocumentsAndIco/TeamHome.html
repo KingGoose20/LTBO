@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E8LZ895SJC');
+    </script>
+    <script src="../js/HeaderFooter.js"></script>
+
+
+    <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+    <meta charset="utf-8" />
+    <title id="name1"></title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+    <script src="../js/Webfont.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+            }
+        });
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --colour-a: #d74268;
+            --colour-b: #f5b153;
+            --colour-c: #d48619;
+            --colour-d: #d74268;
+        }
+
+        table {
+            position: relative;
+            border-collapse: separate;
+        }
+
+        td {
+            font-size: 30px;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        @media screen and (max-width: 800px) {
+            td {
+                padding: 15px
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            td {
+                padding: 10px
+            }
+        }
+
+        .againstTeams td {
+            border: 0.5px solid rgb(150, 150, 150)
+        }
+
+        .imageBackground {
+            background: repeating-linear-gradient(45deg,
+                    var(--colour-d),
+                    var(--colour-d) 60px,
+                    var(--colour-b) 60px,
+                    var(--colour-b) 120px);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        table td+td {
+            border-left: 2px solid rgb(150, 150, 150);
+        }
+
+        .dayByDay tr:nth-child(even) {
+            background-color: var(--colour-a);
+        }
+
+        .dayByDay tr:nth-child(odd) {
+            background-color: var(--colour-c);
+        }
+
+        .dayByDay td {
+            border: 0.5px solid black;
+            color: rgb(210, 210, 210);
+        }
+
+
+        .h1class {
+            color: var(--colour-a);
+        }
+
+        table,
+        th {
+            position: sticky;
+            top: 0;
+        }
+
+        th {
+            border: 0.5px solid rgb(0, 0, 0);
+            background-color: var(--colour-a);
+            color: rgb(210, 210, 210);
+            position: sticky;
+            top: 0;
+        }
+
+        #playersTable {
+            table-layout: fixed;
+        }
+
+        @media screen and (max-width: 1300px) {
+            #playersTable {
+                overflow-x: scroll;
+            }
+        }
+
+        .reigning {
+            font-family: "Brush King";
+            letter-spacing: 0.7em;
+            color: rgb(229, 197, 18);
+            font-size: 2.2em;
+            line-height: 5em;
+        }
+
+
+        @media screen and (max-width: 1100px) {
+            .reigning {
+                font-size: 2em
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .reigning {
+                font-size: 1.5em
+            }
+        }
+
+        .teamsSize {
+            font-size: 2em;
+            line-height: 2em
+        }
+
+        @media screen and (max-width: 1000px) {
+            .teamsSize {
+                font-size: 1em;
+                line-height: 1em
+            }
+        }
+
+        .playerImages {
+            width: 15vw
+        }
+
+        #playersText {
+            font-size: 1em;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .playerImages {
+                width: 10vw
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            #playersText {
+                font-size: 0.7em;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .playerImages {
+                width: 20vw
+            }
+        }
+
+        #playersRow2>td {
+            padding: 5px
+        }
+
+        .dayResults {
+            font-size: 1em;
+            line-height: 1.3em;
+        }
+
+        .dayResults2 {
+            font-size: 0.9em;
+            line-height: 1em;
+        }
+
+        @media screen and (max-width: 1100px) {
+            .dayResults {
+                font-size: 1em;
+                line-height: 1.2em;
+            }
+
+            .dayResults2 {
+                font-size: 0.7em;
+                line-height: 1em;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .dayResults {
+                font-size: 0.7em;
+                line-height: 0.9em;
+            }
+
+            .dayResults2 {
+                font-size: 0.5em;
+                line-height: 1em;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            .dayResults {
+                font-size: 0.5em;
+                line-height: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../js/jquery.min.js"></script>
+    <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+    </div>
+    <div class="hero-section centered container imageBackground">
+        <br>
+        <div data-ix="new-interaction" class="w-container">
+            <h1 class="hero-heading mainHeading animate-heading fade-inHeading"><span id="name2"></span> | Home</h1><br>
+            <div class="button fade-inHeading"><i>Welcome to the home of the <span id="name3"></span>.</i></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="w-container">
+            <div class="LearnMore">
+                <div class="section-title-group">
+                    <div style="display: none;" id="champions">
+                        <br><br><br><br>
+                        <h1 class="reigning">Reigning Champions</h1>
+                        <br><br><br><br><br><br><br>
+                    </div>
+                    <h2 class="section-heading centered">Home of the <span id="name4"></span></h2>
+                    <p>Here, you can find the stats, players, history, and more of the LTBO team the <span
+                            id="name5"></span>.</p>
+                    <br><br>
+                    <p
+                        style="font-family: 'Playfair Display', serif; letter-spacing: 0.4em; font-size: 2.3em; line-height: 1.2em;">
+                        <i id="quoteLocation"></i>
+                    </p>
+                    <br><br><br><br>
+                    <h2 class="section-heading centered" style="text-align: left; font-size: 7vw; line-height: 9vw;">
+                        Players</h2>
+                    <div id="playersTable">
+                        <table style="width: 100%; position: inherit;" id="pTT">
+                            <tr id="playersRow1">
+
+                            </tr>
+                            <tr id="playersRow2">
+
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="inverseheading-hide"><i>Scroll across to see all players.</i></p>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                    <h2 class="section-heading centered" style="text-align: left; font-size: 7vw; line-height: 9vw;">
+                        Team Stats</h2>
+                    <div class="overflowElement">
+                        <table style="width: 100%; height: auto; border:2px solid rgb(150,150,150);">
+                            <col style="width: 33.3333%">
+                            <col style="width: 33.3333%">
+                            <col style="width: 33.3333%">
+                            <tr>
+                                <td>
+                                    <h1 class="title h1class" id="tWins">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="tLoss">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="tPercent">20</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Total Wins</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Total Losses</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Win Percentage</span>
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                    <h2 class="section-heading centered" style="text-align: left; font-size: 7vw; line-height: 9vw;">
+                        Team Leaders</h2>
+                    <div class="overflowElement">
+                        <table style="width: 100%; height: auto; border:2px solid rgb(150,150,150);">
+                            <col style="width: 25%">
+                            <col style="width: 25%">
+                            <col style="width: 25%">
+                            <col style="width: 25%">
+                            <tr>
+                                <td style="height: 200px">
+                                    <h1 class="title h1class"><span class="h1Small" id="lPointsN">Angus Walker</span>
+                                    </h1>
+                                    <h1 class="title h1class" id="lPointsS">20</h1>
+                                </td>
+                                <td style="height: 200px">
+                                    <h1 class="title h1class"><span class="h1Small" id="lFinishesN">Angus Walker</span>
+                                    </h1>
+                                    <h1 class="title h1class" id="lFinishesS">20</h1>
+                                </td>
+                                <td style="height: 200px">
+                                    <h1 class="title h1class"><span class="h1Small" id="lMidrangesN">Angus Walker</span>
+                                    </h1>
+                                    <h1 class="title h1class" id="lMidrangesS">20</h1>
+                                </td>
+                                <td style="height: 200px">
+                                    <h1 class="title h1class"><span class="h1Small" id="lThreesN">Angus Walker</span>
+                                    </h1>
+                                    <h1 class="title h1class" id="lThreesS">20</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Points</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Finishes</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Midranges</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Threes</span></h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                    <h2 class="section-heading centered" style="text-align: left; font-size: 7vw; line-height: 9vw;">
+                        Team Averages</h2>
+                    <div class="overflowElement">
+                        <table style="width: 100%; height: auto; border:2px solid rgb(150,150,150);">
+                            <col style="width: 16.6666667%">
+                            <col style="width: 16.6666667%">
+                            <col style="width: 16.6666667%">
+                            <col style="width: 16.6666667%">
+                            <col style="width: 16.6666667%">
+                            <col style="width: 16.6666667%">
+                            <tr>
+                                <td>
+                                    <h1 class="title h1class" id="aPoints">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="aFinishes">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="aMidranges">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="aThrees">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="aWins">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="aLosses">20</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h2 class="h2Small section-heading centered"><span class="h2Small">Points</span>
+                                    </h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Finishes</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered h2Small"><span class="h2Small">Midranges</span>
+                                    </h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered h2Small"><span class="h2Small">Threes</span>
+                                    </h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered h2Small"><span class="h2Small">Wins</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered h2Small"><span class="h2Small">Losses</span>
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                    <h2 class="section-heading centered" style="text-align: left; font-size: 7vw; line-height: 9vw;">
+                        Records against other teams</h2>
+                    <div class="overflowElement">
+                        <table style="width: 100%; border:2px solid rgb(150,150,150);" class="againstTeams">
+                            <col style="width: 40%">
+                            <col style="width: 15%">
+                            <col style="width: 15%">
+                            <col style="width: 15%">
+                            <tr>
+                                <td>
+                                    <h2 class="section-heading centered" style="line-height: 70px;"><span
+                                            class="h2Small" style="font-size: 1em">Team</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Wins</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Losses</span></h2>
+                                </td>
+                                <td>
+                                    <h2 class="section-heading centered"><span class="h2Small">Percentage</span></h2>
+                                </td>
+                            </tr>
+                            <tr style="border:2px solid rgb(150,150,150);">
+                                <td>
+                                    <h2 class="section-heading centered"><span class="teamsSize" id="teamAbig"></span>
+                                    </h2>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="AWins">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="ALoss">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="APercent">20</h1>
+                                </td>
+                            </tr>
+                            <tr style="border:2px solid rgb(150,150,150);">
+                                <td>
+                                    <h2 class="section-heading centered">
+                                        <span class="teamsSize" id="teamBbig"></span>
+                                    </h2>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="BWins">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="BLoss">20</h1>
+                                </td>
+                                <td>
+                                    <h1 class="title h1class" id="BPercent">20</h1>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                    <h2 class="section-heading centered" style="text-align: left; font-size: 7vw; line-height: 9vw;">
+                        Day-By-Day</h2>
+                    <div style="overflow-y: scroll; overflow-x: scroll; max-height: 300px;">
+                        <table class="dayByDay" style="width: 100%; text-align: center;" id="dayByDay">
+                            <col style="width: 10%; min-width: 60px;">
+                            <col style="width: 9%; min-width: 60px;">
+                            <col style="width: 9%; min-width: 60px;">
+                            <col style="width: 9%; min-width: 60px;">
+                            <col style="width: 31.5%; min-width: 120px;">
+                            <col style="width: 31.5%; min-width: 120px;">
+                            <tr style="height: 50px;">
+                                <th>Date</th>
+                                <th>Wins</th>
+                                <th>Losses</th>
+                                <th>Points</th>
+                                <th>Best against <span id="teamAsmall"></span></th>
+                                <th>Best against <span id="teamBsmall"></span></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <i>
+                        <p>More dates can be viewed by scrolling on box</p>
+                    </i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <script>footer("CT")</script>
+    </div>
+    <template>
+        <tr id="" style="height: 30px">
+            <td>
+                <p id="Date" style="font-weight: 500" class="dayResults2"></p>
+            </td>
+            <td>
+                <p id="Wins" style="font-weight: 500" class="dayResults"></p>
+            </td>
+            <td>
+                <p id="Losses" style="font-weight: 500" class="dayResults"></p>
+            </td>
+            <td>
+                <p id="Points" style="font-weight: 500" class="dayResults"></p>
+            </td>
+            <td>
+                <p id="TeamA" style="font-weight: 500" class="dayResults"></p>
+            </td>
+            <td>
+                <p id="TeamB" style="font-weight: 500" class="dayResults"></p>
+            </td>
+        </tr>
+    </template>
+    <template>
+        <tr id="" style="height: 30px">
+          <td colspan="6"><h2 class="section-heading centered" style="margin: 0; color: rgb(210, 210, 210); font-size: 1em; line-height: 1em; letter-spacing: 0.5em;"><i id="main"></i></h2></td>
+        </tr>
+      </template>
+    <script src="../js/TeamMain.js"></script>
+    <script>initalise()</script>
+    <script>header("CT")</script>
+    <script src="../js/heading.js"></script>
+    <script src="../js/Scroll.js"></script>
+</body>
+
+</html>

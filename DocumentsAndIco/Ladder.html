@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E8LZ895SJC');
+  </script>
+  <script src="../js/HeaderFooter.js"></script>
+
+  <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+  <meta charset="utf-8" />
+  <title>Ladder | LTBO</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+  <script src="../js/Webfont.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(8vh);
+      visibility: hidden;
+      transition: opacity 0.6s ease-out, transform 1s ease-out;
+      will-change: opacity, visibility;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+
+    .Image {
+      width: 80%;
+      position: relative
+    }
+
+    @keyframes Shrink {
+      from {
+        display: inline-block;
+        transform: rotate3d(0, 0, 0, 0deg);
+        width: 80%;
+      }
+
+      to {
+        display: inline-block;
+        transform: rotate3d(0, 1, 0.5, 360deg);
+        width: 40%;
+      }
+    }
+
+    @keyframes TeamList {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script src="../js/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function () {
+      $('.fade-in').each(function () {
+        var top_of_element = $(this).offset().top;
+        var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+
+        if (((bottom_of_screen - 250) > top_of_element) && (top_of_screen < bottom_of_element) && !$(this).hasClass('is-visible')) {
+          $(this).addClass('is-visible');
+        }
+      });
+    });
+  </script>
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+    <script>header("docs")</script>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="hero-section centered container ladder" style="background-size: cover;">
+    <br>
+    <div data-ix="new-interaction" class="w-container">
+      <h1 class="hero-heading mainHeading animate-heading fade-inHeading">Ladder</h1>
+      <br>
+      <div>
+        <a href="#bottom" class="button fade-inHeading">As of the <span id="asOf"></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding: 60px 10px; height:auto; min-height: 500px;">
+    <div class="w-container fade-in" style="height:100%">
+      <div class="section-title-group" style="margin:0px; height:100%">
+        <table style="width:100%; height:100%">
+          <tr>
+            <td style="width:50%; height: 50vh">
+              <div class="section-subheading center GoldHover TitleHoverInversePart2"
+                style="font-size:6rem; line-height: 50px;">1st Place: The <span id="firstName"></span></div>
+              <p style="font-size:20px;" id="firstText">Led by <strong id="firstLeader"></strong>, averaging <strong
+                  id="firstScoring"></strong></p>
+              <p style="font-size:20px;">Ladder points: <strong id="firstPoints"></strong></p>
+            </td>
+            <td style="width:40%;" class="AustraliansHide">
+              <img src="" alt="" id="firstImagea" class="Image" onmouseover="LadderMain('firstImagea', 'teamLista')" style="max-height: 60vh; width: auto;"/>
+              <div id="teamLista" style="display: none">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="" alt="" style="width:60%" class="AustraliansShow" id="firstImageb"/>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="section accent" style="padding: 60px 10px; height:auto; min-height: 500px;">
+    <div class="w-container fade-in" style="height:100%">
+      <div class="section-title-group" style="margin:0px; height:100%">
+        <table style="width:100%; height:100%">
+          <tr>
+            <td style="width:50%;" class="AustraliansHide">
+              <img src="" alt="" class="Image" id="secondImagea"
+                onmouseover="LadderMain('secondImagea', 'teamListb')" style="max-height: 60vh; width: auto;"/>
+              <div id="teamListb" style="display: none;">
+              </div>
+            </td>
+            <td style="width:50%; height: 50vh">
+              <div class="section-subheading center SilverHover" style="font-size:6rem; line-height: 50px;">2nd Place:
+                The <span id="secondName"></span></div>
+              <p style="font-size:20px;" id="secondText">Led by <strong id="secondLeader"></strong>, averaging <strong
+                  id="secondScoring"></strong></p>
+              <p style="font-size:20px;">Ladder points: <strong id="secondPoints"></strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img alt="" style="width:60%" class="AustraliansShow" id="secondImageb" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding: 60px 10px; height:auto; min-height: 500px;">
+    <div class="w-container fade-in" style="height:100%; ">
+      <div class="section-title-group" style="margin:0px; height:100%">
+        <table style="width:100%; height:100%">
+          <td style="width:50%; height: 50vh">
+            <div class="section-subheading center BronzeHover TitleHoverInversePart2"
+              style="font-size:6rem; line-height: 50px;">3rd Place: The <span id="thirdName"></span></div>
+            <p style="font-size:20px;" id="thirdText">Led by <strong id="thirdLeader"></strong>, averaging <strong
+                id="thirdScoring"></strong></p>
+            <p style="font-size:20px;">Ladder points: <strong id="thirdPoints"></strong></p>
+          </td>
+          <td style="width:50%" class="AustraliansHide">
+            <img src="" alt="" class="Image" id="thirdImagea" onmouseover="LadderMain('thirdImagea', 'teamListc')" style="max-height: 60vh; width: auto;"/>
+            <div id="teamListc" style="display: none">
+            </div>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <img alt="" style="width:60%" class="AustraliansShow" id="thirdImageb" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div id="footer">
+    <script>footer("docs")</script>
+  </div>
+  <script src="../js/heading.js"></script>
+  <script src="../js/Scroll.js"></script>
+  <script src="../js/TeamMain.js"></script>
+  <script src="../js/Results.js"></script>
+  <script>ladder(); asOf()</script>
+  <script>
+    justRan = false
+    function LadderMain(ImageID, TeamListID) {
+      if (!justRan) {
+        ImageElement = document.getElementById(ImageID)
+        TeamListElement = document.getElementById(TeamListID)
+        ImageElement.style.animation = "none"
+        TeamListElement.style.animation = "none"
+        ImageElement.offsetHeight
+        TeamListElement.offsetHeight
+        ImageElement.style.animation = "Shrink 2s 1"
+        ImageElement.style.animationFillMode = 'forwards';
+        TeamListElement.style.display = "block"
+        TeamListElement.style.animation = "TeamList 2s 1"
+        TeamListElement.style.animationFillMode = 'forwards';
+        justRan = true
+
+        setTimeout(() => {
+
+          ImageElement.style.animation = "none"
+          TeamListElement.style.animation = "none"
+          ImageElement.offsetHeight
+          TeamListElement.offsetHeight
+          ImageElement.style.animation = "Shrink 2s 1 reverse"
+          ImageElement.style.animationFillMode = 'forwards';
+          TeamListElement.style.animation = "TeamList 2s 1 reverse"
+          TeamListElement.style.animationFillMode = 'forwards';
+
+          setTimeout(() => { TeamListElement.style.display = "none"; }, 1800);
+          setTimeout(() => { justRan = false }, 2500);
+        }, 6000);
+
+      }
+    }
+
+  </script>
+</body>
+
+</html>

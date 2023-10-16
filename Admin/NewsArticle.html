@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E8LZ895SJC');
+    </script>
+    <script src="../js/HeaderFooter.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+    <meta charset="utf-8" />
+    <title>News Link App | LTBO</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+    <script src="../js/Webfont.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+            }
+        });
+    </script>
+  
+</head>
+
+<body>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(8vh);
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, transform 1s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .inner_content form {
+            text-align: center;
+            margin-top: 0;
+            width: 50%;
+        }
+
+        option {
+            font-family: sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+        .left {
+            width: 25%;
+        }
+
+        .right {
+            width: 75%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .features {
+            float: left;
+            width: 100%;
+            text-align: left;
+            line-height: 70px;
+            margin-left: 40px;
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+        .teamImage {
+            width: 80%;
+            height: auto;
+        }
+
+        .playerImage {
+            width: 90%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 1250px) {
+            .column {
+                width: 100%;
+            }
+
+            .teamImage {
+                width: 40%;
+                float: left;
+                position: relative;
+                top: 200px
+            }
+
+            .playerImage {
+                width: 50%;
+                float: right;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .teamImage {
+                top: 50px;
+            }
+
+            h3 {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1030px) {
+            .normalNews {
+                width: 100%
+            }
+
+            .features {
+                font-size: 3em;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .features {
+                font-size: 1em
+            }
+        }
+
+        table,
+        th,
+        td {
+            border: 0.5px solid rgb(0, 0, 0);
+        }
+
+        td,
+        th {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            color: rgb(210, 210, 210)
+        }
+
+        table.menu,
+        th.menu,
+        td.menu {
+            border: none;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            color: rgb(0, 0, 0)
+        }
+
+        @media screen and (max-width: 800px) {
+
+            td,
+            th {
+                font-size: 10px
+            }
+        }
+
+        table {
+            position: relative;
+            border-collapse: separate;
+        }
+
+        .bc {
+            background-color: rgb(30, 30, 30);
+        }
+
+        th {
+            border: 0.5px solid rgb(0, 0, 0);
+            position: sticky;
+            top: 0;
+        }
+
+        .changer {
+            width: 40%
+        }
+
+        @media screen and (max-width: 750px) {
+            .changer {
+                width: 70%
+            }
+        }
+
+        table {
+            background-color: rgb(40, 40, 40);
+        }
+
+        td {
+            width: 50%
+        }
+
+        input[type="text"] {
+            font-size: 24px;
+            color: black;
+        }
+
+        textarea {
+            color: black
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            $('.fade-in').each(function () {
+                var top_of_element = $(this).offset().top;
+                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+                var top_of_screen = $(window).scrollTop();
+
+                if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) && !$(this).hasClass('is-visible')) {
+                    $(this).addClass('is-visible');
+                }
+            });
+        });
+    </script>
+    <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+        <script>header("admin")</script>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="hero-section centered container stats">
+        <br>
+        <div data-ix="new-interaction" class="w-container">
+            <h1 style="color: white" class="hero-heading mainHeading animate-heading">News Article Link Generator</h1>
+            <br>
+            <div>
+                <a href="#bottom" class="button fade-inHeading">Program to quickly design news articles links.</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" style="padding: 60px 10px; height:auto; min-height: 500px;">
+        <div class="w-container fade-in" style="height:100%">
+            <div class="section-subheading center" style="font-size:6rem; line-height: 50px; color: gold">Let's Start!
+            </div>
+        </div>
+        <br><br><br>
+        <br><br>
+        <table style="width: 100%;" class="menu">
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Week to add to:</h1>
+                </td>
+                <td>
+                    <form style="color:black">
+                        <select style="width: 40%" class="menu" id="week">
+                            <option disabled selected>Week to add to</option>
+                            <option value="zero">Preseason</option>
+                            <option value="one">Week 1</option>
+                            <option value="two">Week 2</option>
+                            <option value="three">Week 3</option>
+                            <option value="four">Week 4</option>
+                            <option value="five">Week 5</option>
+                            <option value="six">Finals</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter name of article: </h1>
+                </td>
+                <td>
+                    <form>
+                        <input type="text" style="width: 80%; height: 40px" id="name"></input>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter description of article: </h1>
+                </td>
+                <td>
+                    <form>
+                        <textarea type="text" style="width: 80%; height: 70px" id="description"></textarea>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter date of article: </h1>
+                </td>
+                <td>
+                    <form>
+                        <input type="text" style="width: 80%; height: 40px" id="date"></input>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Select Image A: </h1>
+                </td>
+                <td>
+                    <form style="color: black">
+                        <select style="width: 40%" class="menu" id="imageA">
+                            <option selected>None</option>
+                            <option value="zero">Main Logo</option>
+                            <option value="one">Choc-Tops</option>
+                            <option value="two">Traffic Controllers</option>
+                            <option value="three">Gentle Men</option>
+                            <option value="four">Finals</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Select Image B: </h1>
+                </td>
+                <td>
+                    <form style="color: black">
+                        <select style="width: 40%" class="menu" id="imageB">
+                            <option selected>None</option>
+                            <option value="zero">Main Logo</option>
+                            <option value="one">Choc-Tops</option>
+                            <option value="two">Traffic Controllers</option>
+                            <option value="three">Gentle Men</option>
+                            <option value="four">Finals</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Select Image C: </h1>
+                </td>
+                <td>
+                    <form style="color: black">
+                        <select style="width: 40%" class="menu" id="imageC">
+                            <option selected>None</option>
+                            <option value="zero">Main Logo</option>
+                            <option value="one">Choc-Tops</option>
+                            <option value="two">Traffic Controllers</option>
+                            <option value="three">Gentle Men</option>
+                            <option value="four">Finals</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Select Image D: </h1>
+                </td>
+                <td>
+                    <form style="color: black">
+                        <select style="width: 40%" class="menu" id="imageD">
+                            <option selected>None</option>
+                            <option value="zero">Main Logo</option>
+                            <option value="one">Choc-Tops</option>
+                            <option value="two">Traffic Controllers</option>
+                            <option value="three">Gentle Men</option>
+                            <option value="four">Finals</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Enter link to article (including params if needed): </h1>
+                </td>
+                <td>
+                    <form>
+                        <input type="text" style="width: 80%; height: 40px" id="link"></input>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="title" style="color: white">Select Colour: </h1>
+                </td>
+                <td>
+                    <form style="color: black">
+                        <select style="width: 40%" class="menu" id="colour">
+                            <option selected>Normal</option>
+                            <option value="zero">White</option>
+                            <option value="one">Black</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        <button class="button fade-inHeading" id="startButton" onclick="CreateArticle()" style="width: 40%">
+            <p>Save Article!</p>
+        </button>
+    </div>
+    <div id="footer">
+        <script>footer("results")</script>
+    </div>
+    <script src="../js/NewsArticleGenerator.js">
+    </script>
+    <script src="../js/News.js"></script>
+
+    <script src="../js/heading.js"></script>
+    <script src="../js/Scroll.js"></script>
+</body>
+
+</html>

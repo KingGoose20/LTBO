@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E8LZ895SJC');
+  </script>
+  <script src="../js/HeaderFooter.js"></script>
+
+  <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+  <meta charset="utf-8" />
+  <title>Contact | LTBO</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+  <script src="../js/Webfont.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+      }
+    });
+  </script>
+
+  <style>
+    td {
+      padding-bottom: 30px;
+      width: 20%
+    }
+
+    option {
+      font-family: sans-serif;
+    }
+
+    input,
+    textarea {
+      font-family: sans-serif;
+      color: black;
+    }
+
+    input {
+      font-size: 20px;
+    }
+
+    textarea {
+      font-size: 15px;
+    }
+
+    .left {
+      width: 30%
+    }
+
+    .right {
+      width: 70%
+    }
+
+    @media screen and (max-width: 1100px) {
+      .left, .right {
+        width: 100%;
+        display: block;
+      }
+
+      .right {
+        margin-bottom: 30px;
+      }
+
+      .left {
+        padding-bottom: 10px;
+
+      }
+    }
+    
+  </style>
+
+</head>
+
+<body>
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+    <script>header("docs")</script>
+  </div>
+  <div class="hero-section centered container rules" style="background-size: cover;">
+    <br>
+    <div data-ix="new-interaction" class="w-container">
+      <h1 class="hero-heading mainHeading animate-heading fade-inHeading">Contact Us</h1>
+      <br>
+      <a href="#rulesbook">
+        <div class="button fade-inHeading"><i>Have an equiry for the LTBO? The form below will help start your
+            email.</i></div>
+      </a>
+    </div>
+  </div>
+  <div class="section">
+    <div class="w-container">
+      <form>
+        <table style="width: 100%;" class="menu">
+          <tr>
+            <td class="left">
+              <h1 class="title" style="color: white;">Enter your Name: </h1>
+            </td>
+            <td class="right">
+              <input type="text" style="width: 60vw;" id="name"></input>
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <h1 class="title" style="color: white;">Category of Enquiry: </h1>
+            </td>
+            <td class="right">
+              <select style="width: 60%; color:black;" class="menu" id="category">
+                <option selected value="zero">General Enquiry</option>
+                <option value="one">Complaint :(</option>
+                <option value="two">Compliment :)</option>
+                <option value="three">Website Bug</option>
+                <option value="four">Stats Error</option>
+                <option value="five">Feature Request</option>
+                <option value="seven">Quote for Instagram</option>
+                <option value="six">Other</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <h1 class="title" style="color: white;">Subject of Enquiry: </h1>
+            </td>
+            <td class="right">
+              <input type="text" style="width: 100%; height: 40px" id="subject"></input>
+            </td>
+          </tr>
+          <tr>
+            <td class="left">
+              <h1 class="title" style="color: white;">Body of Enquiry: </h1>
+            </td>
+            <td class="right">
+              <textarea type="text" style="width: 100%; height: 130px" id="body"></textarea>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <p>Important Note: If you are looking to upload a quote to the LTBO Instagram, you must provide a) your quote, and
+        b) A very small background behind the topic. <a
+          href="https://www.instagram.com/p/CsgsMWerSov/?utm_source=ig_web_button_share_sheet&igshid=MzRlODBiNWFlZA=="
+          target="_blank">Click here for an example if you do not understand.</a> If you wish for your quote to be anonymous, please type
+          ANONYMOUS in full caps during your quote. The author of the quote will not be revealed.</p>
+      <br><br>
+      <div class="button fade-inHeading" style="width: 60%; cursor: pointer;" onclick="SendEmail()"><i>Send Email</i>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <script>footer("docs")</script>
+  </div>
+  <script src="../js/heading.js"></script>
+  <script src="../js/Scroll.js"></script>
+  <script>
+    function SendEmail() {
+      Name = document.getElementById("name").value
+      x = document.getElementById("category")
+      Category = x.options[x.selectedIndex].text
+      Subject = document.getElementById("subject").value
+      Body = document.getElementById("body").value
+
+      if (Name != "" && Category != "" && Subject != "" && Body != "") {
+        EmailSubject = Subject + " (" + Category + ")"
+        EmailBody = "Dear LTBO,%0D%0A%0D%0A" + Body + "%0D%0A%0D%0A" + "From " + Name
+        window.open('mailto:011445@asas.qld.edu.au?subject=' + EmailSubject + "&body=" + EmailBody);
+      } else {
+        alert("You have left a field blank. Please fill it in.")
+      }
+
+
+    }
+  </script>
+</body>
+
+</html>

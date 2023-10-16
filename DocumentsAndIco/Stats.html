@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8LZ895SJC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E8LZ895SJC');
+  </script>
+  <script src="../js/HeaderFooter.js"></script>
+
+
+  <link href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f3c0.png" rel="shortcut icon">
+  <meta charset="utf-8" />
+  <title>Stats | LTBO</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+  <script src="../js/Webfont.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(8vh);
+      visibility: hidden;
+      transition: opacity 0.6s ease-out, transform 1s ease-out;
+      will-change: opacity, visibility;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+    }
+
+    .inner_content form {
+      text-align: center;
+      margin-top: 0;
+      width: 50%;
+    }
+
+    option {
+      font-family: sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+      float: left;
+      padding: 10px;
+    }
+
+    .left {
+      width: 25%;
+    }
+
+    .right {
+      width: 75%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .features {
+      float: left;
+      width: 100%;
+      text-align: left;
+      line-height: 70px;
+      padding-left: 40px;
+    }
+
+    h3 {
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    .teamImage {
+      width: 80%;
+      height: auto;
+    }
+
+    .playerImage {
+      width: 90%;
+      height: auto;
+    }
+
+    table,
+    th {
+      background-color: #5c2678;
+    }
+
+    td,
+    th {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      color: rgb(210, 210, 210);
+      border: 0.5px solid rgb(0, 0, 0);
+    }
+
+    table {
+      position: relative;
+      border-collapse: separate;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+    }
+
+    .dayByDay tr:nth-child(even) {
+      background-color: #5c2678;
+    }
+
+    .dayByDay tr:nth-child(odd) {
+      background-color: #8537ad;
+    }
+
+    .changer {
+      width: 40%
+    }
+    .average {
+      width: 60vw;
+    }
+
+    .statButton {
+      width: 45%;
+    }
+
+    .accolades {
+      height: 10%; 
+      padding-bottom: 30px; 
+      text-align: left;
+      width: 50%;
+    }
+
+    .accolades > h3 {
+      font-size: 1.6em;
+    }
+
+    #historyMain {
+      display: inline;
+    }
+
+    .accolades.right {
+      border-left: 2px solid rgb(210,210,210);
+      padding-left: 40px;
+    }
+
+    @media screen and (max-width: 1030px) {
+      .accolades.right {
+        border-left: none;
+        padding-left: inherit;
+      }
+    }
+
+    @media screen and (max-width: 1250px) {
+      .column {
+        width: 100%;
+      }
+
+      .teamImage {
+        width: 40%;
+        float: left;
+        position: relative;
+        top: 200px
+      }
+
+      .playerImage {
+        width: 50%;
+        float: right;
+      }
+
+      .average {
+        width: 85vw;
+      }
+    }
+
+    @media screen and (max-width: 1050px) {
+      .statButton {
+        width: 90%;
+        margin: 10px;
+      }
+    }
+
+    .mainStats {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 1031px) {
+
+    }
+
+    @media screen and (max-width: 1030px) {
+      .normalNews {
+        width: 100%
+      }
+
+      .features {
+        font-size: 5vw;
+        text-align: center;
+        padding-left: 0;
+      }
+
+      .average {
+        font-size: 5vw;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 20px;
+      }
+
+      #historyMain {
+        display: block;
+      }
+    }
+
+
+    @media screen and (max-width: 800px) {
+      .features {
+        font-size: 5.5vw;
+        text-align: center;
+        padding-left: 0;
+      }
+
+      td,
+      th {
+        font-size: 10px
+      }
+
+      .mainStats {
+        padding-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .normalNews {
+        margin-bottom: 0px;
+        margin-top: 40px;
+      }
+
+      .normalNews.accolades, .normalNews.mainStats {
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+    }
+
+
+
+    @media screen and (max-width: 750px) {
+      .changer {
+        width: 70%
+      }
+    }
+
+
+
+    @media screen and (max-width: 600px) {
+      .teamImage {
+        top: 0px;
+        width: 60%;
+        float: initial;
+        height: auto;
+      }
+
+      .playerImage {
+        width: 80%;
+        float: initial;
+        position: block;
+      }
+
+      h3 {
+        font-size: 15px;
+      }
+
+      .accolades h3 {
+        font-size: 1.25em;
+      }
+
+      .accolades {
+        padding-bottom: 10px;
+      }
+    }
+  </style>
+  <script src="../js/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function () {
+      $('.fade-in').each(function () {
+        var top_of_element = $(this).offset().top;
+        var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+
+        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) && !$(this).hasClass('is-visible')) {
+          $(this).addClass('is-visible');
+        }
+      });
+    });
+  </script>
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav" id="header">
+    <script>header("docs")</script>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="hero-section centered container stats">
+    <br>
+    <div data-ix="new-interaction" class="w-container">
+      <h1 class="hero-heading mainHeading animate-heading fade-inHeading">Stats Home</h1>
+      <br>
+      <div>
+        <a href="#bottom" class="button fade-inHeading">Dive into the analytic part of the LTBO.</a>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding: 60px 10px; height:auto; min-height: 500px;">
+    <div class="w-container fade-in" style="height:100%">
+      <div class="section-subheading center" style="font-size:6rem; line-height: 50px; color: gold">Stats Home</div>
+      <p style="font-size:20px;">Welcome to the analytic part of the Lunch Time Basketball Organisation Website, Stats.
+      </p>
+      <br><br><br>
+      <p style="font-size:20px;">What is Stats Home?</p>
+      <p>Stats home is the new way to view specific players past results, as well as their accolades and mention
+        history.</p>
+      <p>It's easy to use! Simply select a player from the drop down list below, and the stats will load for you!
+        Everything should be self explanatory.</p>
+      <p>Numbers are marked as Average-Total (e.g. it will show 3.5-7 if the total is 7 over two games)</p>
+    </div>
+    <br><br><br><br>
+    <form>
+      <select id="changer" class="changer">
+        <option disabled selected value="none">Choose a player</option>
+        <option value="zero">Jasper Collier</option>
+        <option value="one">Conor Farrington</option>
+        <option value="two">Alexander Galt</option>
+        <option value="three">Rudy Hoschke</option>
+        <option value="four">Michael Iffland</option>
+        <option value="five">Lukas Johnston</option>
+        <option value="six">Sam James</option>
+        <option value="seven">Clarrie Jones</option>
+        <option value="eight">William Kim</option>
+        <option value="nine">Samuel McConaghy</option>
+        <option value="ten">Ryan Pattemore</option>
+        <option value="eleven">William Scott</option>
+        <option value="twelve">Nicholas Szogi</option>
+        <option value="thirteen">Christopher Tomkinson</option>
+        <option value="fourteen">Angus Walker</option>
+        <option value="fifteen">Will Weekes</option>
+        <option value="sixteen">Mitch Yue</option>
+      </select>
+    </form>
+  </div>
+  <div class="section accent" id="main" style="min-height: 700px;">
+    <div class="row" id="mainArea">
+      <div class="column left">
+        <img src="../Images/Logo.png" class="teamImage" id="TeamImage" style="padding-bottom: 15px; object-fit: contain;" />
+        <img src="../Images/Player Images/Christopher.jpg" class="playerImage" id="PlayerImage" />
+      </div>
+      <div class="column right">
+        <table class="" style="width: 80%">
+          <tr>
+            <h3 class="features average" style="text-align: center;">Key: <strong>Average - Total</strong></h3>
+          </tr>
+          <tr>
+            <div class="w-col w-col-5 normalNews mainStats" style="float: left;">
+              <h3 class="features">Points: <strong id="points">20</strong></h3><br><br>
+            </div>
+            <div class="w-col w-col-5 normalNews mainStats" style="float: right;">
+              <h3 class="features">Finishes: <strong id="finishes">20</strong></h3>
+            </div>
+          </tr>
+          <tr>
+            <div class="w-col w-col-5 normalNews mainStats" style="float: left; ">
+              <h3 class="features">Midranges: <strong id="midranges">20</strong></h3>
+            </div>
+            <div class="w-col w-col-5 normalNews mainStats" style="float: right;">
+              <h3 class="features">3-Pointers: <strong id="threepointers">20</strong></h3>
+            </div>
+          </tr>
+        </table>
+        <br>
+        <table class="features" style="width: 75%; height:auto">
+          <tr>
+            <div class="w-col w-col-5 normalNews" style="width: 100%;">
+              <h3 class="features" style="position: block; top: 30px; margin-left: 10px; display: inline;"><em>Accolades</em></h3>
+            </div>
+          </tr>
+          <br>
+          <tr>
+            <div class="w-col w-col-5 normalNews accolades"  
+              style="float: left; ">
+              <h3>1. <strong id="accolade1"></strong></h3>
+            </div>
+            <div class="w-col w-col-5 normalNews accolades right"
+              style="float: right; ">
+              <h3>2. <strong id="accolade2"></strong></h3>
+            </div>
+          </tr>
+          <br>
+          <tr>
+            <div class="w-col w-col-5 normalNews accolades"
+              style="float: left; ">
+              <h3>3. <strong id="accolade3"></strong></h3>
+            </div>
+            <div class="w-col w-col-5 normalNews accolades right"
+              style="float: right; ">
+              <h3>4. <strong id="accolade4"></strong></h3>
+            </div>
+          </tr>
+          <br>
+          <tr>
+            <div class="w-col w-col-5 normalNews accolades"
+              style="float: left; ">
+              <h3>5. <strong id="accolade5"></strong></h3>
+            </div>
+            <div class="w-col w-col-5 normalNews accolades right"
+              style="float: right; ">
+              <h3>6. <strong id="accolade6"></strong></h3>
+            </div>
+          </tr>
+          <tr>
+            <div class="w-col w-col-5 normalNews accolades"
+              style="float: left; ">
+              <h3>7. <strong id="accolade7"></strong></h3>
+            </div>
+            <div class="w-col w-col-5 normalNews accolades right"
+              style="float: right; ">
+              <h3>8. <strong id="accolade8"></strong></h3>
+            </div>
+          </tr>
+        </table>
+        <br><br><br>
+        <h3 class="features" style="position: relative; top: 30px; margin-left: 10px; display: inline;"><em>History:
+          </em>
+          <p id="historyMain"><strong id="history"></strong></p>
+        </h3>
+      </div>
+    </div>
+    <div id="pastDetails">
+      <br><br><br><br><br><br>
+      <h3 class="features" style="float: initial; text-align: center;"><em>Past Results</em></h3><br>
+      <div style="overflow-y: scroll; max-height: 200px;">
+        <table class="dayByDay" style="width: 100%; text-align: center;" id="dayByDay">
+          <tr style="height: 50px;">
+            <th>Date</th>
+            <th>Points</th>
+            <th>Finishes</th>
+            <th>Midranges</th>
+            <th>Three Pointers</th>
+          </tr>
+          <tr>
+            <td>Preseason</td>
+          </tr>
+        </table>
+      </div>
+      <i>
+        <p>More dates can be viewed by scrolling on box</p>
+      </i>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div id="footer">
+    <script>footer("stats")</script>
+  </div>
+
+
+  <script src="../js/heading.js"></script>
+  <script src="../js/Scroll.js"></script>
+  <script src="../js/Array.js"></script>
+  <template>
+    <tr id="" style="height: 30px">
+      <td id="date"></td>
+      <td id="points"></td>
+      <td id="finishes"></td>
+      <td id="midranges"></td>
+      <td id="threes"></td>
+    </tr>
+  </template>
+  <template>
+    <tr id="" style="height: 30px;" >
+      <td colspan="5" style="background-color: #471e5b;"><h2 class="section-heading centered" style="margin: 0; color: rgb(210, 210, 210); font-size: 1.5em; line-height: 1.5em; letter-spacing: 0.5em;"><i id="main"></i></h2></td>
+    </tr>
+  </template>
+  <script src="../js/Stats.js"></script>
+</body>
+
+</html>
