@@ -11,7 +11,7 @@ Today = {
   "SStreak":[]
 }
 
-Override = false
+Override = true
 OverrideOrder = ["CT", "GM", "TC"]
 overRideDate = " "
 overrideW = ""
