@@ -2,14 +2,14 @@ mainArray = {
   
   "Name":["Jasper Collier","Conor Farrington","Alexander Galt","Rudy Hoschke","Michael Iffland","Lukas Johnston","Sam James","Clarrie Jones","William Kim","Samuel McConaghy","Ryan Pattemore","William Scott","Nicholas Szogi","Christopher Tomkinson","Angus Walker","Willie Weekes"],
   "Team":["Choc-Tops","Gentle, Men","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","","Traffic Controllers","Gentle, Men","Choc-Tops","Gentle, Men"],
-  "PPG":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "TP":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "FPG":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "TF":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "MPG":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "TM":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "TPG":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  "TT":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "PPG":[0,0,0,6,1,0,2,0,2,0,1,0,0,2,0,0],
+  "TP":[0,0,0,6,1,0,2,0,2,0,1,0,0,2,0,0],
+  "FPG":[0,0,0,6,1,0,1,0,0,0,0,0,0,2,0,0],
+  "TF":[0,0,0,6,1,0,1,0,0,0,0,0,0,2,0,0],
+  "MPG":[0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0],
+  "TM":[0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0],
+  "TPG":[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
+  "TT":[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],  
   "Missed":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   "AccoladesOne":["","","All-Defence Team T1","All-Offence Team T1","Playmaker T1","MVP Runner Up T1","Miles Morales","LTBO Manager","MVP T1","GM","Perimeter T1","LTBO Photographer","The Biggest Bird","MIP T1","LTBO CEO","Teammate T1"],
   "AccoladesTwo":["","","Champion T1","All-Defence Team T1","Thirdman T1","All-Offence Team T1","Champion T2","Champion T1","All-Offence Team T1","All-Offence Team T1","Champion T1","","Champion T1","MIP T2","GM","Champion T1"],
@@ -27,18 +27,18 @@ mainArray = {
 
 dayArray = [
   {
-    "Date": ["18-October"],
-    "Points":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    "Finishes":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    "Midrange":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    "ThreePointers":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    "Date":["23-October"],
+    "Points":[0,0,"Did not Play",6,1,0,2,0,2,0,1,"Did not Play",0,2,0,0],
+    "Finishes":[0,0,"Did not Play",6,1,0,1,0,0,0,0,"Did not Play",0,2,0,0],
+    "Midrange":[0,0,"Did not Play",0,0,0,1,0,0,0,1,"Did not Play",0,0,0,0],
+    "ThreePointers":[0,0,"Did not Play",0,0,0,0,0,1,0,0,"Did not Play",0,0,0,0]
+    },
     
-  },
 
 
 ]
 
 markers = {
-  "Location": [0, 3],
-  "Text": ["Preseason", "Regular Season"]
+  "Location": [0],
+  "Text": ["Regular Season"]
 }

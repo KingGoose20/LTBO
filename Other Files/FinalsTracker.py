@@ -70,7 +70,7 @@ def Start() :
     print("Enter starting team. ")
     print("Type \033[0;34m1 for \033[0;34mChoc-Tops")
     print("\033[0;37mType \033[0;31m2 \033[0;37mfor \033[0;31mTraffic Controllers")
-    print("\033[0;37mType \033[0;33m3 \033[0;37mfor \033[0;33mGentle Men\033[0;37m")
+    print("\033[0;37mType \033[0;33m3 \033[0;37mfor \033[0;33mGentle, Men\033[0;37m")
     starter = int(input("Enter: "))
 
     if((starter != 1) and (starter != 2) and (starter != 3)) :
@@ -80,7 +80,7 @@ def Start() :
     print("Enter other team. ")
     print("Type\033[0;34m 1 \033[0;37mfor \033[34m Choc-Tops")
     print("\033[0;37mType \033[0;31m2 \033[0;37mfor \033[0;31mTraffic Controllers")
-    print("\033[0;37mType \033[0;33m3 \033[0;37mfor \033[0;33mGentle Men\033[0;37m")
+    print("\033[0;37mType \033[0;33m3 \033[0;37mfor \033[0;33mGentle, Men\033[0;37m")
     other = int(input("Enter: "))
     print()
 
@@ -93,25 +93,25 @@ def Start() :
         CT=a
     elif starter == 2 :
         a="\033[0;31mTraffic Controllers\033[0;37m"
-    else : a = "\033[0;33mGentle Men\033[0;37m"
+    else : a = "\033[0;33mGentle, Men\033[0;37m"
 
     if other == 1 :
         b="\033[0;34mChoc-Tops\033[0;37m"
     elif other == 2 :
         b="\033[0;31mTraffic Controllers\033[0;37m"
-    else : b = "\033[0;33mGentle Men\033[0;37m"
+    else : b = "\033[0;33mGentle, Men\033[0;37m"
 
     if (a=="\033[0;34mChoc-Tops\033[0;37m" and b=="\033[0;31mTraffic Controllers\033[0;37m") :
-        c="\033[0;33mGentle Men\033[0;37m"
-    elif (a=="\033[0;34mChoc-Tops\033[0;37m" and b=="\033[0;33mGentle Men\033[0;37m") :
+        c="\033[0;33mGentle, Men\033[0;37m"
+    elif (a=="\033[0;34mChoc-Tops\033[0;37m" and b=="\033[0;33mGentle, Men\033[0;37m") :
         c="\033[0;31mTraffic Controllers\033[0;37m"
     elif (a=="\033[0;31mTraffic Controllers\033[0;37m" and b=="\033[0;34mChoc-Tops\033[0;37m") :
-        c="\033[0;33mGentle Men\033[0;37m"
-    elif (a=="\033[0;31mTraffic Controllers\033[0;37m" and b=="\033[0;33mGentle Men\033[0;37m") :
+        c="\033[0;33mGentle, Men\033[0;37m"
+    elif (a=="\033[0;31mTraffic Controllers\033[0;37m" and b=="\033[0;33mGentle, Men\033[0;37m") :
         c="\033[0;34mChoc-Tops\033[0;37m"
-    elif (a=="\033[0;33mGentle Men\033[0;37m" and b=="\033[0;34mChoc-Tops\033[0;37m") :
+    elif (a=="\033[0;33mGentle, Men\033[0;37m" and b=="\033[0;34mChoc-Tops\033[0;37m") :
         c="\033[0;31mTraffic Controllers\033[0;37m"
-    elif (a=="\033[0;33mGentle Men\033[0;37m" and b=="\033[0;31mTraffic Controllers\033[0;37m") :
+    elif (a=="\033[0;33mGentle, Men\033[0;37m" and b=="\033[0;31mTraffic Controllers\033[0;37m") :
         c="\033[0;34mChoc-Tops\033[0;37m"
 
 

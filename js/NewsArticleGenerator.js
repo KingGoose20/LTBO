@@ -30,7 +30,7 @@ function CreateArticle() {
             case "Traffic Controllers" :
                 images.push("TC_Final.png")
                 break;
-            case "Gentle Men" :
+            case "Gentle, Men" :
                 images.push("GM_Final.png")
                 break;
             case "Finals" :

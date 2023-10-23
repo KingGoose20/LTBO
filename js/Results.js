@@ -1,22 +1,21 @@
 Today = {
-  "Date": ["18 October"],
-  "GameNumber":[],
-  "Winner":[],
-  "Loser":[],
-  "Score":[],
-  "Scorer":[],
-  "Type":[],
-  "WStreak":[],
-  "LStreak":[],
-  "SStreak":[]
+  "Date": ["23 October"],
+  "GameNumber":[1,2,3,4,5,6,7,8,9,10,11,12,13],
+  "Winner":["Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men"],
+  "Loser":["Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers"],
+  "Scorer":["Rudy Hoschke","Rudy Hoschke","Rudy Hoschke","Christopher Tomkinson","Rudy Hoschke","Sam James","Ryan Pattemore","Michael Iffland","Christopher Tomkinson","William Kim","Sam James","Rudy Hoschke","Rudy Hoschke"],
+  "Type":["Finish","Finish","Finish","Finish","Finish","Midrange","Midrange","Finish","Finish","Three Pointer","Finish","Finish","Finish"],
+  "WStreak":[1,2,3,4,5,1,2,1,2,1,2,1,2],
+  "LStreak":[1,1,2,2,3,1,4,1,5,1,6,1,7],
+  "SStreak":[1,2,3,1,1,1,1,1,1,1,1,1,2]
 }
 
-Override = true
+Override = false
 OverrideOrder = ["CT", "GM", "TC"]
-overRideDate = " "
+overRideDate = ""
 overrideW = ""
 overrideL = ""
-overrideDayPoints = [0,0,0]
+overrideDayPoints = []
 
 
 
@@ -75,7 +74,7 @@ function ladder() {
       TC = true
       AddData(TrafficControllersPlayers, "teamLista")
     } else {
-      document.getElementById("firstName").innerHTML = "Gentle Men";
+      document.getElementById("firstName").innerHTML = "Gentle, Men";
       document.getElementById("firstPoints").innerHTML = LadderPoints[2];
       document.getElementById("firstImagea").src = "../Images/GM_Final.png"
       document.getElementById("firstImageb").src = "../Images/GM_Final.png"
@@ -123,7 +122,7 @@ function ladder() {
       TC = true
       AddData(TrafficControllersPlayers, "teamListb")
     } else {
-      document.getElementById("secondName").innerHTML = "Gentle Men";
+      document.getElementById("secondName").innerHTML = "Gentle, Men";
       document.getElementById("secondPoints").innerHTML = LadderPoints[2];
       document.getElementById("secondImagea").src = "../Images/GM_Final.png"
       document.getElementById("secondImageb").src = "../Images/GM_Final.png"
@@ -167,7 +166,7 @@ function ladder() {
       }
       AddData(TrafficControllersPlayers, "teamListc")
     } else {
-      document.getElementById("thirdName").innerHTML = "Gentle Men";
+      document.getElementById("thirdName").innerHTML = "Gentle, Men";
       document.getElementById("thirdPoints").innerHTML = LadderPoints[2];
       document.getElementById("thirdImagea").src = "../Images/GM_Final.png"
       document.getElementById("thirdImageb").src = "../Images/GM_Final.png"
@@ -220,7 +219,7 @@ function ladder() {
           TC = true
           AddData(TrafficControllers, "teamLista")
         } else {
-          document.getElementById("firstName").innerHTML = "Gentle Men";
+          document.getElementById("firstName").innerHTML = "Gentle, Men";
           document.getElementById("firstPoints").innerHTML = LadderPoints[2];
           document.getElementById("firstImagea").src = "../Images/GM_Final.png"
           document.getElementById("firstImageb").src = "../Images/GM_Final.png"
@@ -261,7 +260,7 @@ function ladder() {
           }
           AddData(TrafficControllersPlayers, "teamListb")
         } else {
-          document.getElementById("secondName").innerHTML = "Gentle Men";
+          document.getElementById("secondName").innerHTML = "Gentle, Men";
           document.getElementById("secondPoints").innerHTML = LadderPoints[2];
           document.getElementById("secondImagea").src = "../Images/GM_Final.png"
           document.getElementById("secondImageb").src = "../Images/GM_Final.png"
@@ -300,7 +299,7 @@ function ladder() {
           }
           AddData(TrafficControllersPlayers, "teamListc")
         } else {
-          document.getElementById("thirdName").innerHTML = "Gentle Men";
+          document.getElementById("thirdName").innerHTML = "Gentle, Men";
           document.getElementById("thirdPoints").innerHTML = LadderPoints[2];
           document.getElementById("thirdImagea").src = "../Images/GM_Final.png"
           document.getElementById("thirdImageb").src = "../Images/GM_Final.png"
@@ -390,7 +389,7 @@ function results() {
     document.getElementById("winning").innerHTML = "Traffic Controllers";
     document.getElementById("TCpoints").innerHTML = "<strong>3</strong> points"
   } else {
-    document.getElementById("winning").innerHTML = "Gentle Men";
+    document.getElementById("winning").innerHTML = "Gentle, Men";
     document.getElementById("GMpoints").innerHTML = "<strong>3</strong> points"
   }
 
@@ -401,7 +400,7 @@ function results() {
     document.getElementById("losing").innerHTML = "Traffic Controllers";
     document.getElementById("TCpoints").innerHTML = "<strong>1</strong> point"
   } else {
-    document.getElementById("losing").innerHTML = "Gentle Men";
+    document.getElementById("losing").innerHTML = "Gentle, Men";
     document.getElementById("GMpoints").innerHTML = "<strong>1</strong> point"
   }
 
@@ -434,17 +433,15 @@ function results() {
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
-    var cell9 = row.insertCell(8);
 
     cell1.innerHTML = Today.GameNumber[i]
     cell2.innerHTML = Today.Winner[i];
     cell3.innerHTML = Today.Loser[i];
-    cell4.innerHTML = Today.Score[i];
-    cell5.innerHTML = Today.Scorer[i];
-    cell6.innerHTML = Today.Type[i];
-    cell7.innerHTML = Today.WStreak[i];
-    cell8.innerHTML = Today.LStreak[i];
-    cell9.innerHTML = Today.SStreak[i];
+    cell4.innerHTML = Today.Scorer[i];
+    cell5.innerHTML = Today.Type[i];
+    cell6.innerHTML = Today.WStreak[i];
+    cell7.innerHTML = Today.LStreak[i];
+    cell8.innerHTML = Today.SStreak[i];
   }
 
   for (x = 0; x < players.length; x++) {

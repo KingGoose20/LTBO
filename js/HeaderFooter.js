@@ -34,7 +34,7 @@ function header(location) {
                     <a href="replacerDocumentsAndIco/LeagueHome.html?Team=LTBO" class="dropDown-link">League Home</a>
                     <a href="replacerDocumentsAndIco/TeamHome.html?Team=CT" class="dropDown-link">Choc-Tops Home</a>
                     <a href="replacerDocumentsAndIco/TeamHome.html?Team=TC" class="dropDown-link">Traffic Controllers Home</a>
-                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="dropDown-link">Gentle Men Home</a>
+                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="dropDown-link">Gentle, Men Home</a>
                     <a href="replacerDocumentsAndIco/OfficialGame.html" class="dropDown-link">Official Game</a>
                     <a href="https://365asas-my.sharepoint.com/:f:/g/personal/011445_asas_qld_edu_au/Enw3biOiY2xAo3nd_oihdAEBjsB7F500EKl6UYgd5-ONqQ?e=1KAlm2" class="dropDown-link" target="_blank">Visual Database</a>
                 </div>
@@ -61,7 +61,7 @@ function header(location) {
                 <a href="replacerDocumentsAndIco/TeamHome.html?Team=TC" class="navigation-link w-nav-link">Traffic Controllers Home</a>
             </li>
             <li class="nav-item dropdownShow">
-                <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="navigation-link w-nav-link">Gentle Men Home</a>
+                <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="navigation-link w-nav-link">Gentle, Men Home</a>
             </li>
             <li class="nav-item dropdownShow">
                 <a href="replacerDocumentsAndIco/OfficialGame.html" class="navigation-link w-nav-link">Official Game</a>
@@ -160,9 +160,9 @@ function header(location) {
             template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Traffic Controllers Home</a>', 'class="navigation-link w-nav-link w--current">Traffic Controllers Home</a>')
             template.innerHTML = template.innerHTML.replace('<span class="navigation-link w-nav-link">More</span>', '<span class="navigation-link w-nav-link w--current">More</span>')
             break;
-        case "Gentle Men":
-            template.innerHTML = template.innerHTML.replace('">Gentle Men Home', ' w-nav-link w--current">Gentle Men Home')
-            template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Gentle Men Home</a>', 'class="navigation-link w-nav-link w--current">Gentle Men Home</a>')
+        case "Gentle, Men":
+            template.innerHTML = template.innerHTML.replace('">Gentle, Men Home', ' w-nav-link w--current">Gentle, Men Home')
+            template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Gentle, Men Home</a>', 'class="navigation-link w-nav-link w--current">Gentle, Men Home</a>')
             template.innerHTML = template.innerHTML.replace('<span class="navigation-link w-nav-link">More</span>', '<span class="navigation-link w-nav-link w--current">More</span>')
             break;
         case "Official Game":

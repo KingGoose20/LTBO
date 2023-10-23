@@ -29,7 +29,7 @@ function start() {
             aTeam = "Choc-Tops"
             break;
         case "one" :
-            aTeam = "Gentle Men"
+            aTeam = "Gentle, Men"
             break;
         case "two" :
             aTeam = "Traffic Controllers"
@@ -41,7 +41,7 @@ function start() {
             bTeam = "Choc-Tops"
             break;
         case "four" :
-            bTeam = "Gentle Men"
+            bTeam = "Gentle, Men"
             break;
         case "five" :
             bTeam = "Traffic Controllers"
@@ -49,17 +49,17 @@ function start() {
     }
 
     if (aTeam == "Choc-Tops" && bTeam == "Traffic Controllers") {
-        cTeam = "Gentle Men"
-    } else if (aTeam == "Choc-Tops" && bTeam == "Gentle Men") {
+        cTeam = "Gentle, Men"
+    } else if (aTeam == "Choc-Tops" && bTeam == "Gentle, Men") {
         cTeam = "Traffic Controllers"
-    } else if (aTeam == "Gentle Men" && bTeam == "Choc-Tops") {
+    } else if (aTeam == "Gentle, Men" && bTeam == "Choc-Tops") {
         cTeam = "Traffic Controllers"
-    } else if (aTeam == "Gentle Men" && bTeam == "Traffic Controllers") {
+    } else if (aTeam == "Gentle, Men" && bTeam == "Traffic Controllers") {
         cTeam = "Choc-Tops"
-    } else if (aTeam == "Traffic Controllers" && bTeam == "Gentle Men") {
+    } else if (aTeam == "Traffic Controllers" && bTeam == "Gentle, Men") {
         cTeam = "Choc-Tops"
     } else {
-        cTeam = "Gentle Men"
+        cTeam = "Gentle, Men"
     }
 
     assignPlayers(aTeam)
@@ -78,7 +78,7 @@ function assignPlayers(team) {
             opt.innerHTML = ChocTops.Players[i];
             select.appendChild(opt);
         }
-    } else if (team == "Gentle Men") {
+    } else if (team == "Gentle, Men") {
         for (i = 0; i<GentleMen.Players.length; i++){
             var opt = document.createElement('option');
             opt.value = i + ChocTops.Players.length;
@@ -108,7 +108,7 @@ function logDetails() {
         CTstreak = range(CTstreak, 1, 1, 100)
         wStreak = CTstreak
     } else if (Scorer.options[Scorer.selectedIndex].value < (ChocTops.Players.length + GentleMen.Players.length)) {
-        winner = "Gentle Men"
+        winner = "Gentle, Men"
         Mstreak = range(Mstreak, 1, 1, 100)
         wStreak = Mstreak
     } else {
