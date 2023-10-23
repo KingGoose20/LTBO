@@ -8,7 +8,11 @@ Mstreak = 0
 Sstreak = 1
 pastScorer = ""
 
+ChocTops.Players.push("Choc-Tops OTHER")
+GentleMen.Players.push("Gentle, Men OTHER")
+TrafficControllers.Players.push("Traffic Controllers OTHER")
 
+console.log(ChocTops.Players[5])
 function start() {
     aElement = document.getElementById("aTeam")
     bElement = document.getElementById("bTeam")
