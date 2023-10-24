@@ -1,13 +1,13 @@
 Today = {
-  "Date": ["23 October"],
-  "GameNumber":[1,2,3,4,5,6,7,8,9,10,11,12,13],
-  "Winner":["Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men"],
-  "Loser":["Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers"],
-  "Scorer":["Rudy Hoschke","Rudy Hoschke","Rudy Hoschke","Christopher Tomkinson","Rudy Hoschke","Sam James","Ryan Pattemore","Michael Iffland","Christopher Tomkinson","William Kim","Sam James","Rudy Hoschke","Rudy Hoschke"],
-  "Type":["Finish","Finish","Finish","Finish","Finish","Midrange","Midrange","Finish","Finish","Three Pointer","Finish","Finish","Finish"],
-  "WStreak":[1,2,3,4,5,1,2,1,2,1,2,1,2],
-  "LStreak":[1,1,2,2,3,1,4,1,5,1,6,1,7],
-  "SStreak":[1,2,3,1,1,1,1,1,1,1,1,1,2]
+  "Date": ["24 October"],
+  "GameNumber":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],
+  "Winner":["Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Gentle, Men","Choc-Tops","Traffic Controllers","Gentle, Men","Gentle, Men"],
+  "Loser":["Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops","Gentle, Men","Choc-Tops","Traffic Controllers","Gentle, Men","Choc-Tops","Traffic Controllers","Choc-Tops"],
+  "Scorer":["Conor Farrington","Will Weekes","Rudy Hoschke","Rudy Hoschke","Conor Farrington","Michael Iffland","Will Weekes","Christopher Tomkinson","Samuel McConaghy","Clarrie Jones","Michael Iffland","Conor Farrington","Nicholas Szogi","Samuel McConaghy","Conor Farrington","Conor Farrington","Conor Farrington","Christopher Tomkinson","Clarrie Jones","Samuel McConaghy","Samuel McConaghy","Clarrie Jones","Rudy Hoschke","Sam James","Lukas Johnston","Rudy Hoschke","Rudy Hoschke"],
+  "Type":["Midrange","Finish","Finish","Finish","Finish","Midrange","Finish","Finish","Midrange","Finish","Three Pointer","Midrange","Finish","Midrange","Midrange","Finish","Midrange","Finish","Midrange","Midrange","Midrange","Three Pointer","Finish","Finish","Midrange","Three Pointer","Finish"],
+  "WStreak":[1,2,3,4,5,6,7,8,1,2,1,4,1,2,1,2,3,4,1,2,3,4,1,1,1,1,2],
+  "LStreak":[1,1,2,2,3,3,4,4,1,5,1,7,1,8,1,9,2,10,1,11,2,12,1,1,1,1,2],
+  "SStreak":[1,1,1,2,1,1,1,1,1,1,1,2,1,1,1,2,3,1,1,1,2,1,1,1,1,1,2]
 }
 
 Override = false
