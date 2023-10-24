@@ -38,7 +38,7 @@ GentleMen = {
     "Quote": ["Insert quote here"],
     "Colours": ["#808080", "#949494", "#404040", "#666666"],
     "Players": ["Conor Farrington", "Rudy Hoschke", "Christopher Tomkinson", "Michael Iffland", "Will Weekes"],
-    "Images": ["../Images/Players/Conor.png", "../Images/Players/Rudy.png", "../Images/Players/Christopher.png", "../Images/Players/Michael.png", "../Images/Players/Willie.png"],
+    "Images": ["../Images/Players/Conor.png", "../Images/Players/Rudy.png", "../Images/Players/Christopher.png", "../Images/Players/Michael.png", "../Images/Players/Will.png"],
     "PartA":[28,7,6],
     "PartB":[12,"Rudy Hoschke",10,"Rudy Hoschke",5,"Conor Farrington",1,"Rudy Hoschke"],
     "PartC":[4,1,3,0,14,3.5],

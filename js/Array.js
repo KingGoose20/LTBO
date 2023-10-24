@@ -1,6 +1,6 @@
 mainArray = {
 
-  "Name": ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Sam James", "Clarrie Jones", "William Kim", "Samuel McConaghy", "Ryan Pattemore", "William Scott", "Nicholas Szogi", "Christopher Tomkinson", "Angus Walker", "Willie Weekes"],
+  "Name": ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Sam James", "Clarrie Jones", "William Kim", "Samuel McConaghy", "Ryan Pattemore", "William Scott", "Nicholas Szogi", "Christopher Tomkinson", "Angus Walker", "Will Weekes"],
   "Team": ["Choc-Tops", "Gentle, Men", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "", "Traffic Controllers", "Gentle, Men", "Choc-Tops", "Gentle, Men"],
   "PPG":[0,3,0,6,2,0.5,1.5,2,1,2,0.5,0,0.5,2,0,0],
   "TP":[0,6,0,12,4,1,3,4,2,4,1,0,1,4,0,0],
@@ -36,11 +36,12 @@ dayArray = [
 
   {
     "Date":["24-October"],
-    "Points":[0,6,"Did not Play",6,3,1,1,4,0,4,0,"Did not Play",1,2,0,0],
-    "Finishes":[0,2,"Did not Play",4,0,0,1,1,0,0,0,"Did not Play",1,2,0,0],
+    "Points":[0,6,"Did not Play",6,3,1,1,4,0,4,0,"Did not Play",1,2,0,2],
+    "Finishes":[0,2,"Did not Play",4,0,0,1,1,0,0,0,"Did not Play",1,2,0,2],
     "Midrange":[0,4,"Did not Play",0,1,1,0,1,0,4,0,"Did not Play",0,0,0,0],
     "ThreePointers":[0,0,"Did not Play",1,1,0,0,1,0,0,0,"Did not Play",0,0,0,0]
-    },    
+    },
+     
 
 
 ]

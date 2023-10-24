@@ -10,8 +10,8 @@ Today = {
   "SStreak":[1,1,1,2,1,1,1,1,1,1,1,2,1,1,1,2,3,1,1,1,2,1,1,1,1,1,2]
 }
 
-Override = false
-OverrideOrder = ["CT", "GM", "TC"]
+Override = true
+OverrideOrder = ["GM", "TC", "CT"]
 overRideDate = ""
 overrideW = ""
 overrideL = ""
@@ -335,7 +335,7 @@ function ladder() {
 players = ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke",
   "Michael Iffland", "Lukas Johnston", "Sam James", "Clarrie Jones", "William Kim",
   "Samuel McConaghy", "Ryan Pattemore", "William Scott", "Nicholas Szogi", "Christopher Tomkinson",
-  "Angus Walker", "Willie Weekes", "Mitch Yue"
+  "Angus Walker", "Will Weekes", "Mitch Yue"
 ]
 
 
