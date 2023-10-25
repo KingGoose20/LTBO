@@ -8,6 +8,9 @@ Mstreak = 0
 Sstreak = 1
 pastScorer = ""
 
+addPlayers(ChocTops)
+addPlayers(TrafficControllers)
+addPlayers(GentleMen)
 ChocTops.Players.push("Choc-Tops OTHER")
 GentleMen.Players.push("Gentle, Men OTHER")
 TrafficControllers.Players.push("Traffic Controllers OTHER")
@@ -76,6 +79,7 @@ function assignPlayers(team) {
             var opt = document.createElement('option');
             opt.value = i;
             opt.innerHTML = ChocTops.Players[i];
+            opt.style.color = "brown";
             select.appendChild(opt);
         }
     } else if (team == "Gentle, Men") {
@@ -83,6 +87,7 @@ function assignPlayers(team) {
             var opt = document.createElement('option');
             opt.value = i + ChocTops.Players.length;
             opt.innerHTML = GentleMen.Players[i];
+            opt.style.color = "black";
             select.appendChild(opt);
         }
     } else {
@@ -90,6 +95,7 @@ function assignPlayers(team) {
             var opt = document.createElement('option');
             opt.value = i + (ChocTops.Players.length + GentleMen.Players.length) ;
             opt.innerHTML = TrafficControllers.Players[i];
+            opt.style.color = "#ff5e00";
             select.appendChild(opt);
         }
     }
@@ -103,6 +109,14 @@ function logDetails() {
     row = table.insertRow(-1);
     winner = ""
     loser = ""
+    if (Type.options[Type.selectedIndex].text == "Choose the type of score") {
+        alert("Select score type.")
+        return;
+    }
+    if (aTeam == "") {
+        alert("Select teams.")
+        return;
+    }
     if (Scorer.options[Scorer.selectedIndex].value < ChocTops.Players.length) {
         winner = "Choc-Tops"
         CTstreak = range(CTstreak, 1, 1, 100)
