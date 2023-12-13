@@ -115,6 +115,25 @@
         table {
             cursor: pointer;
         }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+        /* Then style the iframe to fit in the container div with full height and width */
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 
     <script src="../js/jquery.min.js"></script>
@@ -152,37 +171,38 @@
                     Honk</span>, <span style="color: rgb(42, 228, 5);">Team McGoo</span> currently leads 1-0.</h2>
             <br><br><br><br><br>
             <h2 class="section-heading centered">Full Video</h2>
-            <iframe width="840" height="472.5" src="https://www.youtube.com/embed/1TEzJLVMIWg?si=woufaoHt5iBdRjAy"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            <div class="container"> <iframe src="https://www.youtube.com/embed/1TEzJLVMIWg?si=woufaoHt5iBdRjAy"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen class="responsive-iframe"></iframe></div>
+
             <br><br><br><br><br>
             <h2 class="section-heading centered">Box Score</h2>
             <div style="overflow-x: scroll;">
-            <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto; min-width: 1200px;" id="scoringTable"
-                class="heading-hide">
-                <tr class="boxScore">
-                    <colgroup style="min-width: 200px; width: 15%"></colgroup>
-                    <td><span class="boldNumber">Name</span></td>
-                    <td><span class="boldNumber">PTS</span></td>
-                    <td><span class="boldNumber">REB</span></td>
-                    <td><span class="boldNumber">AST</span></td>
-                    <td><span class="boldNumber">STL</span></td>
-                    <td><span class="boldNumber">BLK</span></td>
-                    <td><span class="boldNumber">TO</span></td>
-                    <td><span class="boldNumber">PF</span></td>
-                    <td><span class="boldNumber">FGA</span></td>
-                    <td><span class="boldNumber">FGM</span></td>
-                    <td><span class="boldNumber">FG%</span></td>
-                    <td><span class="boldNumber">3GA</span></td>
-                    <td><span class="boldNumber">3GM</span></td>
-                    <td><span class="boldNumber">3G%</span></td>
-                    <td><span class="boldNumber">FTA</span></td>
-                    <td><span class="boldNumber">FTM</span></td>
-                    <td><span class="boldNumber">FT%</span></td>
-                </tr>
-            </table>
-        </div>
+                <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto; min-width: 1200px;"
+                    id="scoringTable" class="heading-hide">
+                    <tr class="boxScore">
+                        <colgroup style="min-width: 200px; width: 15%"></colgroup>
+                        <td><span class="boldNumber">Name</span></td>
+                        <td><span class="boldNumber">PTS</span></td>
+                        <td><span class="boldNumber">REB</span></td>
+                        <td><span class="boldNumber">AST</span></td>
+                        <td><span class="boldNumber">STL</span></td>
+                        <td><span class="boldNumber">BLK</span></td>
+                        <td><span class="boldNumber">TO</span></td>
+                        <td><span class="boldNumber">PF</span></td>
+                        <td><span class="boldNumber">FGA</span></td>
+                        <td><span class="boldNumber">FGM</span></td>
+                        <td><span class="boldNumber">FG%</span></td>
+                        <td><span class="boldNumber">3GA</span></td>
+                        <td><span class="boldNumber">3GM</span></td>
+                        <td><span class="boldNumber">3G%</span></td>
+                        <td><span class="boldNumber">FTA</span></td>
+                        <td><span class="boldNumber">FTM</span></td>
+                        <td><span class="boldNumber">FT%</span></td>
+                    </tr>
+                </table>
+            </div>
             <br><br><br><br><br>
             <h2 class="section-heading centered">Play-by-Play</h2>
             <p><i>Select Player</i></p>
@@ -220,51 +240,51 @@
         <script>footer("finals")</script>
     </div>
     <script> /*
-   var x = setInterval(function () {
+var x = setInterval(function () {
 
-       // Get today's date and time
-       var now = new Date().getTime();
-       var countDownDate = new Date("June 5, 2023 12:00:00")
+// Get today's date and time
+var now = new Date().getTime();
+var countDownDate = new Date("June 5, 2023 12:00:00")
 
-       var distance = 100
-       var days = 10
-       var hours = 10
-       var minutes = 10
-       var seconds = 10
-       var glowTick = 0
-       var glowOn = false
+var distance = 100
+var days = 10
+var hours = 10
+var minutes = 10
+var seconds = 10
+var glowTick = 0
+var glowOn = false
 
-       // Find the distance between now and the count down date
-       function main() {
-           now = new Date().getTime();
-           distance = countDownDate - now;
+// Find the distance between now and the count down date
+function main() {
+ now = new Date().getTime();
+ distance = countDownDate - now;
 
-           // Time calculations for days, hours, minutes and seconds
-           days = Math.floor(distance / (1000 * 60 * 60 * 24));
-           hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-           minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-           seconds = Math.floor((distance % (1000 * 60)) / 1000);
+ // Time calculations for days, hours, minutes and seconds
+ days = Math.floor(distance / (1000 * 60 * 60 * 24));
+ hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+ minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-       }
+}
 
-       main()
+main()
 
-       function checkNotZero(variable, letter) {
-           if (variable > 0) {
-               return (variable + letter)
-           } else {
-               return ("")
-           }
-       }
+function checkNotZero(variable, letter) {
+ if (variable > 0) {
+     return (variable + letter)
+ } else {
+     return ("")
+ }
+}
 
-       if (distance > 0) {
-           document.getElementById("counter").innerHTML = checkNotZero(days, "d ") + checkNotZero(hours, "h ")
-               + checkNotZero(minutes, "m ") + checkNotZero(seconds, "s ");
-       } else {
-           document.getElementById("counter").innerHTML = "The Grand Finale is in progress."
-       }
+if (distance > 0) {
+ document.getElementById("counter").innerHTML = checkNotZero(days, "d ") + checkNotZero(hours, "h ")
+     + checkNotZero(minutes, "m ") + checkNotZero(seconds, "s ");
+} else {
+ document.getElementById("counter").innerHTML = "The Grand Finale is in progress."
+}
 
-   }); */
+}); */
     </script>
     <script>
         function showElement(element) {
