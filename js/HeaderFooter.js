@@ -11,6 +11,9 @@ function header(location) {
         <nav class="navbar heading-links w-nav-menu">
             <ul class="nav-menu">
             <li class="nav-item">
+            <a href="replacerDocumentsAndIco/Holidays.html" class="navigation-link w-nav-link">Holidays Series</a>
+        </li>
+            <li class="nav-item">
                 <a href="replacerDocumentsAndIco/Draft.html" class="navigation-link w-nav-link">The Draft</a>
             </li>
             <li class="nav-item">
@@ -175,6 +178,10 @@ function header(location) {
             break;
         case "Draft":
             template.innerHTML = template.innerHTML.replace('w-nav-link">The Draft</a>', 'w-nav-link w--current">The Draft</a>')
+            break;
+        case "Holidays Series":
+            template.innerHTML = template.innerHTML.replace('w-nav-link">Holidays Series</a>', 'w-nav-link w--current">Holidays Series</a>')
+            break;
 
     }
     if (location == "admin") {
