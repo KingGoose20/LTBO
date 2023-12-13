@@ -158,9 +158,11 @@
                 allowfullscreen></iframe>
             <br><br><br><br><br>
             <h2 class="section-heading centered">Box Score</h2>
-            <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto;" id="scoringTable"
+            <div style="overflow-x: scroll;">
+            <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto; min-width: 1200px;" id="scoringTable"
                 class="heading-hide">
                 <tr class="boxScore">
+                    <colgroup style="min-width: 200px; width: 15%"></colgroup>
                     <td><span class="boldNumber">Name</span></td>
                     <td><span class="boldNumber">PTS</span></td>
                     <td><span class="boldNumber">REB</span></td>
@@ -180,6 +182,7 @@
                     <td><span class="boldNumber">FT%</span></td>
                 </tr>
             </table>
+        </div>
             <br><br><br><br><br>
             <h2 class="section-heading centered">Play-by-Play</h2>
             <p><i>Select Player</i></p>
