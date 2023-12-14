@@ -112,6 +112,12 @@ selectDiv.addEventListener('change', function (e) {
         case 'ten':
             number = 10
             break;
+        case 'eleven':
+            number = 11
+            break;
+        case 'twelve':
+            number = 12
+            break;
     }
     RunMain()
 });
@@ -129,15 +135,15 @@ function RunMain() {
                 row.id = i
                 row.classList.add("pbp")
                 var cell1 = row.insertCell(0);
-                
-                cell1.innerHTML = "END Q" + (x+1)
+
+                cell1.innerHTML = "END Q" + (x + 1)
                 cell1.style.fontSize = "2em"
                 cell1.style.lineHeight = "2em"
                 cell1.colSpan = "3"
-                
+
             }
         }
-        if ((PlayByPlay.Player[i] == BoxScore.Name[number - 1]) || number == 0) {
+        if ((PlayByPlay.Player[i] == BoxScore.Name[number - 1]) || (number == 0)) {
 
             row = pbptable.insertRow(-1);
             row.id = i
@@ -149,6 +155,38 @@ function RunMain() {
             cell1.innerHTML = PlayByPlay.Time[i];
             cell2.innerHTML = PlayByPlay.Player[i];
             cell3.innerHTML = PlayByPlay.Thing[i];
+        } else if (number == 11) {
+            for (x=0; x<5; x++) {
+                if ((PlayByPlay.Player[i] == BoxScore.Name[x])) {
+
+                    row = pbptable.insertRow(-1);
+                    row.id = i
+                    row.classList.add("pbp")
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+        
+                    cell1.innerHTML = PlayByPlay.Time[i];
+                    cell2.innerHTML = PlayByPlay.Player[i];
+                    cell3.innerHTML = PlayByPlay.Thing[i];
+                }
+            }
+        } else if (number == 12) {
+            for (x=5; x<10; x++) {
+                if ((PlayByPlay.Player[i] == BoxScore.Name[x])) {
+
+                    row = pbptable.insertRow(-1);
+                    row.id = i
+                    row.classList.add("pbp")
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+        
+                    cell1.innerHTML = PlayByPlay.Time[i];
+                    cell2.innerHTML = PlayByPlay.Player[i];
+                    cell3.innerHTML = PlayByPlay.Thing[i];
+                }
+            }
         }
 
     }
