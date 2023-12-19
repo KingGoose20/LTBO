@@ -102,8 +102,30 @@
             }
         }
 
-        table tr:nth-child(even) {
-            background-color: rgb(35, 35, 35);
+        table tr:nth-child(even):nth-child(-n+11),table tr:nth-child(13) {
+            background-color: rgba(0, 177, 0,0.15);
+        }
+
+        table tr:nth-child(even):nth-child(-n+7),table tr:nth-child(12) {
+            background-color: rgba(211, 222, 0,0.15);
+        }
+
+        table tr:nth-child(2n-1):nth-child(-n+11) {
+            background-color: rgba(0, 177, 0,0.4);
+        }
+
+        table tr:nth-child(2n-1):nth-child(-n+6) {
+            background-color: rgba(242, 255, 0, 0.4);
+            color: rgb(52, 52, 52);
+        }
+
+        
+        table tr:nth-child(1) {
+            background-color: rgba(0, 0, 0, 0) !important; 
+        }
+
+        table tr:nth-child(12) {
+            padding-top: 30px;
         }
 
         .boldNumber {
