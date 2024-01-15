@@ -102,26 +102,28 @@
             }
         }
 
-        #scoringTable tr:nth-child(even):nth-child(-n+11), #scoringTable tr:nth-child(13) {
-            background-color: rgba(0, 177, 0,0.15);
+        #scoringTable tr:nth-child(even):nth-child(-n+14),
+        #scoringTable tr:nth-child(16) {
+            background-color: rgba(0, 177, 0, 0.15);
         }
 
-        #scoringTable tr:nth-child(even):nth-child(-n+7), #scoringTable tr:nth-child(12) {
-            background-color: rgba(211, 222, 0,0.15);
+        #scoringTable tr:nth-child(even):nth-child(-n+9),
+        #scoringTable tr:nth-child(15) {
+            background-color: rgba(211, 222, 0, 0.15);
         }
 
-        #scoringTable tr:nth-child(2n-1):nth-child(-n+11) {
-            background-color: rgba(0, 177, 0,0.4);
+        #scoringTable tr:nth-child(2n-1):nth-child(-n+13) {
+            background-color: rgba(0, 177, 0, 0.4);
         }
 
-        #scoringTable tr:nth-child(2n-1):nth-child(-n+6) {
+        #scoringTable tr:nth-child(2n-1):nth-child(-n+8) {
             background-color: rgba(242, 255, 0, 0.4);
             color: rgb(52, 52, 52);
         }
 
-        
+
         #scoringTable tr:nth-child(1) {
-            background-color: rgba(0, 0, 0, 0) !important; 
+            background-color: rgba(0, 0, 0, 0) !important;
         }
 
         table tr:nth-child(12) {
@@ -156,6 +158,17 @@
             width: 100%;
             height: 100%;
         }
+
+        .videosMain {
+            width: 49%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .videosMain {
+                width: 100%;
+                float: inherit !important
+            }
+        }
     </style>
 
     <script src="../js/jquery.min.js"></script>
@@ -189,20 +202,39 @@
     </div>
     <div class="section">
         <div class="w-container">
-            <h2 class="section-heading centered">With a 43-35 win over <span style="color: rgb(255, 236, 23);">Team
-                    Honk</span>, <span style="color: rgb(42, 228, 5);">Team McGoo</span> currently leads 1-0.</h2>
+            <h2 class="section-heading centered">With a 40-37 win by <span style="color: rgb(255, 236, 23);">Team
+                    Honk</span> over <span style="color: rgb(42, 228, 5);">Team McGoo</span>, the series is tied at 1-1.</h2>
             <br><br><br><br><br>
-            <h2 class="section-heading centered">Full Video</h2>
-            <div class="container"> <iframe src="https://www.youtube.com/embed/1TEzJLVMIWg?si=woufaoHt5iBdRjAy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen class="responsive-iframe"></iframe></div>
-
-            <br><br><br><br><br>
+            <div style="float: left; margin-bottom: 50px;" class="videosMain">
+                <h2 class="section-heading centered">Game 1 | <span style="color: rgb(255, 236, 23);">35</span>-<span
+                        style="color: rgb(42, 228, 5);">43</span></h2>
+                <div class="container"> <iframe src="https://www.youtube.com/embed/1TEzJLVMIWg?si=woufaoHt5iBdRjAy"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen class="responsive-iframe"></iframe></div>
+            </div>
+            <div style="float: right; margin-bottom: 50px;" class="videosMain">
+                <h2 class="section-heading centered">Game 2 | <span style="color: rgb(255, 236, 23);">40</span>-<span
+                        style="color: rgb(42, 228, 5);">37</span></h2>
+                <div class="container"> <iframe src="https://www.youtube.com/embed/kq7AmKOiu0Y?si=Ef83sIeAEuqWNSbU"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen class="responsive-iframe"></iframe></div>
+            </div>
+            <br><br><br>
+            <p><i>Select Game</i></p>
+            <form style="color: black; font-size: 25px;">
+                <select id="gameSelection" class="changer" style="width: 60%; text-align: center;">
+                    <option selected value="zero">Game 1</option>
+                    <option value="one">Game 2</option>
+                </select>
+            </form><br><br><br>
             <h2 class="section-heading centered">Box Score</h2>
+
+            <br>
             <div style="overflow-x: scroll;">
                 <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto; min-width: 1200px;"
-                    id="scoringTable" class="heading-hide">
+                    id="scoringTable" class="">
                     <tr class="boxScore">
                         <colgroup style="min-width: 200px; width: 13.6%"></colgroup>
                         <colgroup span="18" style="width: 4.8%"></colgroup>
@@ -241,32 +273,37 @@
                     <option value="three">William Kim</option>
                     <option value="four">Clarrie Jones</option>
                     <option value="five">Jasper Collier</option>
-                    <option value="eleven">All Team Honk</option>
+                    <option value="six">Michael Iffland</option>
+                    <option value="seven">Will Weekes</option>
+                    <option value="fourteen">All Team Honk</option>
                     <option value="" disabled>- - - - - - - - - - - - - -</option>
-                    <option value="six">Samuel McConaghy</option>
-                    <option value="seven">Alexander Galt</option>
-                    <option value="eight">Lukas Johnston</option>
-                    <option value="nine">Christopher Tomkinson</option>
-                    <option value="ten">Ryan Pattemore</option>
-                    <option value="twelve">All Team McGoo</option>
+                    <option value="eight">Samuel McConaghy</option>
+                    <option value="nine">Alexander Galt</option>
+                    <option value="ten">Lukas Johnston</option>
+                    <option value="eleven">Christopher Tomkinson</option>
+                    <option value="twelve">Ryan Pattemore</option>
+                    <option value="thirteen">Conor Farrington</option>
+                    <option value="fifteen">All Team McGoo</option>
                 </select>
             </form>
             <br><br><br>
-            <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto;" id="playByPlayTable"
-                class="heading-hide">
-                <colgroup style="width: 25%"></colgroup>
-                <colgroup style="width: 50%"></colgroup>
-                <colgroup style="width: 25%"></colgroup>
-                <tr class="pbp">
-                    <td><span class="boldNumber">Time</span></td>
-                    <td><span class="boldNumber">Player</span></td>
-                    <td><span class="boldNumber">Action</span></td>
-                </tr>
-            </table>
+            <div style="overflow-x: scroll;">
+                <table style="width: 90%; text-align: center; margin-left:auto; margin-right: auto; min-width: 400px"
+                    id="playByPlayTable" class="">
+                    <colgroup style="width: 25%"></colgroup>
+                    <colgroup style="width: 50%"></colgroup>
+                    <colgroup style="width: 25%"></colgroup>
+                    <tr class="pbp">
+                        <td><span class="boldNumber">Time</span></td>
+                        <td><span class="boldNumber">Player</span></td>
+                        <td><span class="boldNumber">Action</span></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <div id="footer">
-        <script>footer("finals")</script>
+        <script>footer("docs")</script>
     </div>
     <script> /*
 var x = setInterval(function () {
@@ -285,32 +322,32 @@ var glowOn = false
 
 // Find the distance between now and the count down date
 function main() {
- now = new Date().getTime();
- distance = countDownDate - now;
+now = new Date().getTime();
+distance = countDownDate - now;
 
- // Time calculations for days, hours, minutes and seconds
- days = Math.floor(distance / (1000 * 60 * 60 * 24));
- hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
- minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
- seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// Time calculations for days, hours, minutes and seconds
+days = Math.floor(distance / (1000 * 60 * 60 * 24));
+hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 }
 
 main()
 
 function checkNotZero(variable, letter) {
- if (variable > 0) {
-     return (variable + letter)
- } else {
-     return ("")
- }
+if (variable > 0) {
+return (variable + letter)
+} else {
+return ("")
+}
 }
 
 if (distance > 0) {
- document.getElementById("counter").innerHTML = checkNotZero(days, "d ") + checkNotZero(hours, "h ")
-     + checkNotZero(minutes, "m ") + checkNotZero(seconds, "s ");
+document.getElementById("counter").innerHTML = checkNotZero(days, "d ") + checkNotZero(hours, "h ")
++ checkNotZero(minutes, "m ") + checkNotZero(seconds, "s ");
 } else {
- document.getElementById("counter").innerHTML = "The Grand Finale is in progress."
+document.getElementById("counter").innerHTML = "The Grand Finale is in progress."
 }
 
 }); */
@@ -329,7 +366,7 @@ if (distance > 0) {
     <script src="../js/Scroll.js"></script>
     <script src="../js/Holidays.js"></script>
     <script>
-        Box()
+        Box(GameOne)
     </script>
 
 </body>
