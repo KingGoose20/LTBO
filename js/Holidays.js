@@ -54,6 +54,7 @@ GameTwo = {
   "FTP":["0.00%","0.00%","0.00%","0.00%","0.00%","0","DNP","0.00%","0.00%","DNP","0.00%","0.00%","0","0.00%","0.00%","0.00%"]
 }
 
+console.log("aaa")
 
 BreakPositionsGameOne = [59, 121, 200]
 BreakPositionsGameTwo = [63, 133, 205]
