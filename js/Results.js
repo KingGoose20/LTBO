@@ -1,13 +1,13 @@
 Today = {
-  "Date": ["25 October"],
-  "GameNumber":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
-  "Winner":["Choc-Tops","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Choc-Tops","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers"],
-  "Loser":["Gentle, Men","Choc-Tops","Gentle, Men","Choc-Tops","Gentle, Men","Choc-Tops","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops"],
-  "Scorer":["Ryan Pattemore","William Kim","Samuel McConaghy","Samuel McConaghy","Christopher Tomkinson","Clarrie Jones","William Kim","Angus Walker","Conor Farrington","Rudy Hoschke","Alexander Galt","Alexander Galt","Rudy Hoschke","Alexander Galt","Alexander Galt","Christopher Tomkinson","William Kim"],
-  "Type":["Midrange","Finish","Midrange","Midrange","Finish","Finish","Midrange","Three Pointer","Midrange","Midrange","Finish","Finish","Finish","Finish","Finish","Midrange","Finish"],
-  "WStreak":[1,1,2,3,4,5,6,1,1,2,3,4,5,6,7,1,2],
-  "LStreak":[1,1,2,2,3,3,4,1,1,2,2,3,3,4,4,1,5],
-  "SStreak":[1,1,1,2,1,1,1,1,1,1,1,2,1,1,2,1,1]
+  "Date": [""],
+  "GameNumber":[],
+  "Winner":[],
+  "Loser":[],
+  "Scorer":[],
+  "Type":[],
+  "WStreak":[],
+  "LStreak":[],
+  "SStreak":[]
 }
 
 Override = true
