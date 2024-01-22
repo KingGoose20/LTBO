@@ -1,69 +1,102 @@
+/* -------------- PUT INFO HERE -------------- */
+Main = {
+    "PartACT": [0, 0, 0],
+    "PartBCT": [0, "N/A", 0, "N/A", 0, "N/A", 0, "N/A"],
+    "PartCCT": [0, 0, 0, 0, 0, 0],
+    "PartDCT": [0, 0, 0, 0, 0, 0],
+    "PartATC": [0, 0, 0],
+    "PartBTC": [0, "N/A", 0, "N/A", 0, "N/A", 0, "N/A"],
+    "PartCTC": [0, 0, 0, 0, 0, 0],
+    "PartDTC": [0, 0, 100, 0, 0, 0],
+    "PartAGM": [0, 0, 0],
+    "PartBGM": [0, "N/A", 0, "N/A", 0, "N/A", 0, "N/A"],
+    "PartCGM": [0, 0, 0, 0, 0, 0],
+    "PartDGM": [0, 0, 100, 0, 0, 100],
+
+}
+
+/* ------------------------------------------- */
+
 ChocTops = {
     "TeamsNames": ["Traffic Controllers", "Gentle, Men", "TC", "GM", "Choc-Tops"],
     "Quote": [""],
     "Colours": ["#8a5500", "#ffb082", "#ffb082", "#8a5500"],
-    "Players": ["Ryan Pattemore", "Angus Walker", "William Kim", "Sam James", "Jasper Collier"],
-    "Images": ["../Images/Players/Ryan.png","../Images/Players/Angus.png", "../Images/Players/Kimmy.png", "../Images/Players/SamJ.png", "../Images/Players/Jasper.png"],
-    "PartA":[],
-    "PartB":[],
-    "PartC":[],
-    "PartD":[],
+    "Players": [],
+    "Images": [],
+    "PartA": [],
+    "PartB": [],
+    "PartC": [],
+    "PartD": [],
     "Date": [],
     "Wins": [],
     "Losses": [],
-    "Points": [],
-    "TA": [],
-    "TB": []
+    "Points": []
 }
 TrafficControllers = {
     "TeamsNames": ["Choc-Tops", "Gentle, Men", "CT", "GM", "Traffic Controllers"],
     "Quote": [""],
     "Colours": ["#ff5500", "#8a8a8a", "#545454", "#ff5500"],
-    "Players": ["Clarrie Jones", "Lukas Johnston", "Samuel McConaghy", "Nicholas Szogi", "Alexander Galt"],
-    "Images": ["../Images/Players/Clarrie.png", "../Images/Players/Lukas.png", "../Images/Players/SamM.png", "../Images/Players/Nicholas.png", "../Images/Players/Alex.png"],
-    "PartA":[],
-    "PartB":[],
-    "PartC":[],
-    "PartD":[],
+    "Players": [],
+    "Images": [],
+    "PartA": [],
+    "PartB": [],
+    "PartC": [],
+    "PartD": [],
     "Date": [],
     "Wins": [],
     "Losses": [],
-    "Points": [],
-    "TA": [],
-    "TB": []
+    "Points": []
 }
 
 GentleMen = {
     "TeamsNames": ["Choc-Tops", "Traffic Controllers", "CT", "TC", "Gentle, Men"],
     "Quote": [""],
     "Colours": ["#808080", "#949494", "#404040", "#666666"],
-    "Players": ["Conor Farrington", "Rudy Hoschke", "Christopher Tomkinson", "Michael Iffland", "Will Weekes"],
-    "Images": ["../Images/Players/Conor.png", "../Images/Players/Rudy.png", "../Images/Players/Christopher.png", "../Images/Players/Michael.png", "../Images/Players/Will.png"],
-    "PartA":[],
-    "PartB":[],
-    "PartC":[],
-    "PartD":[],
+    "Players": [],
+    "Images": [],
+    "PartA": [],
+    "PartB": [],
+    "PartC": [],
+    "PartD": [],
     "Date": [],
     "Wins": [],
     "Losses": [],
-    "Points": [],
-    "TA": [],
-    "TB": []
+    "Points": []
 }
+
+allTeamDBD("Choc-Tops", ChocTops)
+allTeamDBD("Traffic Controllers", TrafficControllers)
+allTeamDBD("Gentle, Men", GentleMen)
+
+
+ChocTops.PartA = Main.PartACT
+ChocTops.PartB = Main.PartBCT
+ChocTops.PartC = Main.PartCCT
+ChocTops.PartD = Main.PartDCT
+TrafficControllers.PartA = Main.PartATC
+TrafficControllers.PartB = Main.PartBTC
+TrafficControllers.PartC = Main.PartCTC
+TrafficControllers.PartD = Main.PartDTC
+GentleMen.PartA = Main.PartAGM
+GentleMen.PartB = Main.PartBGM
+GentleMen.PartC = Main.PartCGM
+GentleMen.PartD = Main.PartDGM
+
+
 
 function addPlayers(team) {
     team.Players = []
     team.Images = []
     gmIndex = null
-    for (i=0; i<mainArray.Name.length; i++) {
-        if(mainArray.History[i] == ("GM of " + team.TeamsNames[4])) {
+    for (i = 0; i < mainArray.Name.length; i++) {
+        if (mainArray.History[i] == ("GM of " + team.TeamsNames[4])) {
             team.Players.push(mainArray.Name[i])
             team.Images.push(mainArray.PlayerImage[i])
-            gmIndex=i
+            gmIndex = i
         }
     }
-    for (i=0; i<mainArray.Name.length; i++) {
-        if((mainArray.Team[i] == team.TeamsNames[4])&& i!=gmIndex ) {
+    for (i = 0; i < mainArray.Name.length; i++) {
+        if ((mainArray.Team[i] == team.TeamsNames[4]) && i != gmIndex) {
             team.Players.push(mainArray.Name[i])
             team.Images.push(mainArray.PlayerImage[i])
         }
@@ -148,8 +181,6 @@ function initalise() {
         document.getElementById("BWins").innerHTML = variable.PartD[3]
         document.getElementById("BLoss").innerHTML = variable.PartD[4]
         document.getElementById("BPercent").innerHTML = variable.PartD[5] + "%"
-        document.getElementById("teamAsmall").innerHTML = variable.TeamsNames[2]
-        document.getElementById("teamBsmall").innerHTML = variable.TeamsNames[3]
         document.getElementById("teamAbig").innerHTML = variable.TeamsNames[0]
         document.getElementById("teamBbig").innerHTML = variable.TeamsNames[1]
         document.getElementById("quoteLocation").innerHTML = variable.Quote[0]
@@ -183,8 +214,6 @@ function initalise() {
             clone.getElementById("Wins").innerHTML = String(variable.Wins[i])
             clone.getElementById("Losses").innerHTML = String(variable.Losses[i])
             clone.getElementById("Points").innerHTML = String(variable.Points[i])
-            clone.getElementById("TeamA").innerHTML = String(variable.TA[i])
-            clone.getElementById("TeamB").innerHTML = String(variable.TB[i])
             table.appendChild(clone)
         }
     }

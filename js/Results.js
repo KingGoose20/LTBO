@@ -1,26 +1,18 @@
-Today = {
-  "Date": [""],
-  "GameNumber":[],
-  "Winner":[],
-  "Loser":[],
-  "Scorer":[],
-  "Type":[],
-  "WStreak":[],
-  "LStreak":[],
-  "SStreak":[]
-}
+Today = returnLatestData()
 
-Override = true
+/* ---------- PUT INFO HERE FOR TIE ---------- */
+Override = false
 OverrideOrder = ["GM", "TC", "CT"]
 overRideDate = ""
 overrideW = ""
 overrideL = ""
 overrideDayPoints = []
 
-
-
-
-
+/* ------------------------------------------- */
+if (ChocTops.PartA[2] == TrafficControllers.PartA[2] || TrafficControllers.PartA[2] == GentleMen.PartA[2] || GentleMen.PartA[2] == ChocTops.PartA[2]) {
+  Override = true
+  OverrideOrder = []
+}
 
 function ladder() {
   /* Goes CT, TC, GM */
