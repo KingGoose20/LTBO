@@ -1,4 +1,3 @@
-/* -------------- PUT INFO HERE -------------- */
 mainArray = {
   "Name": ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Sam James", "Clarrie Jones", "William Kim", "Samuel McConaghy", "Ryan Pattemore", "Nicholas Szogi", "Christopher Tomkinson", "Angus Walker", "Will Weekes", "Mitch Yue"],
   "Team": ["Choc-Tops", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Gentle, Men", "Gentle, Men"],
@@ -25,6 +24,7 @@ mainArray = {
 
 }
 
+/* -------------- PUT INFO HERE -------------- */
 
 Data = [
 
