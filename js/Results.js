@@ -10,6 +10,181 @@ overrideDayPoints = []
 
 /* ------------------------------------------- */
 
+function addLadder(teamName, position) {
+  players = null
+  initials = ""
+  number = 0
+  letter = ""
+  if (teamName == "Choc-Tops") {
+    initials = "CT"
+    number = 0
+    players = ChocTopsPlayers
+    CT = true
+  } else if (teamName == "Gentle, Men") {
+    initials = "GM"
+    number = 2
+    players = GentleMenPlayers
+    MM = true
+  } else if (teamName == "Traffic Controllers") {
+    initials = "TC"
+    number = 1
+    players = TrafficControllersPlayers
+    TC = true
+  }
+  if (position == "first") {
+    letter = "a"
+  } else if (position == "second") {
+    letter = "b"
+  } else {
+    letter = "c"
+  }
+  document.getElementById(position + "Name").innerHTML = teamName;
+  document.getElementById(position + "Points").innerHTML = LadderPoints[number];
+  document.getElementById(position + "Imagea").src = "../Images/" + initials + "_Final.png"
+  document.getElementById(position + "Imageb").src = "../Images/" + initials + "_Final.png"
+  document.getElementById(position + "Leader").innerHTML = Leaders[0]
+  if (LeadersPoints[number] == 1) {
+    document.getElementById(position + "Scoring").innerHTML = (LeadersPoints[number] + " point")
+  } else {
+    document.getElementById(position + "Scoring").innerHTML = (LeadersPoints[number] + " points")
+  }
+  leader = LadderPoints[number]
+  AddData(players, ("teamList" + letter))
+}
+
+function ladderTieBreakers(teamA, teamB, position) {
+  CTwins = 0
+  TCwins = 0
+  Mwins = 0
+  CTloss = 0
+  TCloss = 0
+  Mloss = 0
+
+  for (i = 0; i < Today.Winner.length; i++) {
+    if (Today.GameNumber[i] < Today.GameNumber[i + 1] || i + 1 == Today.Winner.length) {
+      if (Today.Winner[i] == "Choc-Tops") {
+        CTwins += 1
+      } else if (Today.Winner[i] == "Traffic Controllers") {
+        TCwins += 1
+      } else {
+        Mwins += 1
+      }
+    }
+
+  }
+
+  for (i = 0; i < Today.Loser.length; i++) {
+    if (Today.GameNumber[i] < Today.GameNumber[i + 1] || i + 1 == Today.Winner.length) {
+      if (Today.Loser[i] == "Choc-Tops") {
+        CTloss += 1
+      } else if (Today.Loser[i] == "Traffic Controllers") {
+        TCloss += 1
+      } else {
+        Mloss += 1
+      }
+    }
+
+  }
+  CTP = (Math.round(CTwins / (CTwins + CTloss) * 1000) / 10)
+  TCP = (Math.round(TCwins / (TCwins + TCloss) * 1000) / 10)
+  GMP = (Math.round(Mwins / (Mwins + Mloss) * 1000) / 10)
+
+  teamAp = 0
+  teamBp = 0
+
+  switch (teamA) {
+    case "Gentle, Men":
+      teamAp = GMP
+      break;
+    case "Traffic Controllers":
+      teamAp = TCP
+      break;
+    case "Choc-Tops":
+      teamAp = CTP
+      break;
+  }
+  switch (teamB) {
+    case "Gentle, Men":
+      teamBp = GMP
+      break;
+    case "Traffic Controllers":
+      teamBp = TCP
+      break;
+    case "Choc-Tops":
+      teamBp = CTP
+      break;
+  }
+
+  if (teamAp > teamBp) {
+    addLadder(teamA, position)
+  } else if (teamBp > teamAp) {
+    addLadder(teamB, position)
+  } else if (teamAp == teamBp) {
+    teamAwins = 0
+    teamBwins = 0
+    for (i = 0; i < Today.Winner.length; i++) {
+      if (Today.GameNumber[i] < Today.GameNumber[i + 1] || i + 1 == Today.Winner.length) {
+        if (Today.Winner[i] == teamA && Today.Loser[i] == teamB) {
+          teamAwins += 1
+        } else if (Today.Winner[i] == teamB && Today.Loser[i] == teamA) {
+          teamBwins += 1
+        }
+      }
+
+    }
+    if (teamAwins > teamBwins) {
+      addLadder(teamA, position)
+    } else if (teamBwins > teamAwins) {
+      addLadder(teamB, position)
+    } else {
+      if (teamA == "Choc-Tops") {
+        if (teamB == "Traffic Controllers") {
+          if (ChocTops.PartD[2] > 50) {
+            addLadder(teamA, position)
+          } else {
+            addLadder(teamB, position)
+          }
+        } else {
+          if (ChocTops.PartD[5] > 50) {
+            addLadder(teamA, position)
+          } else {
+            addLadder(teamB, position)
+          }
+        }
+      } else if (teamA == "Traffic Controllers") {
+        if (teamB == "Choc-Tops") {
+          if (TrafficControllers.PartD[2] > 50) {
+            addLadder(teamA, position)
+          } else {
+            addLadder(teamB, position)
+          }
+        } else {
+          if (TrafficControllers.PartD[5] > 50) {
+            addLadder(teamA, position)
+          } else {
+            addLadder(teamB, position)
+          }
+        }
+      } else if (teamA == "Gentle, Men") {
+        if (teamB == "Choc-Tops") {
+          if (GentleMen.PartD[2] > 50) {
+            addLadder(teamA, position)
+          } else {
+            addLadder(teamB, position)
+          }
+        } else {
+          if (GentleMen.PartD[5] > 50) {
+            addLadder(teamA, position)
+          } else {
+            addLadder(teamB, position)
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 function ladder() {
   /* Goes CT, TC, GM */
@@ -33,139 +208,43 @@ function ladder() {
     CT = false
     TC = false
     MM = false
+    /* FIRST PLACE */
     if ((LadderPoints[0] > LadderPoints[1]) && (LadderPoints[0] > LadderPoints[2])) {
-      document.getElementById("firstName").innerHTML = "Choc-Tops";
-      document.getElementById("firstPoints").innerHTML = LadderPoints[0];
-      document.getElementById("firstImagea").src = "../Images/CT_Final.png"
-      document.getElementById("firstImageb").src = "../Images/CT_Final.png"
-      document.getElementById("firstLeader").innerHTML = Leaders[0]
-      if (LeadersPoints[0] == 1) {
-        document.getElementById("firstScoring").innerHTML = (LeadersPoints[0] + " point")
-      } else {
-        document.getElementById("firstScoring").innerHTML = (LeadersPoints[0] + " points")
-      }
-      leader = LadderPoints[0]
-      CT = true
-      AddData(ChocTopsPlayers, "teamLista")
+      addLadder("Choc-Tops", "first")
     } else if ((LadderPoints[1] > LadderPoints[2]) && (LadderPoints[1] > LadderPoints[0])) {
-      document.getElementById("firstName").innerHTML = "Traffic Controllers";
-      document.getElementById("firstPoints").innerHTML = LadderPoints[1];
-      document.getElementById("firstImagea").src = "../Images/TC_Final.png"
-      document.getElementById("firstImageb").src = "../Images/TC_Final.png"
-      document.getElementById("firstLeader").innerHTML = Leaders[1]
-      if (LeadersPoints[1] == 1) {
-        document.getElementById("firstScoring").innerHTML = (LeadersPoints[1] + " point")
-      } else {
-        document.getElementById("firstScoring").innerHTML = (LeadersPoints[1] + " points")
-        console.log(LeadersPoints[1] + " points")
-      }
-      leader = LadderPoints[1]
-      TC = true
-      AddData(TrafficControllersPlayers, "teamLista")
-    } else {
-      document.getElementById("firstName").innerHTML = "Gentle, Men";
-      document.getElementById("firstPoints").innerHTML = LadderPoints[2];
-      document.getElementById("firstImagea").src = "../Images/GM_Final.png"
-      document.getElementById("firstImageb").src = "../Images/GM_Final.png"
-      document.getElementById("firstLeader").innerHTML = Leaders[2]
-      if (LeadersPoints[2] == 1) {
-        document.getElementById("firstScoring").innerHTML = (LeadersPoints[2] + " point")
-      } else {
-        document.getElementById("firstScoring").innerHTML = (LeadersPoints[2] + " points")
-        console.log(DaysPlayed)
-      }
-      leader = LadderPoints[2]
-      MM = true
-      AddData(GentleMenPlayers, "teamLista")
+      addLadder("Traffic Controllers", "first")
+    } else if ((LadderPoints[2] > LadderPoints[0]) && (LadderPoints[2] > LadderPoints[1])) {
+      addLadder("Gentle, Men", "first")
+    } else if ((LadderPoints[2] == LadderPoints[0]) && (LadderPoints[1] == LadderPoints[0])) {
+
+    } else if (LadderPoints[0] == LadderPoints[1]) {
+      ladderTieBreakers("Choc-Tops", "Traffic Controllers", "first")
+    } else if (LadderPoints[0] == LadderPoints[2]) {
+      ladderTieBreakers("Choc-Tops", "Gentle, Men", "first")
+    } else if (LadderPoints[1] == LadderPoints[2]) {
+      ladderTieBreakers("Traffic Controllers", "Gentle, Men", "first")
     }
-
-
-
-
-
-
+    /* SECOND PLACE */
     if (((LadderPoints[0] > LadderPoints[1]) || (LadderPoints[0] > LadderPoints[2])) && CT != true) {
-      document.getElementById("secondName").innerHTML = "Choc-Tops";
-      document.getElementById("secondPoints").innerHTML = LadderPoints[0];
-      document.getElementById("secondImagea").src = "../Images/CT_Final.png"
-      document.getElementById("secondImageb").src = "../Images/CT_Final.png"
-      document.getElementById("secondLeader").innerHTML = Leaders[0]
-      if (LeadersPoints[0] == 1) {
-        document.getElementById("secondScoring").innerHTML = (LeadersPoints[0] + " point")
-      } else {
-        document.getElementById("secondScoring").innerHTML = (LeadersPoints[0] + " points")
-      }
-      CT = true
-      AddData(ChocTopsPlayers, "teamListb")
+      addLadder("Choc-Tops", "second")
     } else if (((LadderPoints[1] > LadderPoints[2]) || (LadderPoints[1] > LadderPoints[0])) && TC != true || MM == true) {
-      document.getElementById("secondName").innerHTML = "Traffic Controllers";
-      document.getElementById("secondPoints").innerHTML = LadderPoints[1];
-      document.getElementById("secondImagea").src = "../Images/TC_Final.png"
-      document.getElementById("secondImageb").src = "../Images/TC_Final.png"
-      document.getElementById("secondLeader").innerHTML = Leaders[1]
-      if (LeadersPoints[1] == 1) {
-        document.getElementById("secondScoring").innerHTML = (LeadersPoints[1] + " point")
-      } else {
-        document.getElementById("secondScoring").innerHTML = (LeadersPoints[1] + " points")
-      }
-      TC = true
-      AddData(TrafficControllersPlayers, "teamListb")
-    } else {
-      document.getElementById("secondName").innerHTML = "Gentle, Men";
-      document.getElementById("secondPoints").innerHTML = LadderPoints[2];
-      document.getElementById("secondImagea").src = "../Images/GM_Final.png"
-      document.getElementById("secondImageb").src = "../Images/GM_Final.png"
-      document.getElementById("secondLeader").innerHTML = Leaders[2]
-      if (LeadersPoints[2] == 1) {
-        document.getElementById("secondScoring").innerHTML = (LeadersPoints[2] + " point")
-      } else {
-        document.getElementById("secondScoring").innerHTML = (LeadersPoints[2] + " points")
-      }
-      MM = true
-      AddData(GentleMenPlayers, "teamListb")
+      addLadder("Traffic Controllers", "second")
+    } else if (((LadderPoints[2] > LadderPoints[1]) || (LadderPoints[2] > LadderPoints[0])) && MM != true) {
+      addLadder("Gentle, Men", "second")
+    } else if (LadderPoints[0] == LadderPoints[1] && CT != true && TC != true) {
+      ladderTieBreakers("Choc-Tops", "Traffic Controllers", "second")
+    } else if (LadderPoints[0] == LadderPoints[2] && CT != true && MM != true) {
+      ladderTieBreakers("Choc-Tops", "Gentle, Men", "second")
+    } else if (LadderPoints[1] == LadderPoints[2] && TC != true && MM != true) {
+      ladderTieBreakers("Traffic Controllers", "Gentle, Men", "second")
     }
-
-
-
-
-
-
+    /* THIRD PLACE */
     if (CT == false) {
-      document.getElementById("thirdName").innerHTML = "Choc-Tops";
-      document.getElementById("thirdPoints").innerHTML = LadderPoints[0];
-      document.getElementById("thirdImagea").src = "../Images/CT_Final.png"
-      document.getElementById("thirdImageb").src = "../Images/CT_Final.png"
-      document.getElementById("thirdLeader").innerHTML = Leaders[0]
-      if (LeadersPoints[0] == 1) {
-        document.getElementById("thirdScoring").innerHTML = (LeadersPoints[0] + " point")
-      } else {
-        document.getElementById("thirdScoring").innerHTML = (LeadersPoints[0] + " points")
-      }
-      AddData(ChocTopsPlayers, "teamListc")
+      addLadder("Choc-Tops", "third")
     } else if (TC == false) {
-      document.getElementById("thirdName").innerHTML = "Traffic Controllers";
-      document.getElementById("thirdPoints").innerHTML = LadderPoints[1];
-      document.getElementById("thirdImagea").src = "../Images/TC_Final.png"
-      document.getElementById("thirdImageb").src = "../Images/TC_Final.png"
-      document.getElementById("thirdLeader").innerHTML = Leaders[1]
-      if (LeadersPoints[1] == 1) {
-        document.getElementById("thirdScoring").innerHTML = (LeadersPoints[1] + " point")
-      } else {
-        document.getElementById("thirdScoring").innerHTML = (LeadersPoints[1] + " points")
-      }
-      AddData(TrafficControllersPlayers, "teamListc")
-    } else {
-      document.getElementById("thirdName").innerHTML = "Gentle, Men";
-      document.getElementById("thirdPoints").innerHTML = LadderPoints[2];
-      document.getElementById("thirdImagea").src = "../Images/GM_Final.png"
-      document.getElementById("thirdImageb").src = "../Images/GM_Final.png"
-      document.getElementById("thirdLeader").innerHTML = Leaders[2]
-      if (LeadersPoints[2] == 1) {
-        document.getElementById("thirdScoring").innerHTML = (LeadersPoints[2] + " point")
-      } else {
-        document.getElementById("thirdScoring").innerHTML = (LeadersPoints[2] + " points")
-      }
-      AddData(GentleMenPlayers, "teamListc")
+      addLadder("Traffic Controllers", "third")
+    } else if (MM == false) {
+      addLadder("Gentle, Men", "third")
     }
 
 
@@ -371,7 +450,7 @@ function results() {
 
   CTP = (Math.round(CTwins / (CTwins + CTloss) * 1000) / 10)
   TCP = (Math.round(TCwins / (TCwins + TCloss) * 1000) / 10)
-  GMP = (Math.round(Mwins / (Mwins + Mwins) * 1000) / 10)
+  GMP = (Math.round(Mwins / (Mwins + Mloss) * 1000) / 10)
 
   function addPoints(pointsCT, pointsTC, pointsGM) {
     CTpointsRef.innerHTML = "<strong>" + pointsCT + "</strong> points"
@@ -436,7 +515,6 @@ function results() {
   CTpointsRef = document.getElementById("CTpoints")
   TCpointsRef = document.getElementById("TCpoints")
   GMpointsRef = document.getElementById("GMpoints")
-
   /* Checks for 3 way tie */
   if (CTP == TCP && TCP == GMP) {
     addPoints(2, 2, 2)
@@ -464,6 +542,12 @@ function results() {
     } else {
       addPoints(checkTieBreaker("Choc-Tops", "Traffic Controllers", 2), checkTieBreaker("Traffic Controllers", "Choc-Tops", 2), 3)
     }
+  } else if (TCP == CTP) {
+    addPoints(checkTieBreaker("Choc-Tops", "Traffic Controllers", 3), checkTieBreaker("Traffic Controllers", "Choc-Tops", 3), 1)
+  } else if (TCP == GMP) {
+    addPoints(1, checkTieBreaker("Traffic Controllers", "Gentle, Men", 3), checkTieBreaker("Gentle, Men", "Traffic Controllers", 3))
+  } else if (GMP == CTP) {
+    addPoints(checkTieBreaker("Choc-Tops", "Gentle, Men", 3), 1, checkTieBreaker("Gentle, Men", "Choc-Tops", 3))
   }
   document.getElementById("CTrecord").innerHTML = CTwins + " - " + CTloss + " <strong>(" + (Math.round(CTwins / (CTwins + CTloss) * 1000) / 10) + "%)</strong>"
   document.getElementById("TCrecord").innerHTML = TCwins + " - " + TCloss + " <strong>(" + (Math.round(TCwins / (TCwins + TCloss) * 1000) / 10) + "%)</strong>"

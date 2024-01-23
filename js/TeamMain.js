@@ -1,17 +1,17 @@
 /* -------------- PUT INFO HERE -------------- */
 Main = {
-    "PartACT": [0, 0, 0],
+    "PartACT": [0, 0, 1],
     "PartBCT": [0, "N/A", 0, "N/A", 0, "N/A", 0, "N/A"],
     "PartCCT": [0, 0, 0, 0, 0, 0],
     "PartDCT": [0, 0, 0, 0, 0, 0],
-    "PartATC": [0, 0, 0],
+    "PartATC": [0, 0, 2],
     "PartBTC": [0, "N/A", 0, "N/A", 0, "N/A", 0, "N/A"],
     "PartCTC": [0, 0, 0, 0, 0, 0],
-    "PartDTC": [0, 0, 100, 0, 0, 0],
-    "PartAGM": [0, 0, 0],
+    "PartDTC": [0, 0, 100, 0, 0, 100],
+    "PartAGM": [0, 0, 2],
     "PartBGM": [0, "N/A", 0, "N/A", 0, "N/A", 0, "N/A"],
     "PartCGM": [0, 0, 0, 0, 0, 0],
-    "PartDGM": [0, 0, 100, 0, 0, 100],
+    "PartDGM": [0, 0, 100, 0, 0, 0],
 
 }
 
