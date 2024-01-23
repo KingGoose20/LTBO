@@ -152,7 +152,7 @@ myKeyValues = currentLocation.search
 urlParams = new URLSearchParams(myKeyValues)
 SelectedPlayer = urlParams.get("Player")
 Players = ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Sam James",
-  "Clarrie Jones", "William Kim", "Samuel McConaghy", "Ryan Pattemore", "William Scott", "Nicholas Szogi",
+  "Clarrie Jones", "William Kim", "Samuel McConaghy", "Ryan Pattemore", "Nicholas Szogi",
   "Christopher Tomkinson", "Angus Walker", "Will Weekes", "Mitch Yue"]
 
 for (i = 0; i < Players.length; i++) {

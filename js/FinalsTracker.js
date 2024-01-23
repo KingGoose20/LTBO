@@ -1,6 +1,11 @@
-ChocTops = ["Angus Walker", "William Kim", "Christopher Tomkinson", "Jasper Collier", "Conor Farrington"]
-TrafficControllers = ["Rudy Hoschke", "Michael Iffland", "Nicholas Szogi", "Ryan Pattemore", "Clarrie Jones", "Mitch Yue"]
-GentleMen = ["Samuel McConaghy", "Alexander Galt", "Lukas Johnston", "Sam James", "William Scott", "Will Weekes"]
+addPlayers(ChocTops)
+addPlayers(TrafficControllers)
+addPlayers(GentleMen)
+ChocTops.Players.push("Choc-Tops OTHER")
+GentleMen.Players.push("Gentle, Men OTHER")
+TrafficControllers.Players.push("Traffic Controllers OTHER")
+
+console.log(ChocTops)
 
 aTeam = ""
 bTeam = ""
@@ -82,24 +87,27 @@ function start() {
 function assignPlayers(team) {
     select = document.getElementById("Scorer")
     if (team == "Choc-Tops") {
-        for (i = 0; i < ChocTops.length; i++) {
+        for (i = 0; i < ChocTops.Players.length; i++) {
             var opt = document.createElement('option');
             opt.value = i;
-            opt.innerHTML = ChocTops[i];
+            opt.innerHTML = ChocTops.Players[i];
+            opt.style.color = "brown";
             select.appendChild(opt);
         }
     } else if (team == "Gentle, Men") {
-        for (i = 0; i < GentleMen.length; i++) {
+        for (i = 0; i < GentleMen.Players.length; i++) {
             var opt = document.createElement('option');
-            opt.value = i + ChocTops.length;
-            opt.innerHTML = GentleMen[i];
+            opt.value = i + ChocTops.Players.length;
+            opt.innerHTML = GentleMen.Players[i];
+            opt.style.color = "black";
             select.appendChild(opt);
         }
     } else {
-        for (i = 0; i < TrafficControllers.length; i++) {
+        for (i = 0; i < TrafficControllers.Players.length; i++) {
             var opt = document.createElement('option');
-            opt.value = i + (ChocTops.length + GentleMen.length);
-            opt.innerHTML = TrafficControllers[i];
+            opt.value = i + (ChocTops.Players.length + GentleMen.Players.length);
+            opt.innerHTML = TrafficControllers.Players[i];
+            opt.style.color = "#ff5e00";
             select.appendChild(opt);
         }
     }

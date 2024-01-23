@@ -9,10 +9,7 @@ overrideL = ""
 overrideDayPoints = []
 
 /* ------------------------------------------- */
-if (ChocTops.PartA[2] == TrafficControllers.PartA[2] || TrafficControllers.PartA[2] == GentleMen.PartA[2] || GentleMen.PartA[2] == ChocTops.PartA[2]) {
-  Override = true
-  OverrideOrder = []
-}
+
 
 function ladder() {
   /* Goes CT, TC, GM */
@@ -326,7 +323,7 @@ function ladder() {
 
 players = ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke",
   "Michael Iffland", "Lukas Johnston", "Sam James", "Clarrie Jones", "William Kim",
-  "Samuel McConaghy", "Ryan Pattemore", "William Scott", "Nicholas Szogi", "Christopher Tomkinson",
+  "Samuel McConaghy", "Ryan Pattemore", "Nicholas Szogi", "Christopher Tomkinson",
   "Angus Walker", "Will Weekes", "Mitch Yue"
 ]
 
