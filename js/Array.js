@@ -21,15 +21,17 @@ mainArray = {
   "AccoladesEight": [" ", "", "", "", "", "", "", "", "", "", "", "", "", "Champion T2", "", ""],
   "History": ["Drafted by Choc-Tops", "GM of Gentle, Men", "Drafted by Choc-Tops", "Drafted by Choc-Tops", "Drafted by Gentle, Men", "Drafted by Gentle, Men", "Drafted by Traffic Controllers", "GM of Traffic Controllers", "Drafted by Traffic Controllers", "Drafted by Gentle, Men", "GM of Choc-Tops", "Drafted by Traffic Controllers", "Drafted by Choc-Tops", "Drafted by Traffic Controllers", "Drafted by Gentle, Men", "Drafted by Gentle, Men"],
   "TeamImage": ["../Images/CT_Final.png", "../Images/GM_Final.png", "../Images/CT_Final.png", "../Images/CT_Final.png", "../Images/GM_Final.png", "../Images/GM_Final.png", "../Images/TC_Final.png", "../Images/TC_Final.png", "../Images/TC_Final.png", "../Images/GM_Final.png", "../Images/CT_Final.png", "../Images/TC_Final.png", "../Images/CT_Final.png", "../Images/TC_Final.png", "../Images/GM_Final.png", "../Images/GM_Final.png"],
-  "PlayerImage": ["../Images/Players/Jasper.png", "../Images/Players/Conor.png", "../Images/Players/Alex.png", "../Images/Players/Rudy.png", "../Images/Players/Michael.png", "../Images/Players/Lukas.png", "../Images/Players/SamJ.png", "../Images/Players/Clarrie.png", "../Images/Players/Kimmy.png", "../Images/Players/SamM.png", "../Images/Players/Ryan.png", "../Images/Players/Nicholas.png", "../Images/Players/Chris.png", "../Images/Players/Angus.png", "../Images/Players/Will.png", ""],
+  "PlayerImage": ["../Images/Players/Jasper.png", "../Images/Players/Conor.png", "../Images/Players/Alex.png", "../Images/Players/Rudy.png", "../Images/Players/Michael.png", "../Images/Players/Lukas.png", "../Images/Players/SamJ.png", "../Images/Players/Clarrie.png", "../Images/Players/Kimmy.png", "../Images/Players/SamM.png", "../Images/Players/Ryan.png", "../Images/Players/Nicholas.png", "../Images/Players/Christopher.png", "../Images/Players/Angus.png", "../Images/Players/Will.png", "../Images/Players/Mitch.png"],
 
 }
 
 
 Data = [
+
 ]
 
 Missed = [
+
 ]
 
 /* ------------------------------------------- */
@@ -74,7 +76,7 @@ function getDayArray(index) {
     }
     Points = Finishes + Midranges + ThreePointers + ThreePointers
     if (Points == 0) {
-      if(Missed[index].Missed[x] == 1) {
+      if (Missed[index].Missed[x] == 1) {
         Points = "Did not Play"
         Finishes = "Did not Play"
         Midranges = "Did not Play"
@@ -161,6 +163,74 @@ function allTeamDBD(team, variable) {
 }
 
 
+function calculateAverages() {
+  /* Calculates totals first, then missed days, then averages */
+  AP = []
+  AF = []
+  AM = []
+  AT = []
+  TP = []
+  TF = []
+  TM = []
+  TT = []
+  MD = []
+  for (i = 0; i < mainArray.Name.length; i++) {
+    LP = 0
+    LF = 0
+    LM = 0
+    LT = 0
+    LMD = 0
+    for (x = 0; x < Data.length; x++) {
+      Scored = false
+      for (y = 0; y < Data[x].Scorer.length; y++) {
+        if (Data[x].Scorer[y] == mainArray.Name[i]) {
+          Scored = true
+          if (Data[x].Type[y] == "Finish") {
+            LF += 1
+          } else if (Data[x].Type[y] == "Midrange") {
+            LM += 1
+          } else {
+            LT += 1
+          }
+        }
+      }
+      if (Scored == false) {
+        if (Missed[x].Missed[i] == 1) {
+          LMD += 1
+          console.log(mainArray.Name[i])
+        }
+      }
+      LP = LF + LM + LT + LT
+    }
+    TP.push(LP)
+    TF.push(LF)
+    TM.push(LM)
+    TT.push(LT)
+    MD.push(LMD)
+  }
+
+  for (i = 0; i < mainArray.Name.length; i++) {
+    console.log(MD[i])
+    AP.push((Math.round(100*(TP[i]/(Data.length-MD[i]))))/100)
+    AF.push(TF[i]/(Data.length-MD[i]))
+    AM.push(TM[i]/(Data.length-MD[i]))
+    AT.push(TT[i]/(Data.length-MD[i]))
+  }
+
+  mainArray.PPG = AP
+  mainArray.TP = TP
+  mainArray.FPG = AF
+  mainArray.TF = TF
+  mainArray.MPG = AM
+  mainArray.TM = TM
+  mainArray.TPG = AT
+  mainArray.TT = TT
+  mainArray.Missed = MD
+
+}
+
+
 dayArray = getAllDayArrays()
+calculateAverages()
 
 /*Show DNP*/
