@@ -97,7 +97,7 @@ function ladder() {
       }
       CT = true
       AddData(ChocTopsPlayers, "teamListb")
-    } else if (((LadderPoints[1] > LadderPoints[2]) || (LadderPoints[1] > LadderPoints[0])) && TC != true) {
+    } else if (((LadderPoints[1] > LadderPoints[2]) || (LadderPoints[1] > LadderPoints[0])) && TC != true || MM == true) {
       document.getElementById("secondName").innerHTML = "Traffic Controllers";
       document.getElementById("secondPoints").innerHTML = LadderPoints[1];
       document.getElementById("secondImagea").src = "../Images/TC_Final.png"
@@ -330,7 +330,6 @@ players = ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke
 
 
 function results() {
-  console.log("ran")
   DidNotPlay = []
   for (i = 0; i < mainArray.Name.length; i++) {
     if (dayArray[dayArray.length - 1].Points[i] == "Did not Play") {
@@ -345,54 +344,134 @@ function results() {
   Mloss = 0
 
   for (i = 0; i < Today.Winner.length; i++) {
-    if (Today.Winner[i] == "Choc-Tops") {
-      CTwins += 1
-    } else if (Today.Winner[i] == "Traffic Controllers") {
-      TCwins += 1
-    } else {
-      Mwins += 1
+    if (Today.GameNumber[i] < Today.GameNumber[i + 1] || i + 1 == Today.Winner.length) {
+      if (Today.Winner[i] == "Choc-Tops") {
+        CTwins += 1
+      } else if (Today.Winner[i] == "Traffic Controllers") {
+        TCwins += 1
+      } else {
+        Mwins += 1
+      }
     }
+
   }
 
   for (i = 0; i < Today.Loser.length; i++) {
-    if (Today.Loser[i] == "Choc-Tops") {
-      CTloss += 1
-    } else if (Today.Loser[i] == "Traffic Controllers") {
-      TCloss += 1
+    if (Today.GameNumber[i] < Today.GameNumber[i + 1] || i + 1 == Today.Winner.length) {
+      if (Today.Loser[i] == "Choc-Tops") {
+        CTloss += 1
+      } else if (Today.Loser[i] == "Traffic Controllers") {
+        TCloss += 1
+      } else {
+        Mloss += 1
+      }
+    }
+
+  }
+
+  CTP = (Math.round(CTwins / (CTwins + CTloss) * 1000) / 10)
+  TCP = (Math.round(TCwins / (TCwins + TCloss) * 1000) / 10)
+  GMP = (Math.round(Mwins / (Mwins + Mwins) * 1000) / 10)
+
+  function addPoints(pointsCT, pointsTC, pointsGM) {
+    CTpointsRef.innerHTML = "<strong>" + pointsCT + "</strong> points"
+    TCpointsRef.innerHTML = "<strong>" + pointsTC + "</strong> points"
+    GMpointsRef.innerHTML = "<strong>" + pointsGM + "</strong> points"
+    if (pointsCT == 3) {
+      document.getElementById("winning").innerHTML = "Choc-Tops";
+    } else if (pointsTC == 3) {
+      document.getElementById("winning").innerHTML = "Traffic Controllers";
+    } else if (pointsGM == 3) {
+      document.getElementById("winning").innerHTML = "Gentle, Men";
+    } else if (Today.Winner[Today.Winner.length - 1] == "Choc-Tops" && pointsCT == 2.5) {
+      document.getElementById("winning").innerHTML = "Choc-Tops";
+    } else if (Today.Winner[Today.Winner.length - 1] == "Traffic Controllers" && pointsTC == 2.5) {
+      document.getElementById("winning").innerHTML = "Traffic Controllers";
+    } else if (Today.Winner[Today.Winner.length - 1] == "Gentle, Men" && pointsGM == 2.5) {
+      document.getElementById("winning").innerHTML = "Gentle, Men";
     } else {
-      Mloss += 1
+      document.getElementById("winning").innerHTML = Today.Winner[Today.Winner.length - 1];
+    }
+
+    if (pointsCT == 1) {
+      document.getElementById("losing").innerHTML = "Choc-Tops";
+    } else if (pointsTC == 1) {
+      document.getElementById("losing").innerHTML = "Traffic Controllers";
+    } else if (pointsGM == 1) {
+      document.getElementById("losing").innerHTML = "Gentle, Men";
+    } else if (Today.Loser[Today.Loser.length - 1] == "Choc-Tops" && pointsCT == 1.5) {
+      document.getElementById("losing").innerHTML = "Choc-Tops";
+    } else if (Today.Loser[Today.Loser.length - 1] == "Traffic Controllers" && pointsTC == 1.5) {
+      document.getElementById("losing").innerHTML = "Traffic Controllers";
+    } else if (Today.Loser[Today.Loser.length - 1] == "Gentle, Men" && pointsGM == 1.5) {
+      document.getElementById("losing").innerHTML = "Gentle, Men";
+    } else {
+      document.getElementById("losing").innerHTML = Today.Loser[Today.Loser.length - 1];
     }
   }
 
+
+  function checkTieBreaker(teamA, teamB, points) {
+    teamAwins = 0
+    teamBwins = 0
+    for (i = 0; i < Today.Winner.length; i++) {
+      if (Today.GameNumber[i] < Today.GameNumber[i + 1] || i + 1 == Today.Winner.length) {
+        if (Today.Winner[i] == teamA && Today.Loser[i] == teamB) {
+          teamAwins += 1
+        } else if (Today.Winner[i] == teamB && Today.Loser[i] == teamA) {
+          teamBwins += 1
+        }
+      }
+
+    }
+    if (teamAwins > teamBwins) {
+      return (points)
+    } else if (teamBwins > teamAwins) {
+      return (points - 1)
+    } else {
+      return (points - 0.5)
+    }
+  }
+
+  CTpointsRef = document.getElementById("CTpoints")
+  TCpointsRef = document.getElementById("TCpoints")
+  GMpointsRef = document.getElementById("GMpoints")
+
+  /* Checks for 3 way tie */
+  if (CTP == TCP && TCP == GMP) {
+    addPoints(2, 2, 2)
+  } else if (CTP > TCP && CTP > GMP) {
+    if (TCP > GMP && TCP != GMP) {
+      addPoints(3, 2, 1)
+    } else if (TCP < GMP) {
+      addPoints(3, 1, 2)
+    } else {
+      addPoints(3, checkTieBreaker("Traffic Controllers", "Gentle, Men", 2), checkTieBreaker("Gentle, Men", "Traffic Controllers", 2))
+    }
+  } else if (TCP > GMP && TCP > GMP) {
+    if (CTP > GMP && CTP != GMP) {
+      addPoints(2, 3, 1)
+    } else if (CTP < GMP) {
+      addPoints(1, 3, 2)
+    } else {
+      addPoints(checkTieBreaker("Choc-Tops", "Gentle, Men", 2), 3, checkTieBreaker("Gentle, Men", "Choc-Tops", 2))
+    }
+  } else if (GMP > TCP && GMP > TCP) {
+    if (TCP > CTP && TCP != CTP) {
+      addPoints(1, 2, 3)
+    } else if (TCP < CTP) {
+      addPoints(2, 1, 3)
+    } else {
+      addPoints(checkTieBreaker("Choc-Tops", "Traffic Controllers", 2), checkTieBreaker("Traffic Controllers", "Choc-Tops", 2), 3)
+    }
+  }
   document.getElementById("CTrecord").innerHTML = CTwins + " - " + CTloss + " <strong>(" + (Math.round(CTwins / (CTwins + CTloss) * 1000) / 10) + "%)</strong>"
   document.getElementById("TCrecord").innerHTML = TCwins + " - " + TCloss + " <strong>(" + (Math.round(TCwins / (TCwins + TCloss) * 1000) / 10) + "%)</strong>"
   document.getElementById("GMrecord").innerHTML = Mwins + " - " + Mloss + " <strong>(" + (Math.round(Mwins / (Mwins + Mloss) * 1000) / 10) + "%)</strong>"
-  document.getElementById("CTpoints").innerHTML = "<strong>2</strong> points"
-  document.getElementById("TCpoints").innerHTML = "<strong>2</strong> points"
-  document.getElementById("GMpoints").innerHTML = "<strong>2</strong> points"
 
-  if ((CTwins / CTloss) > (TCwins / TCloss) && (CTwins / CTloss) > (Mwins / Mloss)) {
-    document.getElementById("winning").innerHTML = "Choc-Tops";
-    document.getElementById("CTpoints").innerHTML = "<strong>3</strong> points"
-  } else if ((TCwins / TCloss) > (CTwins / CTloss) && (TCwins / TCloss) > (Mwins / Mloss)) {
-    document.getElementById("winning").innerHTML = "Traffic Controllers";
-    document.getElementById("TCpoints").innerHTML = "<strong>3</strong> points"
-  } else {
-    document.getElementById("winning").innerHTML = "Gentle, Men";
-    document.getElementById("GMpoints").innerHTML = "<strong>3</strong> points"
-  }
 
-  if ((CTwins / CTloss) < (TCwins / TCloss) && (CTwins / CTloss) < (Mwins / Mloss)) {
-    document.getElementById("losing").innerHTML = "Choc-Tops";
-    document.getElementById("CTpoints").innerHTML = "<strong>1</strong> point"
-  } else if ((TCwins / TCloss) < (CTwins / CTloss) && (TCwins / TCloss) < (Mwins / Mloss)) {
-    document.getElementById("losing").innerHTML = "Traffic Controllers";
-    document.getElementById("TCpoints").innerHTML = "<strong>1</strong> point"
-  } else {
-    document.getElementById("losing").innerHTML = "Gentle, Men";
-    document.getElementById("GMpoints").innerHTML = "<strong>1</strong> point"
-  }
 
+  /* Override section. Shouldn't be required */
   if (overrideDayPoints.length != 0) {
     document.getElementById("CTpoints").innerHTML = "<strong>" + overrideDayPoints[0] + "</strong> points"
     document.getElementById("TCpoints").innerHTML = "<strong>" + overrideDayPoints[1] + "</strong> points"
@@ -410,6 +489,15 @@ function results() {
   boxtable = document.getElementById("scoringTable")
 
   for (i = 0; i < Today.Winner.length; i++) {
+    if (i != 0) {
+      if (Today.GameNumber[i] > Today.GameNumber[i - 1]) {
+        row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = "The " + Today.Winner[i - 1] + " beat the " + Today.Loser[i - 1] + " " + Today.Score[i - 1]
+        cell1.colSpan = 9
+      }
+    }
+
     row = table.insertRow(-1);
     row.onclick = function () { openStatsLadder(this); };
     row.id = i
@@ -422,16 +510,27 @@ function results() {
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
+    var cell9 = row.insertCell(8);
 
     cell1.innerHTML = Today.GameNumber[i]
     cell2.innerHTML = Today.Winner[i];
     cell3.innerHTML = Today.Loser[i];
-    cell4.innerHTML = Today.Scorer[i];
-    cell5.innerHTML = Today.Type[i];
-    cell6.innerHTML = Today.WStreak[i];
-    cell7.innerHTML = Today.LStreak[i];
-    cell8.innerHTML = Today.SStreak[i];
+    cell4.innerHTML = Today.Score[i];
+    cell5.innerHTML = Today.Scorer[i];
+    cell6.innerHTML = Today.Type[i];
+    cell7.innerHTML = Today.WStreak[i];
+    cell8.innerHTML = Today.LStreak[i];
+    cell9.innerHTML = Today.SStreak[i];
   }
+  row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  if (Today.Score[Today.Winner.length - 1] != "1-1") {
+    cell1.innerHTML = "The " + Today.Winner[Today.Winner.length - 1] + " beat the " + Today.Loser[Today.Winner.length - 1] + " " + Today.Score[Today.Winner.length - 1]
+  } else {
+    cell1.innerHTML = "The " + Today.Winner[Today.Winner.length - 1] + " tied with the " + Today.Loser[Today.Winner.length - 1] + " " + Today.Score[Today.Winner.length - 1]
+  }
+
+  cell1.colSpan = 9
 
   for (x = 0; x < players.length; x++) {
     finishes = 0
@@ -495,6 +594,7 @@ function asOf() {
   if (overRideDate == "") {
     x = document.getElementById("asOf");
     extra = "th"
+    console.log(Today)
     dateNumber = Number(Today.Date[0].slice(0, 2))
     dateMonth = Today.Date[0].slice(getlength(dateNumber) + 1)
 

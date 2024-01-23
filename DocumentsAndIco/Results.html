@@ -58,7 +58,7 @@
     }
 
     tr {
-      line-height: 30px;
+      line-height: 35px;
       transition: all 0.7s ease-in-out;
     }
 
@@ -69,11 +69,11 @@
 
     @keyframes ResultsGrow {
       0% {
-        line-height: 30px;
+        line-height: 35px;
       }
 
       10% {
-        line-height: 30px;
+        line-height: 35px;
       }
 
       40% {
@@ -86,13 +86,13 @@
 
       90% {
         line-height: 45px;
-        font-size: 24px;
+        font-size: 22px;
         color: rgb(200, 200, 200);
       }
 
       100% {
         line-height: 45px;
-        font-size: 24px;
+        font-size: 22px;
         color: rgb(200, 200, 200);
       }
     }
@@ -149,15 +149,17 @@
           <col style="width:11%">
           <col style="width:15%">
           <col style="width:15%">
-          <col style="width:22%">
-          <col style="width:13%">
+          <col style="width:4%">
+          <col style="width:20%">
+          <col style="width:11%">
           <col style="width:6%">
           <col style="width:6%">
           <col style="width:6%">
           <tr>
             <td><span class="boldNumber">Game Number</span></td>
-            <td><span class="boldNumber">Winner</span></td>
-            <td><span class="boldNumber">Loser</span></td>
+            <td><span class="boldNumber">Scored</span></td>
+            <td><span class="boldNumber">Scored On</span></td>
+            <td><span class="boldNumber">Score</span></td>
             <td><span class="boldNumber">Scorer</span></td>
             <td><span class="boldNumber">Type</span></td>
             <td><span class="boldNumber">W-Streak</span></td>
@@ -175,17 +177,17 @@
       </span>
       <br>
       <br>
-      <br>      
+      <br>
       <p>As the <i><u><span id="winning"></span></u></i> had the best record today, they will start with the ball
         against the <i><u><span id="losing"></span></u></i>.</p>
       <br>
       <p>Records: (no particular order)</p>
-      <p><strong>Choc-Tops: </strong><span id="CTrecord">x - y</span> (rewarding them <span
-          id="CTpoints">z points</span>)</p>
+      <p><strong>Choc-Tops: </strong><span id="CTrecord">x - y</span> (rewarding them <span id="CTpoints">z
+          points</span>)</p>
       <p><strong>Traffic Controllers: </strong><span id="TCrecord">x - y</span> (rewarding them <span id="TCpoints">z
-        points</span>)</p>
-      <p><strong>Gentle, Men: </strong><span id="GMrecord">x - y</span> (rewarding them <span
-          id="GMpoints">z points</span>)</p>
+          points</span>)</p>
+      <p><strong>Gentle, Men: </strong><span id="GMrecord">x - y</span> (rewarding them <span id="GMpoints">z
+          points</span>)</p>
       <br>
       <br>
       <br>
@@ -254,8 +256,11 @@
             mainFunction(1800)
           }, x)
         } else {
-          i = 0;
-          mainFunction(1800)
+          setTimeout(() => {
+            i = 0;
+            mainFunction(1800)
+          }, 4000)
+
         }
       }
       mainFunction(0)

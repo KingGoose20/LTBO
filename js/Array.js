@@ -27,11 +27,27 @@ mainArray = {
 /* -------------- PUT INFO HERE -------------- */
 
 Data = [
-
+  /*
+  {
+    "Date":["24 January"],
+    "GameNumber":[1,1,1,2,3,4,4],
+    "Winner":["Choc-Tops","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers"],
+    "Loser":["Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Choc-Tops","Gentle, Men","Gentle, Men"],
+    "Score":["1-0","1-1","2-1","2-0","2-0","1-0","2-0"],
+    "Scorer":["Ryan Pattemore","William Kim","William Kim","Gentle, Men OTHER","Michael Iffland","Angus Walker","Angus Walker"],
+    "Type":["Finish","Finish","Finish","Three Pointer","Three Pointer","Finish","Midrange"],
+    "WStreak":["-","-","1","1","2","-","1"],
+    "LStreak":["-","-","1","1","2","-","1"],
+    "SStreak":[1,1,2,1,1,1,2]
+  }*/
 ]
 
-Missed = [
+Missed = [/*
+  {
+    "Date":["23 January"],
+    "Missed":[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
+  }*/
 ]
 
 /* ------------------------------------------- */

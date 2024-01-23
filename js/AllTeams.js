@@ -26,7 +26,6 @@ function SaveDetails() {
 function exportToEmail() {
     elements = ["", "", "", ""]
     for (i = 0; i<4; i++) {
-        console.log("ran")
         if (i < 2) {
             if (i==0) {
                 middle = ""

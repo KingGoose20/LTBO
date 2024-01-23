@@ -5,8 +5,6 @@ ChocTops.Players.push("Choc-Tops OTHER")
 GentleMen.Players.push("Gentle, Men OTHER")
 TrafficControllers.Players.push("Traffic Controllers OTHER")
 
-console.log(ChocTops)
-
 aTeam = ""
 bTeam = ""
 cTeam = ""
@@ -128,8 +126,7 @@ function logDetails() {
     if (Type.options[Type.selectedIndex].text == "Three Pointer") {
         toadd = 2
     }
-
-    if (Scorer.options[Scorer.selectedIndex].value < ChocTops.length) {
+    if (Scorer.options[Scorer.selectedIndex].value < ChocTops.Players.length) {
         if (aTeam == "Choc-Tops") {
             aScore += toadd
             score = aScore + "-" + bScore
@@ -141,7 +138,7 @@ function logDetails() {
             winner = bTeam
             loser = aTeam
         }
-    } else if (Scorer.options[Scorer.selectedIndex].value < (ChocTops.length + GentleMen.length)) {
+    } else if (Scorer.options[Scorer.selectedIndex].value < (ChocTops.Players.length + GentleMen.Players.length)) {
         if (aTeam == "Gentle, Men") {
             aScore += toadd
             score = aScore + "-" + bScore
@@ -264,11 +261,11 @@ function otherStreak(team) {
 
 
 function updateStreaks() {
-    if (Scorer.options[Scorer.selectedIndex].value < ChocTops.length) {
+    if (Scorer.options[Scorer.selectedIndex].value < ChocTops.Players.length) {
         winner = "Choc-Tops"
         CTstreak = range(CTstreak, 1, 1, 100)
         wStreak = CTstreak
-    } else if (Scorer.options[Scorer.selectedIndex].value < (ChocTops.length + GentleMen.length)) {
+    } else if (Scorer.options[Scorer.selectedIndex].value < (ChocTops.Players.length + GentleMen.Players.length)) {
         winner = "Gentle, Men"
         Mstreak = range(Mstreak, 1, 1, 100)
         wStreak = Mstreak

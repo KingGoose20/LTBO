@@ -59,7 +59,6 @@ function prepare(variable, team, number, forced = "no") {
 
 
 function showPlayer() {
-    console.log("ran")
 
     position = window.pageYOffset
     var id = '#dialog';
