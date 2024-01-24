@@ -11,24 +11,25 @@ overrideDayPoints = []
 /* ------------------------------------------- */
 
 function addLadder(teamName, position) {
-  players = null
+  console.log(Leaders)
+  ThesePlayers = null
   initials = ""
   number = 0
   letter = ""
   if (teamName == "Choc-Tops") {
     initials = "CT"
     number = 0
-    players = ChocTopsPlayers
+    ThesePlayers = ChocTopsPlayers
     CT = true
   } else if (teamName == "Gentle, Men") {
     initials = "GM"
     number = 2
-    players = GentleMenPlayers
+    ThesePlayers = GentleMenPlayers
     MM = true
   } else if (teamName == "Traffic Controllers") {
     initials = "TC"
     number = 1
-    players = TrafficControllersPlayers
+    ThesePlayers = TrafficControllersPlayers
     TC = true
   }
   if (position == "first") {
@@ -42,14 +43,14 @@ function addLadder(teamName, position) {
   document.getElementById(position + "Points").innerHTML = LadderPoints[number];
   document.getElementById(position + "Imagea").src = "../Images/" + initials + "_Final.png"
   document.getElementById(position + "Imageb").src = "../Images/" + initials + "_Final.png"
-  document.getElementById(position + "Leader").innerHTML = Leaders[0]
+  document.getElementById(position + "Leader").innerHTML = Leaders[number]
   if (LeadersPoints[number] == 1) {
     document.getElementById(position + "Scoring").innerHTML = (LeadersPoints[number] + " point")
   } else {
     document.getElementById(position + "Scoring").innerHTML = (LeadersPoints[number] + " points")
   }
   leader = LadderPoints[number]
-  AddData(players, ("teamList" + letter))
+  AddData(ThesePlayers, ("teamList" + letter))
 }
 
 function ladderTieBreakers(teamA, teamB, position) {

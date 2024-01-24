@@ -27,28 +27,27 @@ mainArray = {
 /* -------------- PUT INFO HERE -------------- */
 
 Data = [
-  /*
   {
-    "Date":["24 January"],
-    "GameNumber":[1,1,1,2,3,4,4],
-    "Winner":["Choc-Tops","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers"],
-    "Loser":["Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Choc-Tops","Gentle, Men","Gentle, Men"],
-    "Score":["1-0","1-1","2-1","2-0","2-0","1-0","2-0"],
-    "Scorer":["Ryan Pattemore","William Kim","William Kim","Gentle, Men OTHER","Michael Iffland","Angus Walker","Angus Walker"],
-    "Type":["Finish","Finish","Finish","Three Pointer","Three Pointer","Finish","Midrange"],
-    "WStreak":["-","-","1","1","2","-","1"],
-    "LStreak":["-","-","1","1","2","-","1"],
-    "SStreak":[1,1,2,1,1,1,2]
-  }*/
+    "Date": ["24 January"],
+    "GameNumber": [1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7, 8, 8, 8],
+    "Winner": ["Traffic Controllers", "Gentle, Men", "Traffic Controllers", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Gentle, Men", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Choc-Tops"],
+    "Loser": ["Choc-Tops", "Traffic Controllers", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Gentle, Men", "Choc-Tops", "Gentle, Men"],
+    "Score": ["2-0", "1-0", "2-1", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "1-1", "2-1", ""],
+    "Scorer": ["Clarrie Jones", "Michael Iffland", "Angus Walker", "Alexander Galt", "Christopher Tomkinson", "Alexander Galt", "Michael Iffland", "Will Weekes", "Samuel McConaghy", "Michael Iffland", "Alexander Galt", "Alexander Galt", "Ryan Pattemore", "William Kim", "Alexander Galt", "Rudy Hoschke", "Samuel McConaghy", "Rudy Hoschke"],
+    "Type": ["Three Pointer", "Finish", "Three Pointer", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Finish", "Finish"],
+    "WStreak": ["1", "-", "2", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "-", "2", "-", "-", "3"],
+    "LStreak": ["1", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "-", "3", "-", "-", "2"],
+    "SStreak": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+  }
 ]
 
 Missed = [
-  /*
   {
-    "Date":["23 January"],
-    "Missed":[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    "Date": ["24 January"],
+    "Missed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+    "Points": [3, 1.5, 1.5]
+  },
 
-  }*/
 ]
 
 /* ------------------------------------------- */
@@ -161,14 +160,25 @@ function allTeamDBD(team, variable) {
     LL = 0
     LP = 0
     Dates.push(Data[i].Date)
-    for (x = 0; x < Data[i].Winner.length; x++) {
-      if (Data[i].Winner[x] == team) {
-        LW += 1
+    for (y = 0; y < Data[i].Winner.length; y++) {
+      if (Data[i].GameNumber[y] < Data[i].GameNumber[y + 1] || y + 1 == Data[i].Winner.length) {
+        if (Data[i].Winner[y] == team) {
+          LW += 1
+        }
+        if (Data[i].Loser[y] == team) {
+          LL += 1
+        }
       }
-      if (Data[i].Loser[x] == team) {
-        LL += 1
-      }
+
     }
+    if (team == "Choc-Tops") {
+      LP = Missed[i].Points[0]
+    } else if (team == "Traffic Controllers") {
+      LP = Missed[i].Points[1]
+    } else if (team == "Gentle, Men") {
+      LP = Missed[i].Points[2]
+    }
+
     Wins.push(LW)
     Losses.push(LL)
     Points.push(LP)
@@ -228,10 +238,10 @@ function calculateAverages() {
 
   for (i = 0; i < mainArray.Name.length; i++) {
     console.log(MD[i])
-    AP.push((Math.round(100*(TP[i]/(Data.length-MD[i]))))/100)
-    AF.push(TF[i]/(Data.length-MD[i]))
-    AM.push(TM[i]/(Data.length-MD[i]))
-    AT.push(TT[i]/(Data.length-MD[i]))
+    AP.push((Math.round(100 * (TP[i] / (Data.length - MD[i])))) / 100)
+    AF.push(TF[i] / (Data.length - MD[i]))
+    AM.push(TM[i] / (Data.length - MD[i]))
+    AT.push(TT[i] / (Data.length - MD[i]))
   }
 
   mainArray.PPG = AP
