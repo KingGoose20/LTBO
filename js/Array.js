@@ -260,4 +260,12 @@ function calculateAverages() {
 dayArray = getAllDayArrays()
 calculateAverages()
 
+function getAllDates() {
+  Dates = []
+  for (i=0; i<Data.length; i++) {
+    Dates.push(Data[i].Date)
+  }
+  return(Dates)
+}
+
 /*Show DNP*/
