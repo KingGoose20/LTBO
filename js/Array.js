@@ -239,9 +239,9 @@ function calculateAverages() {
   for (i = 0; i < mainArray.Name.length; i++) {
     console.log(MD[i])
     AP.push((Math.round(100 * (TP[i] / (Data.length - MD[i])))) / 100)
-    AF.push(TF[i] / (Data.length - MD[i]))
-    AM.push(TM[i] / (Data.length - MD[i]))
-    AT.push(TT[i] / (Data.length - MD[i]))
+    AF.push((Math.round(100 * (TF[i] / (Data.length - MD[i])))) / 100)
+    AM.push((Math.round(100 * (TM[i] / (Data.length - MD[i])))) / 100)
+    AT.push((Math.round(100 * (TT[i] / (Data.length - MD[i])))) / 100)
   }
 
   mainArray.PPG = AP
