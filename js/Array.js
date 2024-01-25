@@ -38,6 +38,18 @@ Data = [
     "WStreak": ["1", "-", "2", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "-", "2", "-", "-", "3"],
     "LStreak": ["1", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "-", "3", "-", "-", "2"],
     "SStreak": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
+  },
+  {
+    "Date":["25 January"],
+    "GameNumber":[1,1,1,2,2,3,3,3,4,4],
+    "Winner":["Choc-Tops","Gentle, Men","Choc-Tops","Choc-Tops","Choc-Tops","Gentle, Men","Choc-Tops","Gentle, Men","Gentle, Men","Traffic Controllers"],
+    "Loser":["Gentle, Men","Choc-Tops","Gentle, Men","Traffic Controllers","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops","Traffic Controllers","Gentle, Men"],
+    "Score":["1-0","1-1","2-1","1-0","2-0","1-0","1-1","2-1","1-0","2-1"],
+    "Scorer":["Christopher Tomkinson","Samuel McConaghy","Rudy Hoschke","Christopher Tomkinson","Rudy Hoschke","Samuel McConaghy","Alexander Galt","Lukas Johnston","Samuel McConaghy","Angus Walker"],
+    "Type":["Finish","Midrange","Finish","Midrange","Finish","Midrange","Finish","Finish","Midrange","Three Pointer"],
+    "WStreak":["-","-","1","-","2","-","-","1","-","1"],
+    "LStreak":["-","-","1","-","1","-","-","1","-","1"],
+    "SStreak":[1,1,1,1,1,1,1,1,1,1]
   }
 ]
 
@@ -47,6 +59,12 @@ Missed = [
     "Missed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
     "Points": [3, 1.5, 1.5]
   },
+  {
+    "Date":["25 January"],
+    "Missed":[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1],
+    "Points":[3,2,1]
+    },
+    
 
 ]
 

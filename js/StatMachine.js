@@ -40,6 +40,8 @@ function returnBoxStatus(IDnameArray) {
 }
 
 function logClicks() {
+    colorA = "rgba(100,100,100,0.2)"
+    colorB = "rgba(100,100,100,0.45)"
     selectedType = returnBoxStatus(["allStatsCB", "ptsStatsCB", "finStatsCB", "midStatsCB", "thrStatsCB"])
     selectedTeams = returnBoxStatus(["allTeamsCB", "CTCB", "TCCB", "GMCB"])
     selectedPeopleArray = []
@@ -164,7 +166,7 @@ function logClicks() {
         "Missed": []
     }
 
-    for (i = 0; i<BaseDataTwo.Name.length; i++) {
+    for (i = 0; i < BaseDataTwo.Name.length; i++) {
         if (selectedPeople[i] == 1) {
             BaseDataThree.Name.push(BaseDataTwo.Name[i])
             BaseDataThree.PPG.push(BaseDataTwo.PPG[i])
@@ -176,10 +178,20 @@ function logClicks() {
             BaseDataThree.TPG.push(BaseDataTwo.TPG[i])
             BaseDataThree.TT.push(BaseDataTwo.TT[i])
             BaseDataThree.Missed.push(BaseDataTwo.Missed[i])
-        } 
+        }
     }
 
     table = document.getElementById("fullStatsTable");
+
+    var tableBody = table.getElementsByTagName('tbody')[0];
+
+    // Check if tbody exists
+    if (tableBody) {
+        while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild);
+        }
+    }
+
     row = table.insertRow(-1)
     upto = 0
 
@@ -190,25 +202,70 @@ function logClicks() {
                 cell2 = row.insertCell(1)
                 cell3 = row.insertCell(2)
                 cell4 = row.insertCell(3)
+                cell5 = row.insertCell(4)
+                cell6 = row.insertCell(5)
+                cell7 = row.insertCell(6)
+                cell8 = row.insertCell(7)
                 cell1.innerHTML = "PTS"
                 cell2.innerHTML = "FIN"
                 cell3.innerHTML = "MID"
                 cell4.innerHTML = "3PT"
+                cell5.innerHTML = "PTS"
+                cell6.innerHTML = "FIN"
+                cell7.innerHTML = "MID"
+                cell8.innerHTML = "3PT"
+                cell1.style.backgroundColor = colorA
+                cell1.style.fontWeight = "bold"
+                cell2.style.backgroundColor = colorA
+                cell2.style.fontWeight = "bold"
+                cell3.style.backgroundColor = colorA
+                cell3.style.fontWeight = "bold"
+                cell4.style.backgroundColor = colorA
+                cell4.style.fontWeight = "bold"
+                cell5.style.backgroundColor = colorB
+                cell5.style.fontWeight = "bold"
+                cell6.style.backgroundColor = colorB
+                cell6.style.fontWeight = "bold"
+                cell7.style.backgroundColor = colorB
+                cell7.style.fontWeight = "bold"
+                cell8.style.backgroundColor = colorB
+                cell8.style.fontWeight = "bold"
                 break;
             } else {
                 cell = row.insertCell(upto)
+                cellExtra = row.insertCell(-1)
                 switch (i) {
                     case 1:
                         cell.innerHTML = "PTS"
+                        cell.style.backgroundColor = colorA
+                        cellExtra.innerHTML = "PTS"
+                        cellExtra.style.backgroundColor = colorB
+                        cell.style.fontWeight = "bold"
+                        cellExtra.style.fontWeight = "bold"
                         break;
                     case 2:
                         cell.innerHTML = "FIN"
+                        cell.style.backgroundColor = colorA
+                        cellExtra.innerHTML = "FIN"
+                        cellExtra.style.backgroundColor = colorB
+                        cell.style.fontWeight = "bold"
+                        cellExtra.style.fontWeight = "bold"
                         break;
                     case 3:
                         cell.innerHTML = "MID"
+                        cell.style.backgroundColor = colorA
+                        cellExtra.innerHTML = "MID"
+                        cellExtra.style.backgroundColor = colorB
+                        cell.style.fontWeight = "bold"
+                        cellExtra.style.fontWeight = "bold"
                         break;
                     case 4:
                         cell.innerHTML = "3PT"
+                        cell.style.backgroundColor = colorA
+                        cellExtra.innerHTML = "3PT"
+                        cellExtra.style.backgroundColor = colorB
+                        cell.style.fontWeight = "bold"
+                        cellExtra.style.fontWeight = "bold"
                         break;
                 }
                 upto += 1
@@ -216,6 +273,76 @@ function logClicks() {
             }
         }
     }
+    nameRow = row.insertCell(0)
+    nameRow.innerHTML = "Name"
+    nameRow.style.fontWeight = "bold"
+
+    columns = row.cells.length
+
+    row = table.insertRow(0)
+    cellA = row.insertCell(0)
+    cellB = row.insertCell(1)
+    cellC = row.insertCell(2)
+
+    cellB.innerHTML = "Totals"
+    cellC.innerHTML = "Averages"
+    cellB.colSpan = (columns - 1) / 2
+    cellC.colSpan = (columns - 1) / 2
+    cellB.style.backgroundColor = colorA
+    cellC.style.backgroundColor = colorB
+    cellB.style.fontWeight = "bold"
+    cellC.style.fontWeight = "bold"
+
+    function addTableData(row, data, backgroundColour = "rgba(0,0,0,0)") {
+        cell = row.insertCell(-1)
+        cell.innerHTML = data
+        cell.style.backgroundColor = backgroundColour
+    }
+
+    for (i = 0; i < BaseDataThree.Name.length; i++) {
+        x = 0
+        row = table.insertRow(-1)
+        cell1 = row.insertCell(x)
+        cell1.innerHTML = BaseDataThree.Name[i]
+        x += 1
+        if (selectedType[0] == 1) {
+            addTableData(row, BaseDataThree.PPG[i])
+            addTableData(row, BaseDataThree.FPG[i])
+            addTableData(row, BaseDataThree.MPG[i])
+            addTableData(row, BaseDataThree.TPG[i])
+            addTableData(row, BaseDataThree.TP[i])
+            addTableData(row, BaseDataThree.TF[i])
+            addTableData(row, BaseDataThree.TM[i])
+            addTableData(row, BaseDataThree.TT[i])
+        } else {
+            if (selectedType[1] == 1) {
+                addTableData(row, BaseDataThree.PPG[i], colorA)
+            }
+            if (selectedType[2] == 1) {
+                addTableData(row, BaseDataThree.FPG[i], colorA)
+            }
+            if (selectedType[3] == 1) {
+                addTableData(row, BaseDataThree.MPG[i], colorA)
+            }
+            if (selectedType[4] == 1) {
+                addTableData(row, BaseDataThree.TPG[i], colorA)
+            }
+            if (selectedType[1] == 1) {
+                addTableData(row, BaseDataThree.TP[i], colorB)
+            }
+            if (selectedType[2] == 1) {
+                addTableData(row, BaseDataThree.TF[i], colorB)
+            }
+            if (selectedType[3] == 1) {
+                addTableData(row, BaseDataThree.TM[i], colorB)
+            }
+            if (selectedType[4] == 1) {
+                addTableData(row, BaseDataThree.TT[i], colorB)
+            }
+        }
+
+    }
+
     /*
         for (i = 0; i < array.length; i++) {
             row = table.insertRow(-1);
@@ -229,4 +356,9 @@ function logClicks() {
             cell2.style.fontSize = "25px";
         }*/
 
+}
+
+
+for (i = 0; i < document.querySelectorAll('input[type=checkbox]').length; i++) {
+    document.querySelectorAll('input[type=checkbox]')[i].onclick = function () { logClicks() }
 }

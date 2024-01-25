@@ -1,17 +1,18 @@
 /* -------------- PUT INFO HERE -------------- */
 Main = {
-    "PartACT":[4,2,3],
-    "PartBCT":[5,"Alexander Galt",5,"Alexander Galt",1,"Ryan Pattemore",0,"N/A"],
-    "PartCCT":[9,8,1,0,4,2],
-    "PartDCT":[2,1,66.7,2,1,66.7],
-    "PartATC":[2,3,1.5],
-    "PartBTC":[2,"Clarrie Jones",1,"William Kim",0,"N/A",1,"Clarrie Jones"],
-    "PartCTC":[9,1,0,2,2,3],
-    "PartDTC":[1,2,33.3,1,1,50],
-    "PartAGM":[2,3,1.5],
-    "PartBGM":[3,"Michael Iffland",2,"Michael Iffland",1,"N/A",0,"N/A"],
-    "PartCGM":[6,5,1,0,2,3],
-    "PartDGM":[1,2,33.3,1,1,50],
+    "PartACT":[6,4,6],
+    "PartBCT":[6,"Alexander Galt",6,"Alexander Galt",1,"Ryan Pattemore",0,"N/A"],
+    "PartCCT":[7,6,1,0,3,2],
+    "PartDCT":[3,1,75,3,2,60],
+    "PartATC":[3,4,3.5],
+    "PartBTC":[4,"Angus Walker",1,"William Kim",0,"N/A",2,"Angus Walker"],
+    "PartCTC":[7,0.5,0,1.5,1.5,2],
+    "PartDTC":[1,3,25,1,2,33.3],
+    "PartAGM":[3,5,2.5],
+    "PartBGM":[5,"Samuel McConaghy",2,"N/A",3,"N/A",0,"N/A"],
+    "PartCGM":[5,3,2,0,1.5,2.5],
+    "PartDGM":[2,3,40,2,1,66.7],
+    
 }
 
 /* ------------------------------------------- */
