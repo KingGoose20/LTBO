@@ -12,6 +12,79 @@ function toggle(id) {
 
 }
 
+const allPeople = document.getElementById('allPeople');
+const allDays = document.getElementById('allDays');
+const allStats = document.getElementById('allStatsCB');
+const allTeams = document.getElementById('allTeamsCB');
+
+// Define the function to be executed when the checkbox is clicked
+function handleCheckboxClick(event) {
+    if (event.target.checked) {
+        if (event.target.id == "allPeople") {
+            selectedPeopleArray = []
+            for (i = 0; i < document.getElementById("peopleTable").rows.length - 1; i++) {
+                selectedPeopleArray.push("peopleTable" + i)
+            }
+            for (i = 0; i < selectedPeopleArray.length; i++) {
+                document.getElementById(selectedPeopleArray[i]).checked = true;
+            }
+        } else if (event.target.id == "allDays") {
+            selectedDaysArray = []
+            for (i = 0; i < document.getElementById("daysTable").rows.length - 1; i++) {
+                selectedDaysArray.push("daysTable" + i)
+            }
+            for (i = 0; i < selectedDaysArray.length; i++) {
+                document.getElementById(selectedDaysArray[i]).checked = true;
+            }
+
+        } else if (event.target.id == "allStatsCB") {
+            document.getElementById("ptsStatsCB").checked = true;
+            document.getElementById("finStatsCB").checked = true;
+            document.getElementById("midStatsCB").checked = true;
+            document.getElementById("thrStatsCB").checked = true;
+        } else if (event.target.id == "allTeamsCB") {
+            document.getElementById("CTCB").checked = true;
+            document.getElementById("TCCB").checked = true;
+            document.getElementById("GMCB").checked = true;
+        }
+        // Perform actions when the checkbox is checked
+    } else {
+        if (event.target.id == "allPeople") {
+            selectedPeopleArray = []
+            for (i = 0; i < document.getElementById("peopleTable").rows.length - 1; i++) {
+                selectedPeopleArray.push("peopleTable" + i)
+            }
+            for (i = 0; i < selectedPeopleArray.length; i++) {
+                document.getElementById(selectedPeopleArray[i]).checked = false;
+            }
+        } else if (event.target.id == "allDays") {
+            selectedDaysArray = []
+            for (i = 0; i < document.getElementById("daysTable").rows.length - 1; i++) {
+                selectedDaysArray.push("daysTable" + i)
+            }
+            for (i = 0; i < selectedDaysArray.length; i++) {
+                document.getElementById(selectedDaysArray[i]).checked = false;
+            }
+        }  else if (event.target.id == "allStatsCB") {
+            document.getElementById("ptsStatsCB").checked = false;
+            document.getElementById("finStatsCB").checked = false;
+            document.getElementById("midStatsCB").checked = false;
+            document.getElementById("thrStatsCB").checked = false;
+        } else if (event.target.id == "allTeamsCB") {
+            document.getElementById("CTCB").checked = false;
+            document.getElementById("TCCB").checked = false;
+            document.getElementById("GMCB").checked = false;
+        }
+        // Perform actions when the checkbox is unchecked
+    }
+}
+
+// Attach an event listener to the checkbox
+allPeople.addEventListener('click', handleCheckboxClick);
+allDays.addEventListener('click', handleCheckboxClick);
+allStats.addEventListener('click', handleCheckboxClick);
+allTeams.addEventListener('click', handleCheckboxClick);
+
 
 addElements("peopleTable", mainArray.Name)
 addElements("daysTable", getAllDates())
@@ -162,6 +235,7 @@ function text(selectedType, AgainstTeams, selectedDays, selectedPeople) {
 
 
 function logClicks() {
+
     colorA = "rgba(100,100,100,0.2)"
     colorB = "rgba(100,100,100,0.35)"
     selectedType = returnBoxStatus(["allStatsCB", "ptsStatsCB", "finStatsCB", "midStatsCB", "thrStatsCB"])
@@ -179,13 +253,35 @@ function logClicks() {
 
     if (document.getElementById("allPeople").checked) {
         for (i = 0; i < selectedPeople.length; i++) {
-            selectedPeople[i] = 1
+            if (selectedPeople[i] == 0) {
+                document.getElementById("allPeople").checked = false;
+            }
         }
     }
 
     if (document.getElementById("allDays").checked) {
         for (i = 0; i < selectedDays.length; i++) {
-            selectedDays[i] = 1
+            if (selectedDays[i] == 0) {
+                document.getElementById("allDays").checked = false;
+            }
+        }
+    }
+
+    for (i=1; i<selectedType.length; i++) {
+        if (selectedType[i] != 1) {
+            document.getElementById('allStatsCB').checked = false
+            break;
+        } else if (i == selectedType.length-1) {
+            document.getElementById('allStatsCB').checked = true
+        }
+    }
+    for (i=1; i<selectedTeams.length; i++) {
+        if (selectedTeams[i] != 1) {
+            document.getElementById('allTeamsCB').checked = false
+            console.log("abc")
+            break;
+        } else if (i == selectedTeams.length-1) {
+            document.getElementById('allTeamsCB').checked = true
         }
     }
 
