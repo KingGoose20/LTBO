@@ -32,7 +32,6 @@ function header(location) {
             <div class="dropdown nav-item dropdownHide">
                 <span class="navigation-link w-nav-link">More</span>
                 <div class="dropdown-content">
-                    <a href="replacerDocumentsAndIco/Rules.html" class="dropDown-link">Rules, FAQ, Calendar</a>
                     <a href="replacerDocumentsAndIco/Contact.html" class="dropDown-link">Contact Us</a>
                     <a href="replacerDocumentsAndIco/LeagueHome.html?Team=LTBO" class="dropDown-link">League Home</a>
                     <a href="replacerDocumentsAndIco/TeamHome.html?Team=CT" class="dropDown-link">Choc-Tops Home</a>
@@ -47,9 +46,6 @@ function header(location) {
             </li>
             <li class="nav-item dropdownShow">
                 <a href="replacerDocumentsAndIco/Comparer.html" class="navigation-link w-nav-link">Player Comparer</a>
-            </li>
-            <li class="nav-item dropdownShow">
-                <a href="replacerDocumentsAndIco/Rules.html" class="navigation-link w-nav-link">Rules, FAQ, Calendar</a>
             </li>
             <li class="nav-item dropdownShow">
                 <a href="replacerDocumentsAndIco/Contact.html" class="navigation-link w-nav-link">Contact Us</a>
@@ -138,11 +134,6 @@ function header(location) {
             template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Player Comparer</a>', 'class="navigation-link w-nav-link w--current">Player Comparer</a>')
             template.innerHTML = template.innerHTML.replace('<span class="navigation-link w-nav-link">Stats</span>', '<span class="navigation-link w-nav-link w--current">Stats</span>')
             break;
-        case "Rules":
-            template.innerHTML = template.innerHTML.replace('">Rules, FAQ, Calendar', ' w-nav-link w--current">Rules, FAQ, Calendar')
-            template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Rules, FAQ, Calendar</a>', 'class="navigation-link w-nav-link w--current">Rules, FAQ, Calendar</a>')
-            template.innerHTML = template.innerHTML.replace('<span class="navigation-link w-nav-link">More</span>', '<span class="navigation-link w-nav-link w--current">More</span>')
-            break;
         case "Contact":
             template.innerHTML = template.innerHTML.replace('">Contact Us', ' w-nav-link w--current">Contact Us')
             template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Contact Us</a>', 'class="navigation-link w-nav-link w--current">Contact Us</a>')
@@ -219,7 +210,6 @@ function footer(location) {
                     <a href="replacerDocumentsAndIco/Ladder.html" class="footer-link">Ladder</a>
                     <a href="replacerDocumentsAndIco/Results.html" class="footer-link">Results</a>
                     <a href="replacerDocumentsAndIco/Stats.html" class="footer-link">Stats</a>
-                    <a href="replacerDocumentsAndIco/Rules.html" class="footer-link">Rules + More</a>
                 </div>
                 </div>
             </div>

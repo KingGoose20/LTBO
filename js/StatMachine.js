@@ -1,8 +1,12 @@
 function toggle(id) {
     if (document.getElementById(id).style.display == "none") {
         document.getElementById(id).style.display = "table"
+        document.getElementById(id + "Icon").innerHTML = "&#11205"
+        document.getElementById(id + "Icon").style.top = "4px"
     } else {
         document.getElementById(id).style.display = "none"
+        document.getElementById(id + "Icon").innerHTML = "&#11206"
+        document.getElementById(id + "Icon").style.top = "0px"
     }
     returnBoxStatus(["CTCB"])
 
@@ -39,21 +43,151 @@ function returnBoxStatus(IDnameArray) {
     return arrayToRetun
 }
 
+function text(selectedType, AgainstTeams, selectedDays, selectedPeople) {
+    SectionA = "Show me "
+    SectionB = " from the "
+    SectionC = " while playing "
+    statsArray = []
+    datesArray = []
+    peopleArray = []
+    stats = ""
+    names = ""
+    dates = ""
+    teams = ""
+    span = "<span style='color: rgb(200,200,200);'>"
+    spanEnd = "</span>"
+
+    for (i = 0; i < selectedType.length; i++) {
+        if (i == 1 & selectedType[i] == 1) {
+            statsArray.push("points")
+        } else if (i == 2 & selectedType[i] == 1) {
+            statsArray.push("finishing")
+        } else if (i == 3 & selectedType[i] == 1) {
+            statsArray.push("midrange")
+        } else if (i == 4 & selectedType[i] == 1) {
+            statsArray.push("three point")
+        }
+    }
+
+    switch (statsArray.length) {
+        case (1):
+            stats = statsArray[0] + " stats"
+            break;
+        case (2):
+            stats = statsArray[0] + " and " + statsArray[1] + " stats"
+            break;
+        case (3):
+            stats = statsArray[0] + ", " + statsArray[1] + ", and " + statsArray[2] + " stats"
+            break;
+    }
+    if (selectedType[0] == 1 || statsArray.length == 4) {
+        stats = "stats"
+    }
+
+    for (i = 0; i < selectedDays.length; i++) {
+        if (selectedDays[i] == 1) {
+            extra = "th"
+            dateNumber = Number(Data[i].Date[0].slice(0, 2))
+            dateMonth = Data[i].Date[0].slice((dateNumber.toString().length) + 1)
+
+            if (dateNumber == 1 || dateNumber == 21 || dateNumber == 31) {
+                extra = "st"
+            } else if (dateNumber == 2 || dateNumber == 22) {
+                extra = "nd"
+            } else if (dateNumber == 3 || dateNumber == 23) {
+                extra = "rd"
+            }
+
+            datesArray.push(dateNumber + extra + " of " + dateMonth)
+        }
+    }
+    if (datesArray.length != selectedDays.length) {
+        if (datesArray.length > 2) {
+            for (i = 0; i < datesArray.length - 1; i++) {
+                dates = dates + datesArray[i] + ", "
+            }
+            dates = dates + "and " + datesArray[datesArray.length - 1]
+        } else if (datesArray.length == 1) {
+            dates = datesArray[0]
+        } else if (datesArray.length == 2) {
+            dates = datesArray[0] + " and " + datesArray[1]
+        }
+    } else {
+        dates = "whole season"
+    }
+
+
+    if (AgainstTeams.length > 2) {
+        for (i = 0; i < AgainstTeams.length - 1; i++) {
+            teams = teams + " the " + AgainstTeams[i] + ", "
+        }
+        teams = teams + "and the " + AgainstTeams[AgainstTeams.length - 1]
+    } else if (AgainstTeams.length == 1) {
+        teams = teams + "the " + AgainstTeams[0]
+    } else if (AgainstTeams.length == 2) {
+        teams = teams + "the " + AgainstTeams[0] + " and the " + AgainstTeams[1]
+    }
+
+    if (teams == " the Choc-Tops,  the Traffic Controllers, and the Gentle, Men") {
+        teams = "any team"
+    }
+    for (i = 0; i < selectedPeople.length; i++) {
+        if (selectedPeople[i] == 1) {
+            peopleArray.push(mainArray.Name[i])
+        }
+    }
+
+    if (peopleArray.length != selectedPeople.length) {
+        if (peopleArray.length > 2) {
+            for (i = 0; i < peopleArray.length - 1; i++) {
+                names = names + peopleArray[i] + "'s, "
+            }
+            names = names + " and " + peopleArray[peopleArray.length - 1] + "'s"
+        } else if (peopleArray.length == 1) {
+            names = peopleArray[0] + "'s"
+        } else if (peopleArray.length == 2) {
+            names = peopleArray[0] + "'s and " + peopleArray[1] + "'s"
+        }
+    } else {
+        names = "every players"
+    }
+    if (stats == "" || teams == "" || names == "" || dates == "") {
+        document.getElementById("simpleText").innerHTML = "Please fill" + span + " all the " + spanEnd + "criteria."
+    } else {
+        document.getElementById("simpleText").innerHTML = '"' + SectionA + span + names + spanEnd + " " + span + stats + spanEnd + SectionB + span + dates + spanEnd + SectionC + span + teams + spanEnd + "." + '"'
+    }
+
+}
+
+
+
 function logClicks() {
     colorA = "rgba(100,100,100,0.2)"
-    colorB = "rgba(100,100,100,0.45)"
+    colorB = "rgba(100,100,100,0.35)"
     selectedType = returnBoxStatus(["allStatsCB", "ptsStatsCB", "finStatsCB", "midStatsCB", "thrStatsCB"])
     selectedTeams = returnBoxStatus(["allTeamsCB", "CTCB", "TCCB", "GMCB"])
     selectedPeopleArray = []
     selectedDaysArray = []
-    for (i = 0; i < document.getElementById("peopleTable").rows.length; i++) {
+    for (i = 0; i < document.getElementById("peopleTable").rows.length - 1; i++) {
         selectedPeopleArray.push("peopleTable" + i)
     }
-    for (i = 0; i < document.getElementById("daysTable").rows.length; i++) {
+    for (i = 0; i < document.getElementById("daysTable").rows.length - 1; i++) {
         selectedDaysArray.push("daysTable" + i)
     }
     selectedPeople = returnBoxStatus(selectedPeopleArray)
     selectedDays = returnBoxStatus(selectedDaysArray)
+
+    if (document.getElementById("allPeople").checked) {
+        for (i = 0; i < selectedPeople.length; i++) {
+            selectedPeople[i] = 1
+        }
+    }
+
+    if (document.getElementById("allDays").checked) {
+        for (i = 0; i < selectedDays.length; i++) {
+            selectedDays[i] = 1
+        }
+    }
 
     DataToUse = []
     AgainstTeams = []
@@ -284,19 +418,65 @@ function logClicks() {
     cellB = row.insertCell(1)
     cellC = row.insertCell(2)
 
-    cellB.innerHTML = "Totals"
-    cellC.innerHTML = "Averages"
+    cellB.innerHTML = "Averages"
+    cellC.innerHTML = "Totals"
     cellB.colSpan = (columns - 1) / 2
     cellC.colSpan = (columns - 1) / 2
     cellB.style.backgroundColor = colorA
     cellC.style.backgroundColor = colorB
     cellB.style.fontWeight = "bold"
     cellC.style.fontWeight = "bold"
+    cellB.style.width = "33.33%"
+    cellC.style.width = "33.33%"
 
-    function addTableData(row, data, backgroundColour = "rgba(0,0,0,0)") {
+    cellA.style.border = "1px solid rgba(150, 150, 150,0)"
+    cellA.style.borderBottom = "1px solid rgb(150,150,150)"
+    cellA.style.borderRight = "1px solid rgb(150,150,150)"
+
+    function findLargestNumber(array) {
+        if (array.length === 0) {
+            return null; // Return null for an empty array
+        }
+
+        let max = array[0]; // Assume the first element is the largest
+
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i]; // Update max if a larger element is found
+            }
+        }
+
+        return max;
+    }
+
+    function findSmallestNumber(array) {
+        if (array.length === 0) {
+            return null; // Return null for an empty array
+        }
+
+        let min = array[0]; // Assume the first element is the largest
+
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i]; // Update max if a larger element is found
+            }
+        }
+
+        return min;
+    }
+
+
+    function addTableData(row, data, backgroundColour = "rgba(0,0,0,0)", index) {
         cell = row.insertCell(-1)
-        cell.innerHTML = data
+        cell.innerHTML = data[index]
         cell.style.backgroundColor = backgroundColour
+        if (findLargestNumber(data) == data[index]) {
+            cell.style.color = "rgb(0,180,0)"
+            cell.style.fontWeight = "900"
+        }
+        if (findSmallestNumber(data) == data[index]) {
+            cell.style.color = "rgb(150,0,0)"
+        }
     }
 
     for (i = 0; i < BaseDataThree.Name.length; i++) {
@@ -306,55 +486,46 @@ function logClicks() {
         cell1.innerHTML = BaseDataThree.Name[i]
         x += 1
         if (selectedType[0] == 1) {
-            addTableData(row, BaseDataThree.PPG[i])
-            addTableData(row, BaseDataThree.FPG[i])
-            addTableData(row, BaseDataThree.MPG[i])
-            addTableData(row, BaseDataThree.TPG[i])
-            addTableData(row, BaseDataThree.TP[i])
-            addTableData(row, BaseDataThree.TF[i])
-            addTableData(row, BaseDataThree.TM[i])
-            addTableData(row, BaseDataThree.TT[i])
+            addTableData(row, BaseDataThree.PPG, colorA, i)
+            addTableData(row, BaseDataThree.FPG, colorA, i)
+            addTableData(row, BaseDataThree.MPG, colorA, i)
+            addTableData(row, BaseDataThree.TPG, colorA, i)
+            addTableData(row, BaseDataThree.TP, colorB, i)
+            addTableData(row, BaseDataThree.TF, colorB, i)
+            addTableData(row, BaseDataThree.TM, colorB, i)
+            addTableData(row, BaseDataThree.TT, colorB, i)
         } else {
             if (selectedType[1] == 1) {
-                addTableData(row, BaseDataThree.PPG[i], colorA)
+                addTableData(row, BaseDataThree.PPG, colorA, i)
             }
             if (selectedType[2] == 1) {
-                addTableData(row, BaseDataThree.FPG[i], colorA)
+                addTableData(row, BaseDataThree.FPG, colorA, i)
             }
             if (selectedType[3] == 1) {
-                addTableData(row, BaseDataThree.MPG[i], colorA)
+                addTableData(row, BaseDataThree.MPG, colorA, i)
             }
             if (selectedType[4] == 1) {
-                addTableData(row, BaseDataThree.TPG[i], colorA)
+                addTableData(row, BaseDataThree.TPG, colorA, i)
             }
             if (selectedType[1] == 1) {
-                addTableData(row, BaseDataThree.TP[i], colorB)
+                addTableData(row, BaseDataThree.TP, colorB, i)
             }
             if (selectedType[2] == 1) {
-                addTableData(row, BaseDataThree.TF[i], colorB)
+                addTableData(row, BaseDataThree.TF, colorB, i)
             }
             if (selectedType[3] == 1) {
-                addTableData(row, BaseDataThree.TM[i], colorB)
+                addTableData(row, BaseDataThree.TM, colorB, i)
             }
             if (selectedType[4] == 1) {
-                addTableData(row, BaseDataThree.TT[i], colorB)
+                addTableData(row, BaseDataThree.TT, colorB, i)
             }
         }
 
     }
 
-    /*
-        for (i = 0; i < array.length; i++) {
-            row = table.insertRow(-1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-    
-            cell1.innerHTML = '<input type="checkbox" id="' + tableID + i + '" name="" value="">'
-            cell2.innerHTML = array[i];
-            cell2.classList.add("section-heading")
-            cell2.classList.add("centered")
-            cell2.style.fontSize = "25px";
-        }*/
+
+    text(selectedType, AgainstTeams, selectedDays, selectedPeople)
+
 
 }
 
