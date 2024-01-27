@@ -1,16 +1,42 @@
 function toggle(id) {
-    if (document.getElementById(id).style.display == "none") {
-        document.getElementById(id).style.display = "table"
-        document.getElementById(id + "Icon").innerHTML = "&#11205"
-        document.getElementById(id + "Icon").style.top = "4px"
+    if (id != "savedTable") {
+        if (document.getElementById(id).style.display == "none") {
+            document.getElementById(id).style.display = "table"
+            document.getElementById(id + "Icon").innerHTML = "&#11205"
+            document.getElementById(id + "Icon").style.top = "4px"
+        } else {
+            document.getElementById(id).style.display = "none"
+            document.getElementById(id + "Icon").innerHTML = "&#11206"
+            document.getElementById(id + "Icon").style.top = "0px"
+        }
+        returnBoxStatus(["CTCB"])
     } else {
-        document.getElementById(id).style.display = "none"
-        document.getElementById(id + "Icon").innerHTML = "&#11206"
-        document.getElementById(id + "Icon").style.top = "0px"
+        if (document.getElementById("savedTables").style.display == "none") {
+            document.getElementById("savedTables").style.display = "initial"
+            document.getElementById("savedTables" + "Icon").innerHTML = "&#11205"
+            document.getElementById("savedTables" + "Icon").style.top = "4px"
+        } else {
+            document.getElementById("savedTables").style.display = "none"
+            document.getElementById("savedTables" + "Icon").innerHTML = "&#11206"
+            document.getElementById("savedTables" + "Icon").style.top = "0px"
+        }
     }
-    returnBoxStatus(["CTCB"])
 
 }
+
+
+function saveTable() {
+    document.getElementById("savedData").style.display = "initial"
+    stuff = document.getElementById("dataSection")
+    clone = stuff.cloneNode(true)
+    newDiv = document.createElement("div")
+    newDiv.style.border = "1px solid rgb(200,200,200)"
+    newDiv.style.padding = "30px"
+    newDiv.style.marginBottom = "20px"
+    newDiv.appendChild(clone)
+    document.getElementById("savedTables").appendChild(newDiv)
+}
+
 
 const allPeople = document.getElementById('allPeople');
 const allDays = document.getElementById('allDays');
@@ -65,7 +91,7 @@ function handleCheckboxClick(event) {
             for (i = 0; i < selectedDaysArray.length; i++) {
                 document.getElementById(selectedDaysArray[i]).checked = false;
             }
-        }  else if (event.target.id == "allStatsCB") {
+        } else if (event.target.id == "allStatsCB") {
             document.getElementById("ptsStatsCB").checked = false;
             document.getElementById("finStatsCB").checked = false;
             document.getElementById("midStatsCB").checked = false;
@@ -226,8 +252,10 @@ function text(selectedType, AgainstTeams, selectedDays, selectedPeople) {
     }
     if (stats == "" || teams == "" || names == "" || dates == "") {
         document.getElementById("simpleText").innerHTML = "Please fill" + span + " all the " + spanEnd + "criteria."
+        document.getElementById("saveTableButton").style.display = "none"
     } else {
         document.getElementById("simpleText").innerHTML = '"' + SectionA + span + names + spanEnd + " " + span + stats + spanEnd + SectionB + span + dates + spanEnd + SectionC + span + teams + spanEnd + "." + '"'
+        document.getElementById("saveTableButton").style.display = "initial"
     }
 
 }
@@ -251,36 +279,40 @@ function logClicks() {
     selectedPeople = returnBoxStatus(selectedPeopleArray)
     selectedDays = returnBoxStatus(selectedDaysArray)
 
-    if (document.getElementById("allPeople").checked) {
         for (i = 0; i < selectedPeople.length; i++) {
             if (selectedPeople[i] == 0) {
                 document.getElementById("allPeople").checked = false;
+                break;
+            }
+            if (i == selectedPeople.length-1) {
+                document.getElementById("allPeople").checked = true;
             }
         }
-    }
 
-    if (document.getElementById("allDays").checked) {
         for (i = 0; i < selectedDays.length; i++) {
             if (selectedDays[i] == 0) {
                 document.getElementById("allDays").checked = false;
+                break;
+            } if (i == selectedDays.length-1) {
+                document.getElementById("allDays").checked = true;
             }
         }
-    }
 
-    for (i=1; i<selectedType.length; i++) {
+    for (i = 1; i < selectedType.length; i++) {
         if (selectedType[i] != 1) {
             document.getElementById('allStatsCB').checked = false
+            selectedType = returnBoxStatus(["allStatsCB", "ptsStatsCB", "finStatsCB", "midStatsCB", "thrStatsCB"])
             break;
-        } else if (i == selectedType.length-1) {
+        } else if (i == selectedType.length - 1) {
             document.getElementById('allStatsCB').checked = true
         }
     }
-    for (i=1; i<selectedTeams.length; i++) {
+    for (i = 1; i < selectedTeams.length; i++) {
         if (selectedTeams[i] != 1) {
             document.getElementById('allTeamsCB').checked = false
-            console.log("abc")
+            selectedTeams = returnBoxStatus(["allTeamsCB", "CTCB", "TCCB", "GMCB"])
             break;
-        } else if (i == selectedTeams.length-1) {
+        } else if (i == selectedTeams.length - 1) {
             document.getElementById('allTeamsCB').checked = true
         }
     }

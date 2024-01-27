@@ -201,12 +201,16 @@
         <div class="w-container">
             <h2 class="section-heading centered">Welcome to the most versatile stat tool for the LTBO.</h2>
             <br>
-            <p>It's easy to use! Simply open each category by clicking the heading, selecting which data you want to use, and scroll to the bottom of the page to see the results.</p>
+            <p>It's easy to use! Simply open each category by clicking the heading, selecting which data you want to
+                use, and scroll to the bottom of the page to see the results.</p>
             <br><br>
             <div>
                 <div>
-                    <a class="button fade-inHeading" style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;" onclick="toggle('statsTable')"><i>Show
-                            me.... </i><span style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;" id="statsTableIcon">&#11206;</span></a>
+                    <a class="button fade-inHeading"
+                        style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;"
+                        onclick="toggle('statsTable')"><i>Show
+                            me.... </i><span style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;"
+                            id="statsTableIcon">&#11206;</span></a>
                     <br><br>
                     <table style="width: 70%; margin-left: auto; margin-right:auto; display: none;" id="statsTable">
                         <colgroup style="width: 20%"></colgroup>
@@ -235,7 +239,11 @@
                 </div>
                 <br><br><br><br>
                 <div>
-                    <a class="button fade-inHeading" style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;" onclick="toggle('peopleTable')"><i>Of....</i><span style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;" id="peopleTableIcon">&#11206;</span></a>
+                    <a class="button fade-inHeading"
+                        style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;"
+                        onclick="toggle('peopleTable')"><i>Of....</i><span
+                            style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;"
+                            id="peopleTableIcon">&#11206;</span></a>
                     <br><br>
                     <table style="width: 70%; margin-left: auto; margin-right:auto; display: none;" id="peopleTable">
                         <colgroup style="width: 20%"></colgroup>
@@ -249,7 +257,11 @@
                 </div>
                 <br><br><br><br>
                 <div>
-                    <a class="button fade-inHeading" style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;" onclick="toggle('daysTable')"><i>From the....</i><span style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;" id="daysTableIcon">&#11206;</span></a>
+                    <a class="button fade-inHeading"
+                        style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;"
+                        onclick="toggle('daysTable')"><i>From the....</i><span
+                            style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;"
+                            id="daysTableIcon">&#11206;</span></a>
                     <br><br>
                     <table style="width: 70%; margin-left: auto; margin-right:auto; display: none;" id="daysTable">
                         <colgroup style="width: 20%"></colgroup>
@@ -262,7 +274,11 @@
                 </div>
                 <br><br><br><br>
                 <div>
-                    <a class="button fade-inHeading" style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;" onclick="toggle('againstTable')"><i>Against the....</i><span style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;" id="againstTableIcon">&#11206;</span></a>
+                    <a class="button fade-inHeading"
+                        style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;"
+                        onclick="toggle('againstTable')"><i>Against the....</i><span
+                            style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;"
+                            id="againstTableIcon">&#11206;</span></a>
                     <br><br>
                     <table style="width: 70%; margin-left: auto; margin-right:auto; display: none;" id="againstTable">
                         <colgroup style="width: 20%"></colgroup>
@@ -287,10 +303,26 @@
                 </div>
                 <br><br><br>
             </div>
-            <p><i id="simpleText">Show me all of Jasper Collier's and Samuel McConaghy's finishing stats from the 25th of January while playing the Choc-Tops.</i></p>
-            <br><br>
-            <table style="width: 70%; margin-left: auto; margin-right:auto;" id="fullStatsTable"></table>
-    
+            <div id="dataSection">
+                <p><i id="simpleText"></i></p>
+                <br><br>
+                <table style="width: 70%; margin-left: auto; margin-right:auto;" id="fullStatsTable"></table>
+                <br><br>
+            </div>
+            <a class="button fade-inHeading" style="width: 30vw; display: none;" onclick="saveTable()" id="saveTableButton"><i>Save Table!</i></a>
+            <br><br><br><br><br><br><br>
+            <div style="display: none;" id="savedData">
+                <a class="button fade-inHeading"
+                    style="width: 60vw; background-color: rgba(0,0,0,0); border: 1px solid white;"
+                    onclick="toggle('savedTable')"><i>View Saved Tables....</i><span
+                        style="position: relative; top: 0px; font-size: 25px; padding-left: 20px;"
+                        id="savedTablesIcon">&#11206;</span></a>
+                <br><br>
+                <div id="savedTables" style="display: none;">
+
+                </div>
+            </div>
+
         </div>
     </div>
     <div id="footer">
