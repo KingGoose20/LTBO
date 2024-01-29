@@ -33,10 +33,37 @@ function saveTable() {
     newDiv.style.border = "1px solid rgb(200,200,200)"
     newDiv.style.padding = "30px"
     newDiv.style.marginBottom = "20px"
+    newDiv.id = (document.getElementById("savedTables").childNodes.length + "section")
+    deleteButton = document.createElement("a")
+    deleteButton.innerHTML = "Delete Table"
+    deleteButton.classList.add("button")
+    deleteButton.id = document.getElementById("savedTables").childNodes.length
+    deleteButton.onclick = function () { deleteSavedTable(this.id) }
     newDiv.appendChild(clone)
+    newDiv.appendChild(deleteButton)
     document.getElementById("savedTables").appendChild(newDiv)
 }
 
+function deleteSavedTable(id) {
+    console.log(id)
+    if (confirm("Are you sure you want to delete this table?") == true) {
+        parent = document.getElementById(id + "section")
+        console.log(parent.children)
+        for (i=0; i<parent.children.length; i++) {
+            parent.children[i].style.animation = "fade-out-table 2s forwards"
+        }
+        height = document.getElementById(id + "section").offsetHeight
+        parent.style.setProperty('--x',(height + "px"));
+        parent.style.animation = "shrinkTable 4s forwards"
+         setTimeout(function() {
+            parent.remove()
+            
+          }, "4000");        
+    } else {
+    }
+
+}
+`document.getElementById(id + "section").remove();`
 
 const allPeople = document.getElementById('allPeople');
 const allDays = document.getElementById('allDays');
