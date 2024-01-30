@@ -62,6 +62,18 @@ Data = [
     "WStreak": ["-", "-", "1", "-", "-", "2", "-", "3", "-", "1", "-", "1"],
     "LStreak": ["-", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "1"],
     "SStreak": [1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1]
+  },
+  {
+    "Date":["30 January"],
+    "GameNumber":[1,1,2,2,3,3,3,4,4,5,5,5,6,6,7,7,8,8,9,9,10,10,11,11],
+    "Winner":["Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men"],
+    "Loser":["Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Gentle, Men","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers"],
+    "Score":["1-0","2-0","1-0","2-0","1-0","1-1","2-1","1-0","2-0","1-0","1-1","2-1","1-0","2-0","1-0","2-0","1-0","2-0","1-0","2-0","1-0","2-0","1-0","2-0"],
+    "Scorer":["Samuel McConaghy","Samuel McConaghy","Samuel McConaghy","Samuel McConaghy","Samuel McConaghy","Sam James","Angus Walker","Rudy Hoschke","Alexander Galt","Alexander Galt","Lukas Johnston","Will Weekes","Samuel McConaghy","Samuel McConaghy","Rudy Hoschke","Rudy Hoschke","Ryan Pattemore","Ryan Pattemore","Ryan Pattemore","Rudy Hoschke","Sam James","Angus Walker","Samuel McConaghy","Michael Iffland"],
+    "Type":["Finish","Midrange","Midrange","Midrange","Finish","Midrange","Midrange","Finish","Finish","Finish","Finish","Finish","Finish","Midrange","Finish","Finish","Midrange","Midrange","Midrange","Finish","Midrange","Finish","Finish","Finish"],
+    "WStreak":["-","1","-","2","-","-","1","-","1","-","-","1","-","2","-","1","-","2","-","3","-","1","-","1"],
+    "LStreak":["-","1","-","1","-","-","1","-","1","-","-","1","-","2","-","1","-","3","-","2","-","1","-","1"],
+    "SStreak":[1,2,3,4,5,1,1,1,1,2,1,1,1,2,1,2,1,2,3,1,1,1,1,1]
   }
 ]
 
@@ -81,7 +93,12 @@ Missed = [
     "Missed": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
     "Points": [2, 1, 3]
   },
-
+  {
+    "Date":["30 January"],
+    "Missed":[0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,1],
+    "Points":[2,1,3]
+    },
+    
 
 ]
 
