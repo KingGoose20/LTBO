@@ -76,16 +76,28 @@ Data = [
     "SStreak": [1, 2, 3, 4, 5, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 3, 1, 1, 1, 1, 1]
   },
   {
-    "Date":["31 January"],
-    "GameNumber":[1,1,2,2,3,3,4,4,5,5,6,6,6,7,7,7,8,8,9,9,10,10,11,11],
-    "Winner":["Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Gentle, Men","Choc-Tops","Choc-Tops","Choc-Tops","Traffic Controllers","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men"],
-    "Loser":["Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Choc-Tops","Gentle, Men","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers"],
-    "Score":["1-0","2-0","1-0","2-0","1-0","2-0","1-0","2-0","1-0","2-0","1-0","1-1","2-1","1-0","1-1","2-1","1-0","2-0","1-0","2-0","1-0","2-0","1-0","2-0"],
-    "Scorer":["Michael Iffland","Conor Farrington","Ryan Pattemore","Christopher Tomkinson","Christopher Tomkinson","Alexander Galt","Christopher Tomkinson","Jasper Collier","Rudy Hoschke","Alexander Galt","Lukas Johnston","Alexander Galt","Rudy Hoschke","Alexander Galt","Angus Walker","Jasper Collier","Rudy Hoschke","Jasper Collier","Rudy Hoschke","Rudy Hoschke","Samuel McConaghy","Conor Farrington","Lukas Johnston","Samuel McConaghy"],
-    "Type":["Finish","Midrange","Midrange","Finish","Finish","Finish","Midrange","Midrange","Finish","Finish","Midrange","Finish","Finish","Finish","Midrange","Finish","Finish","Midrange","Finish","Finish","Midrange","Midrange","Finish","Midrange"],
-    "WStreak":["-","1","-","1","-","2","-","3","-","4","-","-","5","-","-","6","-","7","-","8","-","1","-","2"],
-    "LStreak":["-","1","-","1","-","2","-","2","-","3","-","-","3","-","-","4","-","4","-","5","-","1","-","6"],
-    "SStreak":[1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1]
+    "Date": ["31 January"],
+    "GameNumber": [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
+    "Winner": ["Gentle, Men", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Gentle, Men", "Gentle, Men"],
+    "Loser": ["Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Traffic Controllers"],
+    "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
+    "Scorer": ["Michael Iffland", "Conor Farrington", "Ryan Pattemore", "Christopher Tomkinson", "Christopher Tomkinson", "Alexander Galt", "Christopher Tomkinson", "Jasper Collier", "Rudy Hoschke", "Alexander Galt", "Lukas Johnston", "Alexander Galt", "Rudy Hoschke", "Alexander Galt", "Angus Walker", "Jasper Collier", "Rudy Hoschke", "Jasper Collier", "Rudy Hoschke", "Rudy Hoschke", "Samuel McConaghy", "Conor Farrington", "Lukas Johnston", "Samuel McConaghy"],
+    "Type": ["Finish", "Midrange", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Midrange"],
+    "WStreak": ["-", "1", "-", "1", "-", "2", "-", "3", "-", "4", "-", "-", "5", "-", "-", "6", "-", "7", "-", "8", "-", "1", "-", "2"],
+    "LStreak": ["-", "1", "-", "1", "-", "2", "-", "2", "-", "3", "-", "-", "3", "-", "-", "4", "-", "4", "-", "5", "-", "1", "-", "6"],
+    "SStreak": [1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1]
+  },
+  {
+    "Date":["1 February"],
+    "GameNumber":[1,1,2,2,3,3,3,4,4,5,5,6,6,7,7,7,8,9,10,10,10,11,11,11],
+    "Winner":["Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Traffic Controllers","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Gentle, Men","Choc-Tops","Gentle, Men"],
+    "Loser":["Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Choc-Tops","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Gentle, Men","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops","Traffic Controllers","Traffic Controllers","Choc-Tops","Gentle, Men","Choc-Tops"],
+    "Score":["1-0","2-0","1-0","2-0","1-0","1-Jan","2-Jan","1-0","2-0","1-0","2-0","1-0","2-0","1-0","1-Jan","2-Jan","2-0","2-0","1-0","1-Jan","2-Jan","1-0","1-Jan","2-Jan"],
+    "Scorer":["Clarrie Jones","William Kim","Sam James","Sam James","William Kim","Christopher Tomkinson","Ryan Pattemore","Samuel McConaghy","Michael Iffland","Michael Iffland","Samuel McConaghy","Michael Iffland","Conor Farrington","Samuel McConaghy","William Kim","Conor Farrington","Samuel McConaghy","Clarrie Jones","Angus Walker","Rudy Hoschke","Rudy Hoschke","Michael Iffland","Rudy Hoschke","Samuel McConaghy"],
+    "Type":["Finish","Midrange","Midrange","Midrange","Finish","Finish","Midrange","Midrange","Finish","Finish","Midrange","Midrange","Finish","Finish","Midrange","Midrange","Three Pointer","Three Pointer","Finish","Finish","Finish","Finish","Finish","Midrange"],
+    "WStreak":["-","1","-","2","-","-","1","-","1","-","2","-","3","-","-","4","5","1","-","-","1","-","-","1"],
+    "LStreak":["-","1","-","1","-","-","1","-","1","-","2","-","2","-","-","3","3","1","-","-","1","-","-","1"],
+    "SStreak":[1,1,1,2,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,2,1,1,1]
   }
 ]
 
@@ -114,6 +126,11 @@ Missed = [
     "Date": ["31 January"],
     "Missed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
     "Points": [3, 1, 2]
+  },
+  {
+    "Date": ["1 February"],
+    "Missed": [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+    "Points": [1, 2, 3]
   },
 
 
