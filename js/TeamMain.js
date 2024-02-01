@@ -7,13 +7,11 @@ Main = {
     "PartATC":[9,21,8.5],
     "PartBTC":[8,"Angus Walker",2,"William Kim",5,"Sam James",2,"Clarrie Jones"],
     "PartCTC":[7.8,0.8,1.8,0.7,1.5,3.5],
-    "PartDTC":[3,12,20,9,6,60],
+    "PartDTC":[3,12,20,6,9,40],
     "PartAGM":[20,15,13.5],
     "PartBGM":[21,"Samuel McConaghy",9,"N/A",12,"N/A",1,"N/A"],
     "PartCGM":[7.7,4.2,3.2,0.2,3.3,2.5],
-    "PartDGM":[11,9,55,6,9,40],
-    
-      
+    "PartDGM":[11,9,55,9,6,60],
 }
 
 /* ------------------------------------------- */
