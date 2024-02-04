@@ -295,7 +295,7 @@
       <p style="color: black">Start!</p>
     </button>
     <br><br><br><br><br><br><br><br><br><br><br><br>
-    <p>Choose the scorer and score type</p>
+    <p>Choose the scorer, score type, and player who assisted</p>
     <table style="width: 100%" class="menu">
       <tr class="menu">
         <td class="menu">
@@ -319,6 +319,7 @@
           <form>
             <select id="Assister" style="width:25vw">
               <option disabled selected value="none">Choose the player who assisted</option>
+              <option value="none">None</option>
             </select>
           </form>
         </td>
@@ -345,6 +346,7 @@
           <th>W-Streak</th>
           <th>L-Streak</th>
           <th>S-Streak</th>
+          <th>Assister</th>
         </tr>
       </table><br><br><br>
       <button id="button" onclick="htmlTableToExcel('xlsx')" class="button fade-inHeading">Export HTML Table to
@@ -368,7 +370,7 @@
   </script>
      <script src="../js/Array.js"></script>
   <script src="../js/TeamMain.js"></script>
-  <script src="../js/FinalsTracker.js">
+  <script src="../js/AssistTracker.js">
   </script>
 
   <script src="../js/heading.js"></script>

@@ -18,6 +18,29 @@ aScore = 0
 bScore = 0
 needed = 0
 
+document.getElementById("Scorer").addEventListener("change", function() {
+    var selectedOption = this.value;
+    // Run your event handling code here
+    if (selectedOption < ChocTops.Players.length) {
+        if (aTeam == "Choc-Tops") {
+            assignAssists(aTeam)
+        } else {
+            assignAssists(bTeam)
+        }
+    } else if (selectedOption < ChocTops.Players.length + GentleMen.Players.length) {
+        if (aTeam == "Gentle, Men") {
+            assignAssists(aTeam)
+        } else {
+            assignAssists(bTeam)
+        }
+    } else {
+        if (aTeam == "Traffic Controllers") {
+            assignAssists(aTeam)
+        } else {
+            assignAssists(bTeam)
+        }
+    }
+  });
 
 function start() {
     if (document.getElementById("type").value == "fw") {
@@ -80,7 +103,37 @@ function start() {
     assignPlayers(bTeam)
 }
 
-
+function assignAssists(team) {
+    for (i = document.getElementById("Assister").length; i > 1; i--) {
+        document.getElementById("Assister").remove(i)
+    }
+    select = document.getElementById("Assister")
+    if (team == "Choc-Tops") {
+        for (i = 0; i < ChocTops.Players.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = ChocTops.Players[i];
+            opt.style.color = "brown";
+            select.appendChild(opt);
+        }
+    } else if (team == "Gentle, Men") {
+        for (i = 0; i < GentleMen.Players.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = i + ChocTops.Players.length;
+            opt.innerHTML = GentleMen.Players[i];
+            opt.style.color = "black";
+            select.appendChild(opt);
+        }
+    } else {
+        for (i = 0; i < TrafficControllers.Players.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = i + (ChocTops.Players.length + GentleMen.Players.length);
+            opt.innerHTML = TrafficControllers.Players[i];
+            opt.style.color = "#ff5e00";
+            select.appendChild(opt);
+        }
+    }
+}
 
 function assignPlayers(team) {
     select = document.getElementById("Scorer")
@@ -114,6 +167,7 @@ function assignPlayers(team) {
 
 function logDetails() {
     Scorer = document.getElementById("Scorer")
+    Assister = document.getElementById("Assister")
     Type = document.getElementById("Type")
     table = document.getElementById("loggedDetails");
     row = table.insertRow(-1);
@@ -181,7 +235,7 @@ function logDetails() {
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
     var cell9 = row.insertCell(8);
-
+    var cell10 = row.insertCell(9);
 
     if (aScore >= needed || bScore >= needed) {
         updateStreaks()
@@ -195,6 +249,7 @@ function logDetails() {
     cell7.innerHTML = wStreak;
     cell8.innerHTML = lStreak;
     cell9.innerHTML = sStreak;
+    cell10.innerHTML = Assister.options[Assister.selectedIndex].text;
 
     if (aScore >= needed || bScore >= needed) {
         gameNumber += 1;
@@ -206,7 +261,6 @@ function logDetails() {
         alert("Logged!")
     }
 
-    
 }
 
 function range(number, change, min, max) {
@@ -244,6 +298,7 @@ function newTeams(winner) {
     for (i = document.getElementById("Scorer").length; i > 0; i--) {
         document.getElementById("Scorer").remove(i)
     }
+
 
     assignPlayers(aTeam)
     assignPlayers(bTeam)
