@@ -300,18 +300,25 @@
       <tr class="menu">
         <td class="menu">
           <form>
-            <select id="Scorer" style="width:40vw">
+            <select id="Scorer" style="width:25vw">
               <option disabled selected value="none">Choose the player who scored</option>
             </select>
           </form>
         </td>
         <td class="menu">
           <form>
-            <select id="Type" style="width:40vw">
+            <select id="Type" style="width:25vw">
               <option disabled selected value="none">Choose the type of score</option>
               <option value="three">Finish</option>
               <option value="four">Midrange</option>
               <option value="five">Three Pointer</option>
+            </select>
+          </form>
+        </td>
+        <td class="menu">
+          <form>
+            <select id="Assister" style="width:25vw">
+              <option disabled selected value="none">Choose the player who assisted</option>
             </select>
           </form>
         </td>
@@ -343,8 +350,6 @@
       <button id="button" onclick="htmlTableToExcel('xlsx')" class="button fade-inHeading">Export HTML Table to
         EXCEL</button>
     </div>
-    <br><br>
-    <a href="AssistTracker.html" class="button">Go to Assists</a>
   </div>
   </div>
   </div>
