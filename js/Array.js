@@ -115,7 +115,7 @@ Data = [
     "Score":["1-0","1-1","2-1","1-0","1-1","2-1","1-0","2-0","1-0","2-0","2-0","1-0","1-1","2-1","2-0","1-0","2-0","1-0","2-0","2-0","1-0","2-0","1-0","2-0"],
     "Scorer":["Michael Iffland","Alexander Galt","Rudy Hoschke","Rudy Hoschke","Clarrie Jones","Rudy Hoschke","Rudy Hoschke","Alexander Galt","Clarrie Jones","Clarrie Jones","William Kim","Ryan Pattemore","William Kim","Christopher Tomkinson","Ryan Pattemore","Alexander Galt","Alexander Galt","Rudy Hoschke","Jasper Collier","Clarrie Jones","Sam James","Sam James","Angus Walker","Angus Walker"],
     "Type":["Finish","Finish","Finish","Finish","Midrange","Finish","Finish","Finish","Midrange","Midrange","Three Pointer","Midrange","Midrange","Finish","Three Pointer","Finish","Finish","Finish","Midrange","Three Pointer","Midrange","Midrange","Midrange","Finish"],
-    "Assister": ["","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
+    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
     "WStreak":["-","-","1","-","-","2","-","3","-","1","2","-","-","1","2","-","3","-","4","1","-","2","-","3"],
     "LStreak":["-","-","1","-","-","1","-","2","-","1","3","-","-","1","4","-","2","-","5","1","-","6","-","2"],
     "SStreak":[1,1,1,2,1,1,2,1,1,2,1,1,1,1,1,1,2,1,1,1,1,2,1,2]
