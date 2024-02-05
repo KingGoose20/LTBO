@@ -1,17 +1,17 @@
 /* -------------- PUT INFO HERE -------------- */
 Main = {
     "PartACT":[28,22,20],
-    "PartBCT":[23,"Rudy Hoschke",23,"Rudy Hoschke",7,"Ryan Pattemore",1,"Ryan Pattemore"],
-    "PartCCT":[7.6,5.8,1.6,0.1,3.5,2.8],
+    "PartBCT":[23,"Rudy Hoschke",23,"Rudy Hoschke",7,"Ryan Pattemore",1,"Ryan Pattemore",0,"N/A"],
+    "PartCCT":[7.6,5.8,1.6,0.1,0,3.5,2.8],
     "PartDCT":[15,6,71.4,13,11,54.2],
     "PartATC":[14,24,12.5],
-    "PartBTC":[10,"Clarrie Jones",3,"Angus Walker",7,"Sam James",3,"Clarrie Jones"],
-    "PartCTC":[7.6,0.8,2.3,0.8,1.8,3],
+    "PartBTC":[10,"Clarrie Jones",3,"Angus Walker",7,"Sam James",3,"Clarrie Jones",0,"N/A"],
+    "PartCTC":[7.6,0.8,2.3,0.8,0,1.8,3],
     "PartDTC":[6,15,28.6,8,9,47.1],
     "PartAGM":[20,21,15.5],
-    "PartBGM":[21,"Samuel McConaghy",10,"Michael Iffland",12,"Samuel McConaghy",1,"Samuel McConaghy"],
-    "PartCGM":[5.9,3.3,2.4,0.1,2.5,2.6],
-    "PartDGM":[11,13,45.8,9,8,52.9],     
+    "PartBGM":[21,"Samuel McConaghy",10,"Michael Iffland",12,"Samuel McConaghy",1,"Samuel McConaghy",0,"N/A"],
+    "PartCGM":[5.9,3.3,2.4,0.1,0,2.5,2.6],
+    "PartDGM":[11,13,45.8,9,8,52.9],       
     
 }
 
@@ -157,7 +157,6 @@ function initalise() {
             rowTwo.children[i].onclick = function () { openStats(this) };
             rowTwo.children[i].id = i
         }
-        console.log()
         document.getElementById("tWins").innerHTML = variable.PartA[0]
         document.getElementById("tLoss").innerHTML = variable.PartA[1]
         document.getElementById("tPercent").innerHTML = (Math.round(variable.PartA[0] / (variable.PartA[1] + variable.PartA[0]) * 1000)) / 10 + "%"
@@ -169,12 +168,15 @@ function initalise() {
         document.getElementById("lMidrangesN").innerHTML = variable.PartB[5]
         document.getElementById("lThreesS").innerHTML = variable.PartB[6]
         document.getElementById("lThreesN").innerHTML = variable.PartB[7]
+        document.getElementById("lAssistsS").innerHTML = variable.PartB[8]
+        document.getElementById("lAssistsN").innerHTML = variable.PartB[9]
         document.getElementById("aPoints").innerHTML = variable.PartC[0]
         document.getElementById("aFinishes").innerHTML = variable.PartC[1]
         document.getElementById("aMidranges").innerHTML = variable.PartC[2]
         document.getElementById("aThrees").innerHTML = variable.PartC[3]
-        document.getElementById("aWins").innerHTML = variable.PartC[4]
-        document.getElementById("aLosses").innerHTML = variable.PartC[5]
+        document.getElementById("aAssists").innerHTML = variable.PartC[4]
+        document.getElementById("aWins").innerHTML = variable.PartC[5]
+        document.getElementById("aLosses").innerHTML = variable.PartC[6]
         document.getElementById("AWins").innerHTML = variable.PartD[0]
         document.getElementById("ALoss").innerHTML = variable.PartD[1]
         document.getElementById("APercent").innerHTML = variable.PartD[2] + "%"
@@ -259,8 +261,8 @@ function initalise() {
         }
         document.getElementById("thirdWinPct").innerHTML = (Math.round(thirdWins / (thirdWins + thirdLosses) * 1000)) / 10 + "%"
 
-        id = ["lPoints", "lFinishes", "lMidranges", "lThrees"]
-        for (i = 0; i < 4; i++) {
+        id = ["lPoints", "lFinishes", "lMidranges", "lThrees", "lAssists"]
+        for (i = 0; i < id.length; i++) {
             if (TrafficControllers.PartB[2 * i] > GentleMen.PartB[2 * i] && TrafficControllers.PartB[2 * i] > ChocTops.PartB[2 * i]) {
                 document.getElementById(id[i] + "S").innerHTML = TrafficControllers.PartB[2 * i]
                 document.getElementById(id[i] + "N").innerHTML = TrafficControllers.PartB[2 * i + 1]
@@ -277,7 +279,8 @@ function initalise() {
         document.getElementById("aFinishes").innerHTML = (ChocTops.PartC[1] + TrafficControllers.PartC[1] + GentleMen.PartC[1]).toFixed(1)
         document.getElementById("aMidranges").innerHTML = (ChocTops.PartC[2] + TrafficControllers.PartC[2] + GentleMen.PartC[2]).toFixed(1)
         document.getElementById("aThrees").innerHTML = (ChocTops.PartC[3] + TrafficControllers.PartC[3] + GentleMen.PartC[3]).toFixed(1)
-        document.getElementById("aGames").innerHTML = (ChocTops.PartC[4] + TrafficControllers.PartC[4] + GentleMen.PartC[4]).toFixed(1)
+        document.getElementById("aAssists").innerHTML = (ChocTops.PartC[4] + TrafficControllers.PartC[4] + GentleMen.PartC[4]).toFixed(1)
+        document.getElementById("aGames").innerHTML = (ChocTops.PartC[5] + TrafficControllers.PartC[5] + GentleMen.PartC[5]).toFixed(1)
 
         secondID = ["PPoints", "PFinishes", "PMidranges", "PThrees"]
         PPG = 0

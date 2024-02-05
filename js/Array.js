@@ -9,6 +9,8 @@ mainArray = {
   "TM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
   "TPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
   "TT": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
+  "APG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
+  "TA": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
   "Missed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
   "AccoladesOne": ["", "", "All-Defence Team T1", "All-Offence Team T1", "Playmaker T1", "MVP Runner Up T1", "Miles Morales", "LTBO Manager", "MVP T1", "GM", "Perimeter T1", "The Biggest Bird", "MIP T1", "LTBO CEO", "Teammate T1", ""],
   "AccoladesTwo": ["", "", "Champion T1", "All-Defence Team T1", "Thirdman T1", "All-Offence Team T1", "Champion T2", "Champion T1", "All-Offence Team T1", "All-Offence Team T1", "Champion T1", "Champion T1", "MIP T2", "GM", "Champion T1", ""],
@@ -35,6 +37,7 @@ Data = [
     "Score": ["2-0", "1-0", "2-1", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "1-1", "2-1", ""],
     "Scorer": ["Clarrie Jones", "Michael Iffland", "Angus Walker", "Alexander Galt", "Christopher Tomkinson", "Alexander Galt", "Michael Iffland", "Will Weekes", "Samuel McConaghy", "Michael Iffland", "Alexander Galt", "Alexander Galt", "Ryan Pattemore", "William Kim", "Alexander Galt", "Rudy Hoschke", "Samuel McConaghy", "Rudy Hoschke"],
     "Type": ["Three Pointer", "Finish", "Three Pointer", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Finish", "Finish"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
     "WStreak": ["1", "-", "2", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "-", "2", "-", "-", "3"],
     "LStreak": ["1", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "-", "3", "-", "-", "2"],
     "SStreak": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1]
@@ -47,6 +50,7 @@ Data = [
     "Score": ["1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-1"],
     "Scorer": ["Christopher Tomkinson", "Samuel McConaghy", "Rudy Hoschke", "Christopher Tomkinson", "Rudy Hoschke", "Samuel McConaghy", "Alexander Galt", "Lukas Johnston", "Samuel McConaghy", "Angus Walker"],
     "Type": ["Finish", "Midrange", "Finish", "Midrange", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Three Pointer"],
+    "Assister": ["None","None","None","None","None","None","None","None","None","None"],
     "WStreak": ["-", "-", "1", "-", "2", "-", "-", "1", "-", "1"],
     "LStreak": ["-", "-", "1", "-", "1", "-", "-", "1", "-", "1"],
     "SStreak": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -59,6 +63,7 @@ Data = [
     "Score": ["1-0", "1-1", "2-1", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
     "Scorer": ["Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Lukas Johnston", "Sam James", "Michael Iffland", "Lukas Johnston", "Michael Iffland", "William Kim", "William Kim", "Christopher Tomkinson", "Rudy Hoschke"],
     "Type": ["Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Midrange", "Midrange", "Finish"],
+    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None"],
     "WStreak": ["-", "-", "1", "-", "-", "2", "-", "3", "-", "1", "-", "1"],
     "LStreak": ["-", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "1"],
     "SStreak": [1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1]
@@ -71,6 +76,7 @@ Data = [
     "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
     "Scorer": ["Samuel McConaghy", "Samuel McConaghy", "Samuel McConaghy", "Samuel McConaghy", "Samuel McConaghy", "Sam James", "Angus Walker", "Rudy Hoschke", "Alexander Galt", "Alexander Galt", "Lukas Johnston", "Will Weekes", "Samuel McConaghy", "Samuel McConaghy", "Rudy Hoschke", "Rudy Hoschke", "Ryan Pattemore", "Ryan Pattemore", "Ryan Pattemore", "Rudy Hoschke", "Sam James", "Angus Walker", "Samuel McConaghy", "Michael Iffland"],
     "Type": ["Finish", "Midrange", "Midrange", "Midrange", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Midrange", "Finish", "Midrange", "Finish", "Finish", "Finish"],
+    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
     "WStreak": ["-", "1", "-", "2", "-", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "2", "-", "3", "-", "1", "-", "1"],
     "LStreak": ["-", "1", "-", "1", "-", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "3", "-", "2", "-", "1", "-", "1"],
     "SStreak": [1, 2, 3, 4, 5, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 3, 1, 1, 1, 1, 1]
@@ -83,6 +89,7 @@ Data = [
     "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
     "Scorer": ["Michael Iffland", "Conor Farrington", "Ryan Pattemore", "Christopher Tomkinson", "Christopher Tomkinson", "Alexander Galt", "Christopher Tomkinson", "Jasper Collier", "Rudy Hoschke", "Alexander Galt", "Lukas Johnston", "Alexander Galt", "Rudy Hoschke", "Alexander Galt", "Angus Walker", "Jasper Collier", "Rudy Hoschke", "Jasper Collier", "Rudy Hoschke", "Rudy Hoschke", "Samuel McConaghy", "Conor Farrington", "Lukas Johnston", "Samuel McConaghy"],
     "Type": ["Finish", "Midrange", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Midrange"],
+    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
     "WStreak": ["-", "1", "-", "1", "-", "2", "-", "3", "-", "4", "-", "-", "5", "-", "-", "6", "-", "7", "-", "8", "-", "1", "-", "2"],
     "LStreak": ["-", "1", "-", "1", "-", "2", "-", "2", "-", "3", "-", "-", "3", "-", "-", "4", "-", "4", "-", "5", "-", "1", "-", "6"],
     "SStreak": [1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1]
@@ -95,6 +102,7 @@ Data = [
     "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "1-Jan", "2-Jan", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "1-Jan", "2-Jan", "2-0", "2-0", "1-0", "1-Jan", "2-Jan", "1-0", "1-Jan", "2-Jan"],
     "Scorer": ["Clarrie Jones", "William Kim", "Sam James", "Sam James", "William Kim", "Christopher Tomkinson", "Ryan Pattemore", "Samuel McConaghy", "Michael Iffland", "Michael Iffland", "Samuel McConaghy", "Michael Iffland", "Conor Farrington", "Samuel McConaghy", "William Kim", "Conor Farrington", "Samuel McConaghy", "Clarrie Jones", "Angus Walker", "Rudy Hoschke", "Rudy Hoschke", "Michael Iffland", "Rudy Hoschke", "Samuel McConaghy"],
     "Type": ["Finish", "Midrange", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Three Pointer", "Three Pointer", "Finish", "Finish", "Finish", "Finish", "Finish", "Midrange"],
+    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
     "WStreak": ["-", "1", "-", "2", "-", "-", "1", "-", "1", "-", "2", "-", "3", "-", "-", "4", "5", "1", "-", "-", "1", "-", "-", "1"],
     "LStreak": ["-", "1", "-", "1", "-", "-", "1", "-", "1", "-", "2", "-", "2", "-", "-", "3", "3", "1", "-", "-", "1", "-", "-", "1"],
     "SStreak": [1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1]
@@ -107,10 +115,11 @@ Data = [
     "Score":["1-0","1-1","2-1","1-0","1-1","2-1","1-0","2-0","1-0","2-0","2-0","1-0","1-1","2-1","2-0","1-0","2-0","1-0","2-0","2-0","1-0","2-0","1-0","2-0"],
     "Scorer":["Michael Iffland","Alexander Galt","Rudy Hoschke","Rudy Hoschke","Clarrie Jones","Rudy Hoschke","Rudy Hoschke","Alexander Galt","Clarrie Jones","Clarrie Jones","William Kim","Ryan Pattemore","William Kim","Christopher Tomkinson","Ryan Pattemore","Alexander Galt","Alexander Galt","Rudy Hoschke","Jasper Collier","Clarrie Jones","Sam James","Sam James","Angus Walker","Angus Walker"],
     "Type":["Finish","Finish","Finish","Finish","Midrange","Finish","Finish","Finish","Midrange","Midrange","Three Pointer","Midrange","Midrange","Finish","Three Pointer","Finish","Finish","Finish","Midrange","Three Pointer","Midrange","Midrange","Midrange","Finish"],
+    "Assister": ["","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
     "WStreak":["-","-","1","-","-","2","-","3","-","1","2","-","-","1","2","-","3","-","4","1","-","2","-","3"],
     "LStreak":["-","-","1","-","-","1","-","2","-","1","3","-","-","1","4","-","2","-","5","1","-","6","-","2"],
     "SStreak":[1,1,1,2,1,1,2,1,1,2,1,1,1,1,1,1,2,1,1,1,1,2,1,2]
-  }
+  },
 ]
 
 Missed = [
@@ -172,7 +181,8 @@ function getDayArray(index) {
     "Points": [],
     "Finishes": [],
     "Midrange": [],
-    "ThreePointers": []
+    "ThreePointers": [],
+    "Assists": []
   }
   DtoUse = Data[index]
   DAtoUse.Date = DtoUse.Date
@@ -180,6 +190,7 @@ function getDayArray(index) {
     Finishes = 0
     Midranges = 0
     ThreePointers = 0
+    Assists = 0
     for (i = 0; i < DtoUse.Scorer.length; i++) {
       if (DtoUse.Scorer[i] == mainArray.Name[x]) {
         if (DtoUse.Type[i] == "Finish") {
@@ -192,6 +203,9 @@ function getDayArray(index) {
           ThreePointers += 1
         }
       }
+      if (DtoUse.Assister[i] == mainArray.Name[x]) {
+        Assists += 1
+      }
     }
     Points = Finishes + Midranges + ThreePointers + ThreePointers
     if (Points == 0) {
@@ -200,12 +214,17 @@ function getDayArray(index) {
         Finishes = "Did not Play"
         Midranges = "Did not Play"
         ThreePointers = "Did not Play"
+        Assists = "Did not Play"
       }
+    }
+    if (index < 7) {
+      Assists = "Did not Track"
     }
     DAtoUse.Points.push(Points)
     DAtoUse.Finishes.push(Finishes)
     DAtoUse.Midrange.push(Midranges)
     DAtoUse.ThreePointers.push(ThreePointers)
+    DAtoUse.Assists.push(Assists)
   }
   return (DAtoUse)
 
@@ -299,17 +318,22 @@ function calculateAverages() {
   AF = []
   AM = []
   AT = []
+  AA = []
   TP = []
   TF = []
   TM = []
   TT = []
+  TA = []
   MD = []
+  MAD = []
   for (i = 0; i < mainArray.Name.length; i++) {
     LP = 0
     LF = 0
     LM = 0
     LT = 0
+    LA = 0
     LMD = 0
+    LMAD = 0
     for (x = 0; x < Data.length; x++) {
       Scored = false
       for (y = 0; y < Data[x].Scorer.length; y++) {
@@ -323,11 +347,16 @@ function calculateAverages() {
             LT += 1
           }
         }
+        if (Data[x].Assister[y] == mainArray.Name[i]) {
+          LA += 1
+        }
       }
       if (Scored == false) {
         if (Missed[x].Missed[i] == 1) {
           LMD += 1
-          console.log(mainArray.Name[i])
+          if(x > 7) {
+            LMAD += 1
+          }
         }
       }
       LP = LF + LM + LT + LT
@@ -336,7 +365,9 @@ function calculateAverages() {
     TF.push(LF)
     TM.push(LM)
     TT.push(LT)
+    TA.push(LA)
     MD.push(LMD)
+    MAD.push(LMAD)
   }
 
   for (i = 0; i < mainArray.Name.length; i++) {
@@ -345,6 +376,7 @@ function calculateAverages() {
     AF.push((Math.round(100 * (TF[i] / (Data.length - MD[i])))) / 100)
     AM.push((Math.round(100 * (TM[i] / (Data.length - MD[i])))) / 100)
     AT.push((Math.round(100 * (TT[i] / (Data.length - MD[i])))) / 100)
+    AA.push((Math.round(100 * (TA[i] / (Data.length - (MAD[i]+7))))) / 100)
   }
 
   mainArray.PPG = AP
@@ -355,6 +387,8 @@ function calculateAverages() {
   mainArray.TM = TM
   mainArray.TPG = AT
   mainArray.TT = TT
+  mainArray.APG = AA
+  mainArray.TA = TA
   mainArray.Missed = MD
 
 }

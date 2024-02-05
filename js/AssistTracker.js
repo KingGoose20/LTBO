@@ -246,10 +246,10 @@ function logDetails() {
     cell4.innerHTML = score;
     cell5.innerHTML = Scorer.options[Scorer.selectedIndex].text;
     cell6.innerHTML = Type.options[Type.selectedIndex].text;
-    cell7.innerHTML = wStreak;
-    cell8.innerHTML = lStreak;
-    cell9.innerHTML = sStreak;
-    cell10.innerHTML = Assister.options[Assister.selectedIndex].text;
+    cell7.innerHTML = Assister.options[Assister.selectedIndex].text;
+    cell8.innerHTML = wStreak;
+    cell9.innerHTML = lStreak;
+    cell10.innerHTML = sStreak;
 
     if (aScore >= needed || bScore >= needed) {
         gameNumber += 1;
