@@ -1,17 +1,17 @@
 mainArray = {
   "Name": ["Jasper Collier", "Conor Farrington", "Alexander Galt", "Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Sam James", "Clarrie Jones", "William Kim", "Samuel McConaghy", "Ryan Pattemore", "Nicholas Szogi", "Christopher Tomkinson", "Angus Walker", "Will Weekes", "Mitch Yue"],
   "Team": ["Choc-Tops", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Gentle, Men", "Gentle, Men"],
-  "PPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "TP": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "FPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "TF": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "MPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "TM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "TPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "TT": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "APG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "TA": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
-  "Missed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "0"],
+  "PPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "TP": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "FPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "TF": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "MPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "TM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "TPG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "TT": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "APG": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "TA": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  "Missed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   "AccoladesOne": ["", "", "All-Defence Team T1", "All-Offence Team T1", "Playmaker T1", "MVP Runner Up T1", "Miles Morales", "LTBO Manager", "MVP T1", "GM", "Perimeter T1", "The Biggest Bird", "MIP T1", "LTBO CEO", "Teammate T1", ""],
   "AccoladesTwo": ["", "", "Champion T1", "All-Defence Team T1", "Thirdman T1", "All-Offence Team T1", "Champion T2", "Champion T1", "All-Offence Team T1", "All-Offence Team T1", "Champion T1", "Champion T1", "MIP T2", "GM", "Champion T1", ""],
   "AccoladesThree": ["", "", "All-Offence Team T2", "Champion T1", "All-Offence Team T2", "All-2nd-Offence Team T2", "", "Finals MVP T1", "All-Defence Team T1", "All-Defence Team T1", "", "MVP Runner Up T2", "MVP T2", "All-Offence Team T1", "Teammate T2", ""],
@@ -50,7 +50,7 @@ Data = [
     "Score": ["1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-1"],
     "Scorer": ["Christopher Tomkinson", "Samuel McConaghy", "Rudy Hoschke", "Christopher Tomkinson", "Rudy Hoschke", "Samuel McConaghy", "Alexander Galt", "Lukas Johnston", "Samuel McConaghy", "Angus Walker"],
     "Type": ["Finish", "Midrange", "Finish", "Midrange", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Three Pointer"],
-    "Assister": ["None","None","None","None","None","None","None","None","None","None"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
     "WStreak": ["-", "-", "1", "-", "2", "-", "-", "1", "-", "1"],
     "LStreak": ["-", "-", "1", "-", "1", "-", "-", "1", "-", "1"],
     "SStreak": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -63,7 +63,7 @@ Data = [
     "Score": ["1-0", "1-1", "2-1", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
     "Scorer": ["Rudy Hoschke", "Michael Iffland", "Lukas Johnston", "Lukas Johnston", "Sam James", "Michael Iffland", "Lukas Johnston", "Michael Iffland", "William Kim", "William Kim", "Christopher Tomkinson", "Rudy Hoschke"],
     "Type": ["Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Midrange", "Midrange", "Finish"],
-    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
     "WStreak": ["-", "-", "1", "-", "-", "2", "-", "3", "-", "1", "-", "1"],
     "LStreak": ["-", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "1"],
     "SStreak": [1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1]
@@ -76,7 +76,7 @@ Data = [
     "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
     "Scorer": ["Samuel McConaghy", "Samuel McConaghy", "Samuel McConaghy", "Samuel McConaghy", "Samuel McConaghy", "Sam James", "Angus Walker", "Rudy Hoschke", "Alexander Galt", "Alexander Galt", "Lukas Johnston", "Will Weekes", "Samuel McConaghy", "Samuel McConaghy", "Rudy Hoschke", "Rudy Hoschke", "Ryan Pattemore", "Ryan Pattemore", "Ryan Pattemore", "Rudy Hoschke", "Sam James", "Angus Walker", "Samuel McConaghy", "Michael Iffland"],
     "Type": ["Finish", "Midrange", "Midrange", "Midrange", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Midrange", "Finish", "Midrange", "Finish", "Finish", "Finish"],
-    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
     "WStreak": ["-", "1", "-", "2", "-", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "2", "-", "3", "-", "1", "-", "1"],
     "LStreak": ["-", "1", "-", "1", "-", "-", "1", "-", "1", "-", "-", "1", "-", "2", "-", "1", "-", "3", "-", "2", "-", "1", "-", "1"],
     "SStreak": [1, 2, 3, 4, 5, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 3, 1, 1, 1, 1, 1]
@@ -89,7 +89,7 @@ Data = [
     "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "1-1", "2-1", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
     "Scorer": ["Michael Iffland", "Conor Farrington", "Ryan Pattemore", "Christopher Tomkinson", "Christopher Tomkinson", "Alexander Galt", "Christopher Tomkinson", "Jasper Collier", "Rudy Hoschke", "Alexander Galt", "Lukas Johnston", "Alexander Galt", "Rudy Hoschke", "Alexander Galt", "Angus Walker", "Jasper Collier", "Rudy Hoschke", "Jasper Collier", "Rudy Hoschke", "Rudy Hoschke", "Samuel McConaghy", "Conor Farrington", "Lukas Johnston", "Samuel McConaghy"],
     "Type": ["Finish", "Midrange", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Midrange"],
-    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
     "WStreak": ["-", "1", "-", "1", "-", "2", "-", "3", "-", "4", "-", "-", "5", "-", "-", "6", "-", "7", "-", "8", "-", "1", "-", "2"],
     "LStreak": ["-", "1", "-", "1", "-", "2", "-", "2", "-", "3", "-", "-", "3", "-", "-", "4", "-", "4", "-", "5", "-", "1", "-", "6"],
     "SStreak": [1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1]
@@ -102,23 +102,23 @@ Data = [
     "Score": ["1-0", "2-0", "1-0", "2-0", "1-0", "1-Jan", "2-Jan", "1-0", "2-0", "1-0", "2-0", "1-0", "2-0", "1-0", "1-Jan", "2-Jan", "2-0", "2-0", "1-0", "1-Jan", "2-Jan", "1-0", "1-Jan", "2-Jan"],
     "Scorer": ["Clarrie Jones", "William Kim", "Sam James", "Sam James", "William Kim", "Christopher Tomkinson", "Ryan Pattemore", "Samuel McConaghy", "Michael Iffland", "Michael Iffland", "Samuel McConaghy", "Michael Iffland", "Conor Farrington", "Samuel McConaghy", "William Kim", "Conor Farrington", "Samuel McConaghy", "Clarrie Jones", "Angus Walker", "Rudy Hoschke", "Rudy Hoschke", "Michael Iffland", "Rudy Hoschke", "Samuel McConaghy"],
     "Type": ["Finish", "Midrange", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Finish", "Finish", "Midrange", "Midrange", "Three Pointer", "Three Pointer", "Finish", "Finish", "Finish", "Finish", "Finish", "Midrange"],
-    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
     "WStreak": ["-", "1", "-", "2", "-", "-", "1", "-", "1", "-", "2", "-", "3", "-", "-", "4", "5", "1", "-", "-", "1", "-", "-", "1"],
     "LStreak": ["-", "1", "-", "1", "-", "-", "1", "-", "1", "-", "2", "-", "2", "-", "-", "3", "3", "1", "-", "-", "1", "-", "-", "1"],
     "SStreak": [1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1]
   },
   {
-    "Date":["2 February"],
-    "GameNumber":[1,1,1,2,2,2,3,3,4,4,5,6,6,6,7,8,8,9,9,10,11,11,12,12],
-    "Winner":["Gentle, Men","Choc-Tops","Choc-Tops","Choc-Tops","Traffic Controllers","Choc-Tops","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers","Traffic Controllers","Choc-Tops","Traffic Controllers","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers","Traffic Controllers"],
-    "Loser":["Choc-Tops","Gentle, Men","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops","Gentle, Men","Traffic Controllers","Choc-Tops","Traffic Controllers","Gentle, Men","Traffic Controllers","Traffic Controllers","Gentle, Men","Gentle, Men","Choc-Tops","Gentle, Men","Gentle, Men","Choc-Tops","Choc-Tops"],
-    "Score":["1-0","1-1","2-1","1-0","1-1","2-1","1-0","2-0","1-0","2-0","2-0","1-0","1-1","2-1","2-0","1-0","2-0","1-0","2-0","2-0","1-0","2-0","1-0","2-0"],
-    "Scorer":["Michael Iffland","Alexander Galt","Rudy Hoschke","Rudy Hoschke","Clarrie Jones","Rudy Hoschke","Rudy Hoschke","Alexander Galt","Clarrie Jones","Clarrie Jones","William Kim","Ryan Pattemore","William Kim","Christopher Tomkinson","Ryan Pattemore","Alexander Galt","Alexander Galt","Rudy Hoschke","Jasper Collier","Clarrie Jones","Sam James","Sam James","Angus Walker","Angus Walker"],
-    "Type":["Finish","Finish","Finish","Finish","Midrange","Finish","Finish","Finish","Midrange","Midrange","Three Pointer","Midrange","Midrange","Finish","Three Pointer","Finish","Finish","Finish","Midrange","Three Pointer","Midrange","Midrange","Midrange","Finish"],
-    "Assister": ["None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None","None"],
-    "WStreak":["-","-","1","-","-","2","-","3","-","1","2","-","-","1","2","-","3","-","4","1","-","2","-","3"],
-    "LStreak":["-","-","1","-","-","1","-","2","-","1","3","-","-","1","4","-","2","-","5","1","-","6","-","2"],
-    "SStreak":[1,1,1,2,1,1,2,1,1,2,1,1,1,1,1,1,2,1,1,1,1,2,1,2]
+    "Date": ["2 February"],
+    "GameNumber": [1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8, 9, 9, 10, 11, 11, 12, 12],
+    "Winner": ["Gentle, Men", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Traffic Controllers", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Choc-Tops", "Traffic Controllers", "Traffic Controllers", "Traffic Controllers", "Traffic Controllers", "Traffic Controllers"],
+    "Loser": ["Choc-Tops", "Gentle, Men", "Gentle, Men", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Choc-Tops", "Choc-Tops", "Gentle, Men", "Traffic Controllers", "Choc-Tops", "Traffic Controllers", "Gentle, Men", "Traffic Controllers", "Traffic Controllers", "Gentle, Men", "Gentle, Men", "Choc-Tops", "Gentle, Men", "Gentle, Men", "Choc-Tops", "Choc-Tops"],
+    "Score": ["1-0", "1-1", "2-1", "1-0", "1-1", "2-1", "1-0", "2-0", "1-0", "2-0", "2-0", "1-0", "1-1", "2-1", "2-0", "1-0", "2-0", "1-0", "2-0", "2-0", "1-0", "2-0", "1-0", "2-0"],
+    "Scorer": ["Michael Iffland", "Alexander Galt", "Rudy Hoschke", "Rudy Hoschke", "Clarrie Jones", "Rudy Hoschke", "Rudy Hoschke", "Alexander Galt", "Clarrie Jones", "Clarrie Jones", "William Kim", "Ryan Pattemore", "William Kim", "Christopher Tomkinson", "Ryan Pattemore", "Alexander Galt", "Alexander Galt", "Rudy Hoschke", "Jasper Collier", "Clarrie Jones", "Sam James", "Sam James", "Angus Walker", "Angus Walker"],
+    "Type": ["Finish", "Finish", "Finish", "Finish", "Midrange", "Finish", "Finish", "Finish", "Midrange", "Midrange", "Three Pointer", "Midrange", "Midrange", "Finish", "Three Pointer", "Finish", "Finish", "Finish", "Midrange", "Three Pointer", "Midrange", "Midrange", "Midrange", "Finish"],
+    "Assister": ["None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None", "None"],
+    "WStreak": ["-", "-", "1", "-", "-", "2", "-", "3", "-", "1", "2", "-", "-", "1", "2", "-", "3", "-", "4", "1", "-", "2", "-", "3"],
+    "LStreak": ["-", "-", "1", "-", "-", "1", "-", "2", "-", "1", "3", "-", "-", "1", "4", "-", "2", "-", "5", "1", "-", "6", "-", "2"],
+    "SStreak": [1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2]
   },
 ]
 
@@ -354,7 +354,7 @@ function calculateAverages() {
       if (Scored == false) {
         if (Missed[x].Missed[i] == 1) {
           LMD += 1
-          if(x > 7) {
+          if (x > 7) {
             LMAD += 1
           }
         }
@@ -371,12 +371,23 @@ function calculateAverages() {
   }
 
   for (i = 0; i < mainArray.Name.length; i++) {
-    console.log(MD[i])
-    AP.push((Math.round(100 * (TP[i] / (Data.length - MD[i])))) / 100)
-    AF.push((Math.round(100 * (TF[i] / (Data.length - MD[i])))) / 100)
-    AM.push((Math.round(100 * (TM[i] / (Data.length - MD[i])))) / 100)
-    AT.push((Math.round(100 * (TT[i] / (Data.length - MD[i])))) / 100)
-    AA.push((Math.round(100 * (TA[i] / (Data.length - (MAD[i]+7))))) / 100)
+    if ((Data.length - MD[i]) != 0) {
+      AP.push((Math.round(100 * (TP[i] / (Data.length - MD[i])))) / 100)
+      AF.push((Math.round(100 * (TF[i] / (Data.length - MD[i])))) / 100)
+      AM.push((Math.round(100 * (TM[i] / (Data.length - MD[i])))) / 100)
+      AT.push((Math.round(100 * (TT[i] / (Data.length - MD[i])))) / 100)
+    } else {
+      AP.push(0)
+      AF.push(0)
+      AM.push(0)
+      AT.push(0)
+    }
+    if ((Data.length - (MAD[i] + 7)) != 0) {
+      AA.push((Math.round(100 * (TA[i] / (Data.length - (MAD[i] + 7))))) / 100)
+    } else {
+      AA.push(0)
+    }
+    
   }
 
   mainArray.PPG = AP

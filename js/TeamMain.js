@@ -292,6 +292,7 @@ function initalise() {
             FPG += mainArray.FPG[i]
             MPG += mainArray.MPG[i]
             TPG += mainArray.TPG[i]
+            console.log(typeof mainArray.PPG[i] + " and is " + mainArray.PPG[i])
         }
 
         document.getElementById("PPoints").innerHTML = Math.round((PPG / mainArray.PPG.length) * 100) / 100
