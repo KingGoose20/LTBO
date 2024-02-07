@@ -128,6 +128,11 @@ function header(location) {
         case "News":
             template.innerHTML = template.innerHTML.replace('w-nav-link">News</a>', 'w-nav-link w--current">News</a>')
             break;
+        case "Stat Machine":
+            template.innerHTML = template.innerHTML.replace('">Stat Machine', ' w-nav-link w--current">Stat Machine')
+            template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Stat Machine</a>', 'class="navigation-link w-nav-link w--current">Stat Machine</a>')
+            template.innerHTML = template.innerHTML.replace('<span class="navigation-link w-nav-link">Stats</span>', '<span class="navigation-link w-nav-link w--current">Stats</span>')
+            break;
         case "Stats":
             template.innerHTML = template.innerHTML.replace('">Stats Home', ' w-nav-link w--current">Stats Home')
             template.innerHTML = template.innerHTML.replace('class="navigation-link w-nav-link">Stats Home</a>', 'class="navigation-link w-nav-link w--current">Stats Home</a>')

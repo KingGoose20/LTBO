@@ -4,6 +4,7 @@ let points = document.getElementById("points")
 let finishes = document.getElementById("finishes")
 let midranges = document.getElementById("midranges")
 let threepointers = document.getElementById("threepointers")
+let assists = document.getElementById("assists")
 let accolade1 = document.getElementById("accolade1")
 let accolade2 = document.getElementById("accolade2")
 let accolade3 = document.getElementById("accolade3")
@@ -87,6 +88,7 @@ function RunMain() {
   finishes.innerHTML = String(mainArray.FPG[number]) + "-" + String(mainArray.TF[number])
   midranges.innerHTML = String(mainArray.MPG[number]) + "-" + String(mainArray.TM[number])
   threepointers.innerHTML = String(mainArray.TPG[number]) + "-" + String(mainArray.TT[number])
+  assists.innerHTML = String(mainArray.APG[number]) + "-" + String(mainArray.TA[number])
 
   accolade1.innerHTML = mainArray.AccoladesOne[number]
   accolade2.innerHTML = mainArray.AccoladesTwo[number]
@@ -136,11 +138,13 @@ function RunMain() {
       clone.getElementById("finishes").innerHTML = String(day.Finishes[number])
       clone.getElementById("midranges").innerHTML = String(day.Midrange[number])
       clone.getElementById("threes").innerHTML = String(day.ThreePointers[number])
+      clone.getElementById("assists").innerHTML = String(day.Assists[number])
     } else {
       clone.getElementById("points").innerHTML = String(day.Points[number])
       clone.getElementById("finishes").innerHTML = String(day.Finishes[number])
       clone.getElementById("midranges").innerHTML = String(day.Midrange[number])
-      clone.getElementById("threes").innerHTML = String(day.ThreePointers[number])
+      clone.getElementById("threes").innerHTML = String(day.Midrange[number])
+      clone.getElementById("assists").innerHTML = String(day.Assists[number])
     }
     table.appendChild(clone)
   }

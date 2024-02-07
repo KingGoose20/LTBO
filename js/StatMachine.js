@@ -45,10 +45,8 @@ function saveTable() {
 }
 
 function deleteSavedTable(id) {
-    console.log(id)
     if (confirm("Are you sure you want to delete this table?") == true) {
         parent = document.getElementById(id + "section")
-        console.log(parent.children)
         for (i=0; i<parent.children.length; i++) {
             parent.children[i].style.animation = "fade-out-table 2s forwards"
         }
@@ -57,6 +55,9 @@ function deleteSavedTable(id) {
         parent.style.animation = "shrinkTable 4s forwards"
          setTimeout(function() {
             parent.remove()
+            if (document.getElementById("savedTables").children.length == 0) {
+                document.getElementById("savedData").style.display = "none"
+            }
             
           }, "4000");        
     } else {
@@ -625,6 +626,7 @@ function logClicks() {
         cell = row.insertCell(-1)
         cell.innerHTML = data[index]
         cell.style.backgroundColor = backgroundColour
+        cell.style.fontWeight = "400"
         if (findLargestNumber(data) == data[index]) {
             cell.style.color = "rgb(0,180,0)"
             cell.style.fontWeight = "900"

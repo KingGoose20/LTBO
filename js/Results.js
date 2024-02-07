@@ -475,10 +475,13 @@ function results() {
 
     if (pointsCT == 1) {
       document.getElementById("losing").innerHTML = "Choc-Tops";
+      CTpointsRef.innerHTML = "<strong>" + pointsCT + "</strong> point"
     } else if (pointsTC == 1) {
       document.getElementById("losing").innerHTML = "Traffic Controllers";
+      TCpointsRef.innerHTML = "<strong>" + pointsTC + "</strong> point"
     } else if (pointsGM == 1) {
       document.getElementById("losing").innerHTML = "Gentle, Men";
+      GMpointsRef.innerHTML = "<strong>" + pointsGM + "</strong> point"
     } else if (Today.Loser[Today.Loser.length - 1] == "Choc-Tops" && pointsCT == 1.5) {
       document.getElementById("losing").innerHTML = "Choc-Tops";
     } else if (Today.Loser[Today.Loser.length - 1] == "Traffic Controllers" && pointsTC == 1.5) {
@@ -579,10 +582,9 @@ function results() {
         row = table.insertRow(-1);
         var cell1 = row.insertCell(0);
         cell1.innerHTML = "The " + Today.Winner[i - 1] + " beat the " + Today.Loser[i - 1] + " " + Today.Score[i - 1]
-        cell1.colSpan = 9
+        cell1.colSpan = 10
       }
     }
-
     row = table.insertRow(-1);
     row.onclick = function () { openStatsLadder(this); };
     row.id = i
@@ -596,6 +598,7 @@ function results() {
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7);
     var cell9 = row.insertCell(8);
+    var cell10 = row.insertCell(9);
 
     cell1.innerHTML = Today.GameNumber[i]
     cell2.innerHTML = Today.Winner[i];
@@ -603,9 +606,29 @@ function results() {
     cell4.innerHTML = Today.Score[i];
     cell5.innerHTML = Today.Scorer[i];
     cell6.innerHTML = Today.Type[i];
-    cell7.innerHTML = Today.WStreak[i];
-    cell8.innerHTML = Today.LStreak[i];
-    cell9.innerHTML = Today.SStreak[i];
+    cell7.innerHTML = Today.Assister[i];
+    cell8.innerHTML = Today.WStreak[i];
+    cell9.innerHTML = Today.LStreak[i];
+    cell10.innerHTML = Today.SStreak[i];
+
+    if (Today.Assister[i] == "None") {
+      cell7.innerHTML = "N/A"
+    } else {
+      AssisterName = Today.Assister[i]
+      FirstNameInitial = AssisterName.charAt(0)
+      Surname = ""
+      for (y = 0; y < AssisterName.length; y++) {
+        if (AssisterName.charAt(y) == " ") {
+          for (x = y; x < AssisterName.length; x++) {
+            Surname += AssisterName.charAt(x)
+          }
+        }
+      }
+      cell7.innerHTML = FirstNameInitial + " " + Surname
+    }
+    if (Today.Type[i] == "Three Pointer") {
+      cell6.innerHTML = "3 Pointer"
+    }
   }
   row = table.insertRow(-1);
   var cell1 = row.insertCell(0);
@@ -615,12 +638,13 @@ function results() {
     cell1.innerHTML = "The " + Today.Winner[Today.Winner.length - 1] + " tied with the " + Today.Loser[Today.Winner.length - 1] + " " + Today.Score[Today.Winner.length - 1]
   }
 
-  cell1.colSpan = 9
+  cell1.colSpan = 10
 
   for (x = 0; x < players.length; x++) {
     finishes = 0
     midrange = 0
     threes = 0
+    assists = 0
 
     for (i = 0; i < Today.Winner.length; i++) {
       if (Today.Scorer[i] == players[x]) {
@@ -631,6 +655,9 @@ function results() {
         } else {
           threes += 1
         }
+      }
+      if (Today.Assister[i] == players[x]) {
+        assists += 1
       }
     }
 
@@ -645,6 +672,7 @@ function results() {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
 
     cell1.innerHTML = players[x];
     dnp = false
@@ -658,11 +686,13 @@ function results() {
       cell3.innerHTML = "DNP"
       cell4.innerHTML = "DNP"
       cell5.innerHTML = "DNP"
+      cell6.innerHTML = "DNP"
     } else {
       cell2.innerHTML = boldNumber((finishes + midrange + (2 * threes)));
       cell3.innerHTML = boldNumber(finishes);
       cell4.innerHTML = boldNumber(midrange);
       cell5.innerHTML = boldNumber(threes);
+      cell6.innerHTML = boldNumber(assists);
     }
 
   }
