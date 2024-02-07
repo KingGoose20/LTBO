@@ -1,17 +1,17 @@
 /* -------------- PUT INFO HERE -------------- */
 Main = {
-    "PartACT":[28,22,20],
-    "PartBCT":[23,"Rudy Hoschke",23,"Rudy Hoschke",7,"Ryan Pattemore",1,"Ryan Pattemore",0,"N/A"],
-    "PartCCT":[7.6,5.8,1.6,0.1,0,3.5,2.8],
-    "PartDCT":[15,6,71.4,13,11,54.2],
-    "PartATC":[14,24,12.5],
-    "PartBTC":[10,"Clarrie Jones",3,"Angus Walker",7,"Sam James",3,"Clarrie Jones",0,"N/A"],
-    "PartCTC":[7.6,0.8,2.3,0.8,0,1.8,3],
-    "PartDTC":[6,15,28.6,8,9,47.1],
-    "PartAGM":[20,21,15.5],
-    "PartBGM":[21,"Samuel McConaghy",10,"Michael Iffland",12,"Samuel McConaghy",1,"Samuel McConaghy",0,"N/A"],
-    "PartCGM":[5.9,3.3,2.4,0.1,0,2.5,2.6],
-    "PartDGM":[11,13,45.8,9,8,52.9],       
+    "PartACT":[29,28,18],
+    "PartBCT":[24,"Rudy Hoschke",24,"Rudy Hoschke",7,"Ryan Pattemore",1,"Ryan Pattemore",0,"N/A"],
+    "PartCCT":[7.9,6,1.6,0.1,0,3.6,3.5],
+    "PartDCT":[16,6,72.7,13,14,48.1],
+    "PartATC":[15,26,12.5],
+    "PartBTC":[11,"William Kim",4,"Angus Walker",7,"Sam James",3,"Clarrie Jones",1,"Angus Walker"],
+    "PartCTC":[7.9,1,2.4,0.8,0.1,1.9,3.3],
+    "PartDTC":[6,16,27.3,9,10,47.4],
+    "PartAGM":[24,22,17.5],
+    "PartBGM":[27,"Samuel McConaghy",11,"Michael Iffland",15,"Samuel McConaghy",1,"Samuel McConaghy",2,"Michael Iffland"],
+    "PartCGM":[7,3.9,2.9,0.1,0.4,3,2.8],
+    "PartDGM":[14,13,51.9,10,9,52.6],        
     
 }
 

@@ -585,7 +585,6 @@ function results() {
         cell1.colSpan = 10
       }
     }
-
     row = table.insertRow(-1);
     row.onclick = function () { openStatsLadder(this); };
     row.id = i
@@ -618,9 +617,9 @@ function results() {
       AssisterName = Today.Assister[i]
       FirstNameInitial = AssisterName.charAt(0)
       Surname = ""
-      for (i=0;i<AssisterName.length; i++) {
-        if (AssisterName.charAt(i) == " ") {
-          for (x=i; x<AssisterName.length; x++) {
+      for (y = 0; y < AssisterName.length; y++) {
+        if (AssisterName.charAt(y) == " ") {
+          for (x = y; x < AssisterName.length; x++) {
             Surname += AssisterName.charAt(x)
           }
         }

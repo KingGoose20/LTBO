@@ -120,6 +120,20 @@ Data = [
     "LStreak": ["-", "-", "1", "-", "-", "1", "-", "2", "-", "1", "3", "-", "-", "1", "4", "-", "2", "-", "5", "1", "-", "6", "-", "2"],
     "SStreak": [1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2]
   },
+
+  {
+    "Date":["7 February"],
+    "GameNumber":[1,1,2,2,2,3,3,3,4,4,5,5,6,6],
+    "Winner":["Gentle, Men","Gentle, Men","Gentle, Men","Traffic Controllers","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men","Gentle, Men"],
+    "Loser":["Choc-Tops","Choc-Tops","Traffic Controllers","Gentle, Men","Gentle, Men","Choc-Tops","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops","Traffic Controllers","Traffic Controllers","Choc-Tops","Choc-Tops"],
+    "Score":["1-0","2-0","1-0","1-1","2-1","1-0","1-1","2-1","1-0","2-0","1-0","2-0","1-0","2-0"],
+    "Scorer":["Samuel McConaghy","Samuel McConaghy","Conor Farrington","Angus Walker","William Kim","William Kim","Christopher Tomkinson","Rudy Hoschke","Samuel McConaghy","Samuel McConaghy","Samuel McConaghy","Samuel McConaghy","Michael Iffland","Conor Farrington"],
+    "Type":["Midrange","Finish","Midrange","Finish","Midrange","Finish","Finish","Finish","Midrange","Finish","Finish","Midrange","Finish","Finish"],
+    "Assister":["Michael Iffland","None","Samuel McConaghy","None","Angus Walker","None","None","None","Michael Iffland","None","None","None","None","None"],
+    "WStreak":["-","1","-","-","1","-","-","1","-","1","-","2","-","3"],
+    "LStreak":["-","1","-","-","1","-","-","1","-","1","-","2","-","2"],
+    "SStreak":[1,2,1,1,1,2,1,1,1,2,3,4,1,1]
+  }
 ]
 
 Missed = [
@@ -158,6 +172,12 @@ Missed = [
     "Missed": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
     "Points": [3, 2, 1]
   },
+  {
+    "Date":["7 February"],
+    "Missed":[0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+    "Points":[1,2,3]
+    },
+    
 
 
 ]
