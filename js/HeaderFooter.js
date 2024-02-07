@@ -33,12 +33,13 @@ function header(location) {
                 <span class="navigation-link w-nav-link">More</span>
                 <div class="dropdown-content">
                     <a href="replacerDocumentsAndIco/Contact.html" class="dropDown-link">Contact Us</a>
-                    <a href="replacerDocumentsAndIco/LeagueHome.html?Team=LTBO" class="dropDown-link">League Home</a>
-                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=CT" class="dropDown-link">Choc-Tops Home</a>
-                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=TC" class="dropDown-link">Traffic Controllers Home</a>
-                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="dropDown-link">Gentle, Men Home</a>
+                    <a href="replacerDocumentsAndIco/LeagueHome.html?Team=LTBO" class="dropDown-link animate-character">League Home</a>
+                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=CT" class="dropDown-link animate-characterCT" style="animation-duration: 5s">Choc-Tops Home</a>
+                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=TC" class="dropDown-link animate-characterTC" style="animation-duration: 5s">Traffic Controllers Home</a>
+                    <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="dropDown-link animate-characterGM" style="animation-duration: 5s">Gentle, Men Home</a>
                     <a href="replacerDocumentsAndIco/OfficialGame.html" class="dropDown-link">Official Game</a>
-                    <a href="https://365asas-my.sharepoint.com/:f:/g/personal/011445_asas_qld_edu_au/Enw3biOiY2xAo3nd_oihdAEBjsB7F500EKl6UYgd5-ONqQ?e=1KAlm2" class="dropDown-link" target="_blank">Visual Database</a>
+                    <a href="https://365asas-my.sharepoint.com/:f:/g/personal/011445_asas_qld_edu_au/Enw3biOiY2xAo3nd_oihdAEBjsB7F500EKl6UYgd5-ONqQ?e=1KAlm2" class="dropDown-link" target="_blank"style="color: #007cff"> Visual Database</a>
+                    <a href="https://youtube.com/playlist?list=PLGcUkGbjJXS2QwsDUtyoju3ULl76rsqQ5&si=fKS9ZOp4a3WV7VA_" class="dropDown-link" target="_blank" style="color: #d40000">YouTube</a>
                 </div>
             </div>
             <li class="nav-item dropdownShow">
@@ -51,16 +52,16 @@ function header(location) {
                 <a href="replacerDocumentsAndIco/Contact.html" class="navigation-link w-nav-link">Contact Us</a>
             </li>
             <li class="nav-item dropdownShow">
-                <a href="replacerDocumentsAndIco/LeagueHome?Team=LTBO" class="navigation-link w-nav-link">League Home</a>
+                <a href="replacerDocumentsAndIco/LeagueHome?Team=LTBO" class="navigation-link w-nav-link animate-character">League Home</a>
             </li>
             <li class="nav-item dropdownShow">
-                <a href="replacerDocumentsAndIco/TeamHome.html?Team=CT" class="navigation-link w-nav-link">Choc-Tops Home</a>
+                <a href="replacerDocumentsAndIco/TeamHome.html?Team=CT" class="navigation-link w-nav-link animate-characterCT">Choc-Tops Home</a>
             </li>
             <li class="nav-item dropdownShow">
-                <a href="replacerDocumentsAndIco/TeamHome.html?Team=TC" class="navigation-link w-nav-link">Traffic Controllers Home</a>
+                <a href="replacerDocumentsAndIco/TeamHome.html?Team=TC" class="navigation-link w-nav-link animate-characterTC">Traffic Controllers Home</a>
             </li>
             <li class="nav-item dropdownShow">
-                <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="navigation-link w-nav-link">Gentle, Men Home</a>
+                <a href="replacerDocumentsAndIco/TeamHome.html?Team=GM" class="navigation-link w-nav-link animate-characterGM">Gentle, Men Home</a>
             </li>
             <li class="nav-item dropdownShow">
                 <a href="replacerDocumentsAndIco/OfficialGame.html" class="navigation-link w-nav-link">Official Game</a>
@@ -68,6 +69,9 @@ function header(location) {
             <li class="nav-item dropdownShow">
             <a href="https://365asas-my.sharepoint.com/:f:/g/personal/011445_asas_qld_edu_au/Enw3biOiY2xAo3nd_oihdAEBjsB7F500EKl6UYgd5-ONqQ?e=1KAlm2" class="navigation-link w-nav-link" target="_blank">Visual Database</a>
         </li>
+        <li class="nav-item dropdownShow">
+        <a href="https://youtube.com/playlist?list=PLGcUkGbjJXS2QwsDUtyoju3ULl76rsqQ5&si=fKS9ZOp4a3WV7VA_" class="navigation-link w-nav-link" target="_blank">YouTube</a>
+    </li>
 
             </ul>
             <div class="hamburger">
@@ -208,7 +212,11 @@ function footer(location) {
                     <h5>About the Lunch Time Basketball Organisation</h5>
                     <p>This website contains all official content relating to the LTBO (Lunch Time Basketball Organisation).</p>
                     <br><br>
-                    <a href="https://www.instagram.com/LTBO_official/" style="text-decoration: none;"><p>Official Instagram - <span class="fa fa-instagram" style="position: relative; top: 2px; font-size: 20px;"></span></p></a>
+                    <div>
+                    <a href="https://www.instagram.com/LTBO_official/" style="text-decoration: none; display:inline-block; margin-right: 20px;"><p>Official Instagram - <span class="fa fa-instagram" style="position: relative; top: 2px; font-size: 20px;"></span></p></a>
+                    <a href="https://youtube.com/playlist?list=PLGcUkGbjJXS2QwsDUtyoju3ULl76rsqQ5&si=fKS9ZOp4a3WV7VA_" style="text-decoration: none; display:inline-block; margin-left: 20px;"><p>Official YouTube - <span class="fa fa-youtube" style="position: relative; top: 2px; font-size: 20px;"></span></p></a>
+                    </div>
+                    
                 </div>
                 <div class="spc w-col w-col-6">
                     <h5>useful links</h5>
