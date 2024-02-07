@@ -6,13 +6,12 @@ Main = {
     "PartDCT":[16,6,72.7,13,14,48.1],
     "PartATC":[15,26,12.5],
     "PartBTC":[11,"William Kim",4,"Angus Walker",7,"Sam James",3,"Clarrie Jones",1,"Angus Walker"],
-    "PartCTC":[7.9,1,2.4,0.8,0.1,1.9,3.3],
+    "PartCTC":[7.9,1,2.4,0.8,1,1.9,3.3],
     "PartDTC":[6,16,27.3,9,10,47.4],
     "PartAGM":[24,22,17.5],
     "PartBGM":[27,"Samuel McConaghy",11,"Michael Iffland",15,"Samuel McConaghy",1,"Samuel McConaghy",2,"Michael Iffland"],
-    "PartCGM":[7,3.9,2.9,0.1,0.4,3,2.8],
-    "PartDGM":[14,13,51.9,10,9,52.6],        
-    
+    "PartCGM":[7,3.9,2.9,0.1,3,3,2.8],
+    "PartDGM":[14,13,51.9,10,9,52.6],
 }
 
 /* ------------------------------------------- */
