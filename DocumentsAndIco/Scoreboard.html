@@ -1,0 +1,209 @@
+<link href="../CSS/MainSS.css" rel="stylesheet" type="text/css" />
+<script src="../js/Webfont.js" type="text/javascript"></script>
+<script type="text/javascript">
+    WebFont.load({
+        google: {
+            families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Roboto:300,regular,500", "Bebas Neue"]
+        }
+    });
+</script>
+<div style="padding: 5px;">
+    <img src="../Images//Scoreboard Basic.png" style="width: 80vw" />
+    <p
+        style="position: absolute; top:25px; left:25px; font-size: 60px; font-family: Bebas Neue; color:black; text-shadow: 2px 2px #ffffff;">
+        HONK</p>
+    <p
+        style="position: absolute; top:25px; left:1055px; font-size: 60px; font-family: Bebas Neue; color:black; text-shadow: 2px 2px #ffffff;">
+        McGOO
+    </p>
+    <img src="../Images//Team Honk.png" style="height: 4vw; position: absolute; left:420px; top:15px; z-index: 100;" />
+    <img src="../Images//Team McGoo.png" style="height: 4vw; position: absolute; left:740px; top:15px; z-index: 100;" />
+    <p
+        style="position: absolute; top:25px; left:502.5px; font-size: 30px; font-family: Bebas Neue; color:white; min-width: 200px; text-align: center;">
+        <span style="float: left; min-width: 80px;" id="quarter">1st</span><span style="width: 30px;"> | </span><span
+            style="float: right; min-width: 80px;" id="time">9:48</span>
+    </p>
+    <p style="position: absolute; top:25px; left:215px; font-size: 80px; font-family: Bebas Neue; color:black; min-width: 100px; text-align: center; text-shadow: 4px 4px #ffffff;"
+        id="honkScore">
+        23</p>
+    <p style="position: absolute; top:25px; left:880px; font-size: 80px; font-family: Bebas Neue; color:black; min-width: 100px; text-align: center; text-shadow: 4px 4px #ffffff;"
+        id="mcgooScore">
+        14</p>
+
+
+</div>
+<script>
+    Data = {
+        "Time": ["9:56", "9:56", "9:40", "9:39", "9:36", "9:36", "9:32", "9:32", "9:26", "9:26", "9:23", "9:23", "9:10", "9:09", "9:03", "9:03", "8:50", "8:50", "8:40", "8:40", "8:19", "8:19", "8:14", "8:13", "7:48", "7:47", "7:41", "6:35", "6:34", "6:15", "6:14", "5:55", "5:54", "5:32", "5:32", "5:08", "5:08", "4:54", "5:43", "4:40", "4:40", "4:09", "4:08", "4:03", "4:03", "3:41", "3:40", "3:32", "3:31", "3:28", "3:06", "3:03", "3:02", "3:01", "2:19", "2:18", "2:12", "2:12", "1:56", "1:54", "0:01", "0:01", "0:01", "", "9:42", "9:42", "9:41", "9:35", "9:34", "9:08", "8:44", "8:44", "8:43", "8:40", "8:39", "8:39", "8:38", "8:08", "8:07", "8:05", "7:35", "7:19", "6:58", "6:57", "6:49", "6:46", "6:27", "6:27", "6:21", "5:42", "5:41", "5:18", "5:17", "4:59", "4:58", "4:47", "4:27", "4:27", "4:17", "3:52", "3:51", "3:18", "3:17", "3:07", "3:06", "2:52", "2:52", "2:51", "2:42", "2:40", "2:30", "2:30", "2:15", "2:14", "2:03", "2:01", "1:56", "1:56", "1:38", "1:33", "1:23", "1:21", "1:15", "1:15", "1:14", "1:13", "0:58", "0:45", "0:21", "0:19", "0:19", "0:06", "0:05", "0:01", "", "9:52", "9:50", "9:18", "9:17", "9:10", "8:40", "8:39", "8:32", "8:31", "8:18", "8:18", "8:00", "8:00", "7:41", "7:40", "7:36", "7:36", "7:25", "7:25", "7:24", "7:15", "7:14", "7:12", "7:12", "7:11", "6:54", "6:45", "6:44", "6:34", "6:11", "6:10", "6:05", "5:45", "5:45", "5:41", "5:41", "5:33", "5:32", "5:15", "4:55", "4:54", "4:32", "4:31", "4:24", "4:24", "4:04", "3:36", "3:35", "3:18", "3:16", "3:08", "3:08", "2:42", "2:28", "2:28", "2:07", "2:07", "1:57", "1:56", "1:53", "1:53", "1:30", "1:30", "1:10", "1:08", "0:55", "0:54", "0:52", "0:30", "0:30", "0:28", "0:27", "", "9:48", "9:47", "9:08", "9:07", "9:04", "9:04", "8:37", "8:37", "8:11", "8:10", "7:42", "7:43", "7:45", "7:45", "7:14", "7:13", "7:09", "7:08", "6:34", "6:34", "6:12", "6:11", "5:57", "5:56", "5:41", "5:40", "5:39", "5:38", "5:37", "5:07", "5:06", "4:32", "4:30", "4:27", "4:10", "4:08", "4:07", "4:06", "4:01", "4:01", "3:37", "3:36", "3:17", "3:16", "2:45", "2:45", "2:27", "2:27", "2:20", "2:20", "2:05", "1:31", "1:28", "1:25", "1:25", "0:50", "0:49", "0:21", "0:20"],
+        "Player": ["Christopher Tomkinson", "Clarrie Jones", "Alexander Galt", "Sam James", "William Kim", "Sam James", "Ryan Pattemore", "William Kim", "William Kim", "Ryan Pattemore", "Ryan Pattemore", "William Kim", "Sam James", "Sam James", "Samuel McConaghy", "Sam James", "Sam James", "Clarrie Jones", "Sam James", "Ryan Pattemore", "Sam James", "Angus Walker", "Sam James", "Rudy Hoschke", "Angus Walker", "Christopher Tomkinson", "Sam James", "William Kim", "Christopher Tomkinson", "Sam James", "Rudy Hoschke", "Rudy Hoschke", "Jasper Collier", "Angus Walker", "Jasper Collier", "Ryan Pattemore", "Ryan Pattemore", "William Kim", "Samuel McConaghy", "Alexander Galt", "Samuel McConaghy", "Angus Walker", "Samuel McConaghy", "Alexander Galt", "Samuel McConaghy", "Clarrie Jones", "Jasper Collier", "Clarrie Jones", "Angus Walker", "Angus Walker", "Alexander Galt", "Sam James", "Sam James", "Michael Iffland", "Clarrie Jones", "Alexander Galt", "Rudy Hoschke", "Samuel McConaghy", "Clarrie Jones", "Alexander Galt", "Clarrie Jones", "Angus Walker", "Alexander Galt", "BREAK", "Michael Iffland", "Alexander Galt", "Alexander Galt", "Alexander Galt", "William Kim", "Angus Walker", "Sam James", "Michael Iffland", "Rudy Hoschke", "Rudy Hoschke", "Angus Walker", "Christopher Tomkinson", "Angus Walker", "Alexander Galt", "Alexander Galt", "Alexander Galt", "Rudy Hoschke", "Samuel McConaghy", "William Kim", "Alexander Galt", "Sam James", "Angus Walker", "Ryan Pattemore", "Clarrie Jones", "Samuel McConaghy", "Michael Iffland", "Christopher Tomkinson", "Alexander Galt", "Clarrie Jones", "William Kim", "Ryan Pattemore", "Samuel McConaghy", "William Kim", "Angus Walker", "Team McGOO", "Sam James", "William Kim", "Ryan Pattemore", "Jasper Collier", "William Kim", "Christopher Tomkinson", "Sam James", "Clarrie Jones", "William Kim", "William Kim", "Alexander Galt", "Samuel McConaghy", "Clarrie Jones", "Samuel McConaghy", "Michael Iffland", "William Kim", "Sam James", "Rudy Hoschke", "Sam James", "Clarrie Jones", "Ryan Pattemore", "Christopher Tomkinson", "Michael Iffland", "Ryan Pattemore", "Michael Iffland", "Ryan Pattemore", "Clarrie Jones", "Clarrie Jones", "Alexander Galt", "William Kim", "Michael Iffland", "Michael Iffland", "Clarrie Jones", "Alexander Galt", "Alexander Galt", "BREAK", "Alexander Galt", "Rudy Hoschke", "Rudy Hoschke", "Alexander Galt", "Samuel McConaghy", "Rudy Hoschke", "Michael Iffland", "William Kim", "Samuel McConaghy", "Jasper Collier", "Ryan Pattemore", "Michael Iffland", "Clarrie Jones", "Samuel McConaghy", "Clarrie Jones", "Samuel McConaghy", "Clarrie Jones", "Sam James", "Rudy Hoschke", "Rudy Hoschke", "William Kim", "Rudy Hoschke", "Rudy Hoschke", "Rudy Hoschke", "Samuel McConaghy", "Rudy Hoschke", "Rudy Hoschke", "Alexander Galt", "Sam James", "Angus Walker", "Sam James", "Samuel McConaghy", "Ryan Pattemore", "Rudy Hoschke", "Clarrie Jones", "Ryan Pattemore", "Clarrie Jones", "Alexander Galt", "Ryan Pattemore", "Clarrie Jones", "Alexander Galt", "Ryan Pattemore", "Michael Iffland", "Angus Walker", "William Kim", "Alexander Galt", "William Kim", "Christopher Tomkinson", "Samuel McConaghy", "William Kim", "Rudy Hoschke", "William Kim", "Rudy Hoschke", "Samuel McConaghy", "Alexander Galt", "Samuel McConaghy", "Rudy Hoschke", "Sam James", "Sam James", "Samuel McConaghy", "Sam James", "William Kim", "Rudy Hoschke", "Ryan Pattemore", "Angus Walker", "Clarrie Jones", "Michael Iffland", "Michael Iffland", "Sam James", "Michael Iffland", "Alexander Galt", "Alexander Galt", "BREAK", "Clarrie Jones", "Alexander Galt", "Samuel McConaghy", "Samuel McConaghy", "Christopher Tomkinson", "Samuel McConaghy", "Clarrie Jones", "Rudy Hoschke", "Sam James", "Rudy Hoschke", "Clarrie Jones", "Rudy Hoschke", "Angus Walker", "Rudy Hoschke", "Samuel McConaghy", "Samuel McConaghy", "Alexander Galt", "Angus Walker", "Angus Walker", "Michael Iffland", "Christopher Tomkinson", "Angus Walker", "Rudy Hoschke", "Christopher Tomkinson", "Alexander Galt", "Alexander Galt", "Alexander Galt", "Alexander Galt", "Alexander Galt", "Clarrie Jones", "Alexander Galt", "Alexander Galt", "Alexander Galt", "Team McGOO", "Sam James", "Alexander Galt", "Alexander Galt", "Samuel McConaghy", "Angus Walker", "Samuel McConaghy", "Michael Iffland", "Alexander Galt", "Alexander Galt", "Angus Walker", "Rudy Hoschke", "Michael Iffland", "Angus Walker", "Samuel McConaghy", "Angus Walker", "Samuel McConaghy", "Rudy Hoschke", "Christopher Tomkinson", "Samuel McConaghy", "Ryan Pattemore", "Christopher Tomkinson", "Angus Walker", "Christopher Tomkinson", "Christopher Tomkinson", "Angus Walker"],
+        "Thing": ["Steal", "Turnover", "Miss 2PT", "Offensive Rebound", "Steal", "Turnover", "Steal", "Turnover", "Steal", "Turnover", "Steal", "Turnover", "Miss 2PT", "Offensive Rebound", "Make 2PT", "Assist", "Steal", "Turnover", "Make 2PT", "Assist", "Steal", "Turnover", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Turnover", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Make 2PT", "Assist", "Make 2PT", "Assist", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Assist", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Assist", "Miss 2PT", "Offensive Rebound", "Miss 3PT", "Offensive Rebound", "Make 2PT", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Defensive Rebound", "Miss 3PT", "Defensive Rebound", "Steal", "Turnover", "Miss 3PT", "Rebound", "Make 3PT", "Assist", "Make 2PT", "", "Miss 2PT", "Block", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Miss 2PT", "Block", "Defensive Rebound", "Make 2PT", "Steal", "Turnover", "Make 2PT", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Make 2PT", "Make 2PT", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Steal", "Turnover", "Make 2PT", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Make 3PT", "Assist", "Timeout", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Block", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Foul", "Miss FT", "Defensive Rebound", "Miss 3PT", "Defensive Rebound", "Steal", "Turnover", "Miss 3PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Steal", "Turnover", "Miss 2PT", "Defensive Rebound", "Turnover", "Turnover", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Turnover", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Defensive Rebound", "Steal", "Turnover", "Make 2PT", "Assist", "Miss 2PT", "Defensive Rebound", "Steal", "Turnover", "Miss 2PT", "Block", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Offensive Rebound", "Foul", "Miss FT", "Miss FT", "Defensive Rebound", "Turnover", "Miss 2PT", "Defensive Rebound", "Turnover", "Steal", "Turnover", "Steal", "Turnover", "Miss 2PT", "Defensive Rebound", "Miss 3PT", "Miss 3PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Assist", "Make 2PT", "Miss 3PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Assist", "Foul", "Make 2PT", "Assist", "Steal", "Turnover", "Miss 2PT", "Offensive Rebound", "Make 2PT", "Assist", "Make 2PT", "Assist", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Make 2PT", "Miss 2PT", "Block", "Offensive Rebound", "Make 2PT", "", "Miss 3PT", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Make 2PT", "Assist", "Make 3PT", "Assist", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Make 3PT", "Assist", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Assist", "Miss 2PT", "Defensive Rebound", "Miss 3PT", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Offensive Rebound", "Make 2PT", "Miss 3PT", "Defensive Rebound", "Miss 2PT", "Offensive Rebound", "Jump Ball", "Miss 2PT", "Offensive Rebound", "Miss 2PT", "Offensive Rebound", "Steal", "Turnover", "Miss 2PT", "Defensive Rebound", "Miss 2PT", "Defensive Rebound", "Make 2PT", "Assist", "Steal", "Turnover", "Miss 2PT", "Block", "Make 2PT", "Miss 2PT", "Offensive Rebound", "Make 3PT", "Assist", "Miss 2PT", "Defensive Rebound", "Miss 3PT", "Defensive Rebound"]
+    }
+</script>
+<script>
+    HonkScore = 0
+    McGooScore = 0
+    Breaks = [0, 63, 134,211,267]
+    BoxScore = {
+        "Name": ["Angus Walker", "Rudy Hoschke", "William Kim", "Clarrie Jones", "Jasper Collier", "Michael Iffland", "Samuel McConaghy", "Alexander Galt", "Christopher Tomkinson", "Ryan Pattemore", "Sam James", "Will Weekes"],
+        "Points": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Rebound": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Assist": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Steal": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Block": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Turnover": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "Foul": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "OffReb": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "DefReb": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "FGA": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "FGM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "FGP": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "TPA": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "TPM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "TPP": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "FTA": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "FTM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "FTP": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+    function quarter(int) {
+        switch (int) {
+            case 1:
+                document.getElementById("quarter").innerHTML = "1st"
+                break;
+            case 2:
+                document.getElementById("quarter").innerHTML = "2nd"
+                break;
+            case 3:
+                document.getElementById("quarter").innerHTML = "3rd"
+                break;
+            case 4:
+                document.getElementById("quarter").innerHTML = "4th"
+                break;
+        }
+    }
+
+    function secondstotime(secondsA, millisecondsA) {
+        minutes = Math.floor(secondsA / 60)
+        realseconds = secondsA % 60
+        if (realseconds < 10) {
+            realseconds = "0" + realseconds
+
+        }
+
+        if (secondsA < 60) {
+            document.getElementById("time").innerHTML = secondsA + "." + millisecondsA
+
+        } else {
+            document.getElementById("time").innerHTML = minutes + ":" + realseconds
+        }
+
+    }
+
+    function updateScores() {
+        document.getElementById("honkScore").innerHTML = HonkScore
+        document.getElementById("mcgooScore").innerHTML = McGooScore
+    }
+
+    function processBoxScore(seconds, milliseconds, quarter) {
+        Ourtime = (Math.floor(seconds / 60)) + ":" + (seconds % 60)
+        if (milliseconds == 0) {
+            Passed = false
+            for (i = Breaks[quarter-1]; i < Breaks[quarter]; i++) {
+                if (Ourtime == Data.Time[i]) {
+                    Passed = true;
+                    for (x = 0; x < BoxScore.Name.length; x++) {
+                        if (Data.Player[i] == BoxScore.Name[x]) {
+                            console.log("HERE - " + Ourtime + Data.Thing[i])
+                            switch (Data.Thing[i]) {
+                                case "Steal":
+                                    BoxScore.Steal[x] = BoxScore.Steal[x] + 1
+                                    break;
+                                case "Assist":
+                                    BoxScore.Assist[x] = BoxScore.Assist[x] + 1
+                                    break;
+                                case "Block":
+                                    BoxScore.Block[x] = BoxScore.Block[x] + 1
+                                    break;
+                                case "Turnover":
+                                    BoxScore.Turnover[x] = BoxScore.Turnover[x] + 1
+                                    break;
+                                case "Offensive Rebound":
+                                    BoxScore.OffReb[x] += 1
+                                    BoxScore.Rebound[x] += 1
+                                    break;
+                                case "Defensive Rebound":
+                                    BoxScore.DefReb[x] += 1
+                                    BoxScore.Rebound[x] += 1
+                                    break;
+                                case "Foul":
+                                    BoxScore.Foul[x] += 1
+                                    break;
+                                case "Miss 2PT":
+                                    BoxScore.FGA[x] += 1
+                                    BoxScore.FGP[x] = (Math.round((BoxScore.FGM[x] / BoxScore.FGA[x]) * 10000) / 100) + "%"
+                                    break;
+                                case "Make 2PT":
+                                    BoxScore.FGA[x] += 1
+                                    BoxScore.FGM[x] += 1
+                                    BoxScore.Points[x] += 2
+                                    BoxScore.FGP[x] = (Math.round((BoxScore.FGM[x] / BoxScore.FGA[x]) * 10000) / 100) + "%"
+                                    break;
+                                case "Miss FT":
+                                    BoxScore.FTA[x] += 1
+                                    BoxScore.FTP[x] = (Math.round((BoxScore.FTP[x] / BoxScore.FTA[x]) * 10000) / 100) + "%"
+                                    break;
+                                case "Make FT":
+                                    BoxScore.FTA[x] += 1
+                                    BoxScore.FTM[x] += 1
+                                    BoxScore.Points[x] += 1
+                                    BoxScore.FTP[x] = (Math.round((BoxScore.FTP[x] / BoxScore.FTA[x]) * 10000) / 100) + "%"
+                                    break;
+                                case "Miss 3PT":
+                                    BoxScore.TPA[x] += 1
+                                    BoxScore.FGA[x] += 1
+                                    BoxScore.TPA[x] = (Math.round((BoxScore.TPA[x] / BoxScore.TPM[x]) * 10000) / 100) + "%"
+                                    break;
+                                case "Make 3PT":
+                                    BoxScore.FGA[x] += 1
+                                    BoxScore.FGM[x] += 1
+                                    BoxScore.TPA[x] += 1
+                                    BoxScore.TPM[x] += 1
+                                    BoxScore.Points[x] += 3
+                                    BoxScore.TPA[x] = (Math.round((BoxScore.TPA[x] / BoxScore.TPM[x]) * 10000) / 100) + "%"
+                                    break;
+                            }
+                            break;
+                        }
+                    }
+                } else if (Passed == true) {
+                    Passed = false;
+                    break;
+                }
+
+            }
+        }
+
+    }
+
+    function main(startingTime) {
+        time = startingTime
+        function loop() {
+            if (time > 0.1) {
+                x = 100
+                setTimeout(() => {
+                    time = time - (x / 1000)
+                    secondstotime(Math.floor(time), Math.floor((time - Math.floor(time)) * 10))
+                    processBoxScore(Math.round(time), Math.floor((time - Math.floor(time)) * 10),1)
+                    updateScores()
+                    loop()
+                }, x)
+            } else {
+
+            }
+
+        }
+        loop()
+
+    }
+
+    main(600)
+</script>
