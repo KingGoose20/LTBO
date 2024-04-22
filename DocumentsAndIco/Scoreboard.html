@@ -18,8 +18,8 @@
     </p>
     <img src="../Images//Team Honk.png" style="height: 4vw; position: absolute; left:420px; top:15px; z-index: 100;" />
     <img src="../Images//Team McGoo.png" style="height: 4vw; position: absolute; left:740px; top:15px; z-index: 100;" />
-    <p
-        style="position: absolute; top:25px; left:502.5px; font-size: 30px; font-family: Bebas Neue; color:white; min-width: 200px; text-align: center;">
+    <p style="position: absolute; top:25px; left:502.5px; font-size: 30px; font-family: Bebas Neue; color:white; min-width: 200px; text-align: center;"
+        id="timer">
         <span style="float: left; min-width: 80px;" id="quarter">1st</span><span style="width: 30px;"> | </span><span
             style="float: right; min-width: 80px;" id="time">9:48</span>
     </p>
@@ -42,7 +42,7 @@
 <script>
     HonkScore = 0
     McGooScore = 0
-    Breaks = [0, 63, 134,211,267]
+    Breaks = [0, 63, 134, 211, 267]
     BoxScore = {
         "Name": ["Angus Walker", "Rudy Hoschke", "William Kim", "Clarrie Jones", "Jasper Collier", "Michael Iffland", "Samuel McConaghy", "Alexander Galt", "Christopher Tomkinson", "Ryan Pattemore", "Sam James", "Will Weekes"],
         "Points": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -64,7 +64,7 @@
         "FTM": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         "FTP": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
-    function quarter(int) {
+    function setQuarter(int) {
         switch (int) {
             case 1:
                 document.getElementById("quarter").innerHTML = "1st"
@@ -99,20 +99,97 @@
     }
 
     function updateScores() {
+        HonkScore = BoxScore.Points[0] + BoxScore.Points[1] + BoxScore.Points[2] + BoxScore.Points[3] + BoxScore.Points[4] + BoxScore.Points[5]
+        McGooScore = BoxScore.Points[6] + BoxScore.Points[7] + BoxScore.Points[8] + BoxScore.Points[9] + BoxScore.Points[10] + BoxScore.Points[11]
         document.getElementById("honkScore").innerHTML = HonkScore
         document.getElementById("mcgooScore").innerHTML = McGooScore
     }
 
+    function quickCatchUp(toWhatQuarter) {
+        for (i = 0; i < Breaks[toWhatQuarter-1]; i++) {
+            for (x = 0; x < BoxScore.Name.length; x++) {
+                if (Data.Player[i] == BoxScore.Name[x]) {
+
+                    switch (Data.Thing[i]) {
+                        case "Steal":
+                            BoxScore.Steal[x] = BoxScore.Steal[x] + 1
+                            break;
+                        case "Assist":
+                            BoxScore.Assist[x] = BoxScore.Assist[x] + 1
+                            break;
+                        case "Block":
+                            BoxScore.Block[x] = BoxScore.Block[x] + 1
+                            break;
+                        case "Turnover":
+                            BoxScore.Turnover[x] = BoxScore.Turnover[x] + 1
+                            break;
+                        case "Offensive Rebound":
+                            BoxScore.OffReb[x] += 1
+                            BoxScore.Rebound[x] += 1
+                            break;
+                        case "Defensive Rebound":
+                            BoxScore.DefReb[x] += 1
+                            BoxScore.Rebound[x] += 1
+                            break;
+                        case "Foul":
+                            BoxScore.Foul[x] += 1
+                            break;
+                        case "Miss 2PT":
+                            BoxScore.FGA[x] += 1
+                            BoxScore.FGP[x] = (Math.round((BoxScore.FGM[x] / BoxScore.FGA[x]) * 10000) / 100) + "%"
+                            break;
+                        case "Make 2PT":
+                            BoxScore.FGA[x] += 1
+                            BoxScore.FGM[x] += 1
+                            BoxScore.Points[x] += 2
+                            BoxScore.FGP[x] = (Math.round((BoxScore.FGM[x] / BoxScore.FGA[x]) * 10000) / 100) + "%"
+                            console.log("MAKE")
+                            break;
+                        case "Miss FT":
+                            BoxScore.FTA[x] += 1
+                            BoxScore.FTP[x] = (Math.round((BoxScore.FTP[x] / BoxScore.FTA[x]) * 10000) / 100) + "%"
+                            break;
+                        case "Make FT":
+                            BoxScore.FTA[x] += 1
+                            BoxScore.FTM[x] += 1
+                            BoxScore.Points[x] += 1
+                            BoxScore.FTP[x] = (Math.round((BoxScore.FTP[x] / BoxScore.FTA[x]) * 10000) / 100) + "%"
+                            break;
+                        case "Miss 3PT":
+                            BoxScore.TPA[x] += 1
+                            BoxScore.FGA[x] += 1
+                            BoxScore.TPA[x] = (Math.round((BoxScore.TPA[x] / BoxScore.TPM[x]) * 10000) / 100) + "%"
+                            break;
+                        case "Make 3PT":
+                            BoxScore.FGA[x] += 1
+                            BoxScore.FGM[x] += 1
+                            BoxScore.TPA[x] += 1
+                            BoxScore.TPM[x] += 1
+                            BoxScore.Points[x] += 3
+                            BoxScore.TPA[x] = (Math.round((BoxScore.TPA[x] / BoxScore.TPM[x]) * 10000) / 100) + "%"
+                            break;
+                    }
+                    break;
+                }
+            }
+        }
+
+    }
     function processBoxScore(seconds, milliseconds, quarter) {
-        Ourtime = (Math.floor(seconds / 60)) + ":" + (seconds % 60)
+        Ourtime = (Math.floor(seconds / 60)) + ":"
+        if ((seconds % 60) < 10) {
+            Ourtime = Ourtime + "0"
+        }
+        Ourtime = Ourtime + (seconds % 60)
         if (milliseconds == 0) {
             Passed = false
-            for (i = Breaks[quarter-1]; i < Breaks[quarter]; i++) {
+            for (i = Breaks[quarter - 1]; i < Breaks[quarter]; i++) {
                 if (Ourtime == Data.Time[i]) {
                     Passed = true;
                     for (x = 0; x < BoxScore.Name.length; x++) {
                         if (Data.Player[i] == BoxScore.Name[x]) {
                             console.log("HERE - " + Ourtime + Data.Thing[i])
+
                             switch (Data.Thing[i]) {
                                 case "Steal":
                                     BoxScore.Steal[x] = BoxScore.Steal[x] + 1
@@ -146,6 +223,7 @@
                                     BoxScore.FGM[x] += 1
                                     BoxScore.Points[x] += 2
                                     BoxScore.FGP[x] = (Math.round((BoxScore.FGM[x] / BoxScore.FGA[x]) * 10000) / 100) + "%"
+                                    console.log("MAKE")
                                     break;
                                 case "Miss FT":
                                     BoxScore.FTA[x] += 1
@@ -184,26 +262,48 @@
 
     }
 
-    function main(startingTime) {
+    function main(startingTime, quarter) {
+        quickCatchUp(quarter)
         time = startingTime
+        setQuarter(quarter)
         function loop() {
             if (time > 0.1) {
                 x = 100
                 setTimeout(() => {
                     time = time - (x / 1000)
                     secondstotime(Math.floor(time), Math.floor((time - Math.floor(time)) * 10))
-                    processBoxScore(Math.round(time), Math.floor((time - Math.floor(time)) * 10),1)
+                    processBoxScore(Math.round(time), Math.floor((time - Math.floor(time)) * 10), quarter)
                     updateScores()
                     loop()
-                }, x)
+                }, x / 20)
             } else {
+                x = 3000
+                setTimeout(() => {
+                    switch (quarter) {
+                        case 1:
+                            text = "1st"
+                            break;
+                        case 2:
+                            text = "2nd"
+                            break;
+                        case 3:
+                            text = "3rd"
+                            break;
+                        case 4:
+                            text = "4th"
+                            break;
 
+                    }
+                    document.getElementById("timer").innerHTML = "END " + text
+                    if (quarter == 4) {
+                        document.getElementById("timer").innerHTML = "FINAL"
+                    }
+                }, x / 20)
             }
 
         }
         loop()
 
     }
-
-    main(600)
+    main(605, 4)
 </script>
